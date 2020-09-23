@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://standardforwarding.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://standardforwarding.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://standardforwarding.com/">
+      <s:element name="GetRateQuoteDetailed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZIPCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZIPCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weight" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rateClass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terms" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRateQuoteDetailedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRateQuoteDetailedResult" type="tns:RateQuote" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateQuote">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TotalCharges" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreDiscountCharges" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BydCharges" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BydDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FSCCharges" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FSCDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineItems" type="tns:ArrayOfRateLineItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRateLineItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RateLineItem" nillable="true" type="tns:RateLineItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RateLineItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LineNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pallets" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pieces" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Charge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRateQuoteSimple">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZIPCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZIPCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weight" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rateClass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terms" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRateQuoteSimpleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRateQuoteSimpleResult" type="tns:RateQuoteSimple" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateQuoteSimple">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TotalCharges" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetRateQuoteDetailedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRateQuoteDetailed" />
+  </wsdl:message>
+  <wsdl:message name="GetRateQuoteDetailedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRateQuoteDetailedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRateQuoteSimpleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRateQuoteSimple" />
+  </wsdl:message>
+  <wsdl:message name="GetRateQuoteSimpleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRateQuoteSimpleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RatingSoap">
+    <wsdl:operation name="GetRateQuoteDetailed">
+      <wsdl:input message="tns:GetRateQuoteDetailedSoapIn" />
+      <wsdl:output message="tns:GetRateQuoteDetailedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRateQuoteSimple">
+      <wsdl:input message="tns:GetRateQuoteSimpleSoapIn" />
+      <wsdl:output message="tns:GetRateQuoteSimpleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RatingSoap" type="tns:RatingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRateQuoteDetailed">
+      <soap:operation soapAction="http://standardforwarding.com/GetRateQuoteDetailed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateQuoteSimple">
+      <soap:operation soapAction="http://standardforwarding.com/GetRateQuoteSimple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RatingSoap12" type="tns:RatingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRateQuoteDetailed">
+      <soap12:operation soapAction="http://standardforwarding.com/GetRateQuoteDetailed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateQuoteSimple">
+      <soap12:operation soapAction="http://standardforwarding.com/GetRateQuoteSimple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Rating">
+    <wsdl:port name="RatingSoap" binding="tns:RatingSoap">
+      <soap:address location="http://www.standardforwarding.com/STDFServices/Rating.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RatingSoap12" binding="tns:RatingSoap12">
+      <soap12:address location="http://www.standardforwarding.com/STDFServices/Rating.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,36 @@
+﻿<RateRequestViewModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy">
+  <DropEvent>
+    <City>ROCKVILLE CENTRE</City>
+    <Country>USA</Country>
+    <Date>2020-08-06T22:00:00.000000</Date>
+    <State>NY</State>
+    <Zip>11570</Zip>
+  </DropEvent>
+  <IsCompanyAccountNumber>true</IsCompanyAccountNumber>
+  <Items>
+    <RateItemViewModel>
+      <Cube>0</Cube>
+      <DimensionUnits>in</DimensionUnits>
+      <FreightClass>175.0</FreightClass>
+      <Height>0.0</Height>
+      <Length>0.0</Length>
+      <Name>ItemName</Name>
+      <Quantity>1</Quantity>
+      <QuantityUnits>Unit</QuantityUnits>
+      <Weight>738.0</Weight>
+      <WeightUnits>lb</WeightUnits>
+      <Width>0.0</Width>
+    </RateItemViewModel>
+  </Items>
+  <LinearFeet>4</LinearFeet>
+  <MaxPriceSheet>6</MaxPriceSheet>
+  <PickupEvent>
+    <City>MONROE TOWNSHIP</City>
+    <Country>USA</Country>
+    <Date>2020-08-06T10:00:00.000000</Date>
+    <State>NJ</State>
+    <Zip>08831</Zip>
+  </PickupEvent>
+  <ReturnAssociatedCarrierPricesheet>true</ReturnAssociatedCarrierPricesheet>
+  <ShowInsurance>true</ShowInsurance>
+</RateRequestViewModel>

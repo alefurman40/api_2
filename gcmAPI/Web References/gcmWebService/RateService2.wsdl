@@ -1,0 +1,3088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://globalcargomanager.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://globalcargomanager.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://globalcargomanager.com/">
+      <s:element name="Authenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerAuthenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentApiUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentApiKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerAuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAuthenticateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MOTFS_Authenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MOTFS_AuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MOTFS_AuthenticateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLTLPiece">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LTLPiece" nillable="true" type="tns:LTLPiece" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LTLPiece">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FreightClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HazMat" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Commodity" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLTLRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLRateResult" type="tns:LTLRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LTLRateReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="LTLRates" type="tns:ArrayOfLTLResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RateServiceNotification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLTLResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LTLResult" nillable="true" type="tns:LTLResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LTLResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessDays" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierDisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyRate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierKey" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CoverageCost" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetLTLBookingRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLBookingRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLBookingRateResult" type="tns:LTLRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLBookingRateWithZips">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLBookingRateWithZipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLBookingRateWithZipsResult" type="tns:LTLRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLTLBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfLTLBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BookingThirdPartyBilling">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BookingAddress" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BookingAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DispatchAddressesId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BookingDestinationLocation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BookingAddress" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BookingPickupLocation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BookingAddress" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLTLBookingPiece">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LTLBookingPiece" nillable="true" type="tns:LTLBookingPiece" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LTLBookingPiece">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NMFC" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfPallet" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateLTLBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateLTLBookingResult" type="tns:LTLBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LTLBookingReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="BOLURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateLTLBooking2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfLTLBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLTLBooking2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateLTLBooking2Result" type="tns:LTLBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLTLBooking_3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="api_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfLTLBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLTLBooking_3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateLTLBooking_3Result" type="tns:LTLBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLRatePoSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLRatePoSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLRatePoSystemResult" type="tns:LTLRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLBookingRatePoSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLBookingRatePoSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLBookingRatePoSystemResult" type="tns:LTLRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLTLBookingPoSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfLTLBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="origGCMCompID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="destGCMCompID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="notesFromVendorToCustomer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="freightBidAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="QuoteID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UPSParcelQuoteID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="poDataID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="routedByVendor" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrierToBidWith" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPieces" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalCube" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipByDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipAfterDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="savedAmount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookedOnShipType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Routing" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TrackingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VendorCarrierName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="combinedPOs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="combinedPO_IDsList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="combinedPOsList" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="CompIDbyAcctNum" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierFromUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLTLBookingPoSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateLTLBookingPoSystemResult" type="tns:LTLBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLTotalRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rates" type="tns:ArrayOfDouble" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDouble">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="double" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLTLTotalRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLTotalRatesResult" type="tns:TotalRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TotalRateReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalRates" type="tns:ArrayOfDouble" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetResultObjectFromUSFReddawayPrepaid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pickupDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHazMat" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultObjectFromUSFReddawayPrepaidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResultObjectFromUSFReddawayPrepaidResult" type="tns:GCMRateQuote" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GCMRateQuote">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPrice" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierKey" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeliveryDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GuaranteedRateAM" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="GuaranteedRatePM" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documentation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OurRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OurRateGAM" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OurRateGPM" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewLogId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnTimePercent" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipsBetweenStates" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetResultObjectFromUSFReddaway">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pickupDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHazMat" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="usfAcctNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chargeType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultObjectFromUSFReddawayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResultObjectFromUSFReddawayResult" type="tns:GCMRateQuote" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getResponseFromDLS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getResponseFromDLSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getResponseFromDLSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirPackageBookingRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPackagePiece">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PackagePiece" nillable="true" type="tns:PackagePiece" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackagePiece">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FreightClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HazMat" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Commodity" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAirPackageBookingRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirPackageBookingRatesResult" type="tns:PackageRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PackageRateReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuoteID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackageRates" type="tns:ArrayOfPackageResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingInfo" type="tns:PackageBookingInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPackageResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PackageResult" nillable="true" type="tns:PackageResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackageResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="resRow" type="tns:upsPackageResRow" />
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessDays" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierDisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyRate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierKey" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CoverageCost" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="upsPackageResRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="service" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cost" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="days" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="latestPickupDateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="scheduleBy" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deliveredBy" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackageBookingInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessLicenseNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serviceCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipChargeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperAddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperAttentionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromAddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromAttentionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toAddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toAttentionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="packageItems" type="tns:ArrayOfPackageItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPackageItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PackageItem" nillable="true" type="tns:PackageItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackageItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitOfMeasurement" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackageType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemUnit" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HazMat" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Commodity" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAirPackageRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirPackageRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirPackageRatesResult" type="tns:PackageRateReply" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryCodes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCountryCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryCodesResult" type="tns:ArrayOfCountryCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCountryCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CountryCode" type="tns:CountryCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CountryCode" />
+      <s:element name="GetCountryCodesXML">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCountryCodesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryCodesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIntermodalRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIntermodalRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIntermodalRateResult" type="tns:IntermodalRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IntermodalRateReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuoteID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="IntermodalRates" type="tns:ArrayOfIntermodalResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIntermodalResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IntermodalResult" nillable="true" type="tns:IntermodalResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntermodalResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInfo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Carrier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstimatedTransitTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginCityState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationCityState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationCountry" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCharge" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstAvailablePickupDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstimatedDeliveryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateValidThrough" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContainerSize" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLTLTrackingInformationByShipmentId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shipmentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLTrackingInformationByShipmentIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLTrackingInformationByShipmentIdResult" type="tns:LTLTrackingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LTLTrackingReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrackingInfo" type="tns:GCMShipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GCMShipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ETADate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PONumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HAWB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAWB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Voyage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentItems" type="tns:ArrayOfGCMShipmentItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentComments" type="tns:ArrayOfGCMShipmentComment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGCMShipmentItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GCMShipmentItem" nillable="true" type="tns:GCMShipmentItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GCMShipmentItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Terms" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Piece" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGCMShipmentComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GCMShipmentComment" nillable="true" type="tns:GCMShipmentComment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GCMShipmentComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrackingInformationByPONumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="poNumbers" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackingInformationByPONumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrackingInformationByPONumberResult" type="tns:TrackingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TrackingReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrackingResult" type="tns:ArrayOfGCMShipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGCMShipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GCMShipment" nillable="true" type="tns:GCMShipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllExistingAddresses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllExistingAddressesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllExistingAddressesResult" type="tns:BookingAddressesReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BookingAddressesReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingAddresses" type="tns:ArrayOfBookingAddress" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBookingAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BookingAddress" nillable="true" type="tns:BookingAddress" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrackingInformationByProNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proNumbers" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackingInformationByProNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrackingInformationByProNumberResult" type="tns:TrackingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGCMInsuranceCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGCMInsuranceCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGCMInsuranceCostResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLRateAAFES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="aafesTotalCube" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLRateAAFESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLRateAAFESResult" type="tns:LTLRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLBookingRateAAFES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfLTLPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalCube" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLTLBookingRateAAFESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLTLBookingRateAAFESResult" type="tns:LTLRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFedExPackageRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFedExPackageRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFedExPackageRateResult" type="tns:PackageRateReply" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFedExPackageBookingRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFedExPackageBookingRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFedExPackageBookingRateResult" type="tns:PackageRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFedExPackageBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfPackageBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPackageBookingPiece">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PackageBookingPiece" nillable="true" type="tns:PackageBookingPiece" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackageBookingPiece">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="additionalInformation" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NMFC" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfPallet" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFedExPackageBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFedExPackageBookingResult" type="tns:PackageBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PackageBookingReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LabelsUrls" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalInfo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notification" type="tns:RateServiceNotification" />
+          <s:element minOccurs="0" maxOccurs="1" name="BOLURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="processCyberSourcePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requester" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="info" type="tns:CC_PaymentInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CC_PaymentInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="shipID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="rate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNbr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ccNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expMonth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cw" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="processCyberSourcePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="processCyberSourcePaymentResult" type="tns:CC_PaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CC_PaymentResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="isPaymentSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="decision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reasonCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getRateViaShipLinx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="info" type="tns:ShoesInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShoesInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="origZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origCompName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destCompName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origAddr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destAddr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origAddr2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destAddr2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destAddr3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="carrier" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="totalBoxes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="totalWeight" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="customsValue" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="shipmentReadyDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getRateViaShipLinxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getRateViaShipLinxResult" type="tns:ShipLinx_ShoesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShipLinx_ShoesResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="isSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="makeBookingViaShipLinx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="info" type="tns:ShoesInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeBookingViaShipLinxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="makeBookingViaShipLinxResult" type="tns:ShipLinx_ShoesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageBookingAlex2015">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfPackageBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageBookingAlex2015Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePackageBookingAlex2015Result" type="tns:PackageBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfPackageBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="origGCMCompID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="destGCMCompID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="notesFromVendorToCustomer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="freightBidAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="QuoteID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UPSParcelQuoteID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="poDataID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="routedByVendor" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrierToBidWith" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPieces" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalCube" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipByDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipAfterDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="savedAmount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookedOnShipType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Routing" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TrackingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VendorCarrierName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="combinedPOs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="combinedPO_IDsList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="combinedPOsList" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="CompIDbyAcctNum" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierFromUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePackageBookingResult" type="tns:PackageBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUPS_InternationalPackageRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="packagingTypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUPS_InternationalPackageRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUPS_InternationalPackageRatesResult" type="tns:PackageRateReply" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="packagingTypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageRateAll_UPS_Services">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageRateAll_UPS_ServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageRateAll_UPS_ServicesResult" type="tns:PackageRateReply" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUPS_InternationalPackageBookingRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="packagingTypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUPS_InternationalPackageBookingRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUPS_InternationalPackageBookingRatesResult" type="tns:PackageRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageBookingRateAll_UPS_Services">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageBookingRateAll_UPS_ServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageBookingRateAll_UPS_ServicesResult" type="tns:PackageRateReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageBooking_Old">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookingKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyBilling" type="tns:BookingThirdPartyBilling" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="readyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolSendTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingLineItems" type="tns:ArrayOfPackageBookingPiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="needInsurance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="declaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageBooking_OldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePackageBooking_OldResult" type="tns:PackageBookingReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="manualCancelBookingOnUPS_Package">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="manualCancelBookingOnUPS_PackageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="makeBookingOnUPS_Package">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="labels" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="labelImgStrings" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="proNbr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupLocation" type="tns:BookingPickupLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLocation" type="tns:BookingDestinationLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeBookingOnUPS_PackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="makeBookingOnUPS_PackageResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfo" type="tns:PackageBookingInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="labels" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="labelImgStrings" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="shipmentDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeBookingOnUPS_PackageAlex2015">
+        <s:complexType />
+      </s:element>
+      <s:element name="makeBookingOnUPS_PackageAlex2015Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="makeBookingOnUPS_PackageAlex2015Result" type="tns:upsPackageShipInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="upsPackageShipInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accessLicenseNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serviceCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipChargeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperAddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperAttentionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shipperPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromAddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromAttentionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toAddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toAttentionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="toPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="packageItems" type="tns:ArrayOfUpsPackageItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUpsPackageItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="upsPackageItem" type="tns:upsPackageItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="upsPackageItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="uom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="packageType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="length" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="width" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="height" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="makeUPS_Package_BookingAPI_CallAlex2015">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packInfo" type="tns:upsPackageShipInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="packInfoLogger" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dblRate" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeUPS_Package_BookingAPI_CallAlex2015Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="makeUPS_Package_BookingAPI_CallAlex2015Result" type="tns:upsPackageBookingRes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="upsPackageBookingRes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="proNbr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="upsPackageResponseStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="labelImgStrings" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUPS_TransitTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pickupDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems" type="tns:ArrayOfPackagePiece" />
+            <s:element minOccurs="0" maxOccurs="1" name="pickupService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalServices" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="totWeight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="numOfPackages" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="InsuredValue" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUPS_TransitTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUPS_TransitTimeResult" type="tns:upsTransitTimeRes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="upsTransitTimeRes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideExpressDays" type="s:byte" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideExpressPlusDays" type="s:byte" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideExpeditedDays" type="s:byte" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideSaverDays" type="s:byte" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideExpressDelDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideExpressPlusDelDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideExpeditedDelDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorldwideSaverDelDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="notification" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerAuthenticate" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerAuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="MOTFS_AuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:MOTFS_Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="MOTFS_AuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:MOTFS_AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLRate" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRate" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateWithZipsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRateWithZips" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateWithZipsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRateWithZipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateWithZipsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLTLBooking" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLTLBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBookingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBooking2SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLTLBooking2" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBooking2SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLTLBooking2Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBooking_3SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLTLBooking_3" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBooking_3SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLTLBooking_3Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBooking_3AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRatePoSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLRatePoSystem" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRatePoSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLRatePoSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRatePoSystemAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRatePoSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRatePoSystem" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRatePoSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRatePoSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRatePoSystemAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBookingPoSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLTLBookingPoSystem" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBookingPoSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLTLBookingPoSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateLTLBookingPoSystemAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLTotalRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLTotalRates" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLTotalRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLTotalRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLTotalRatesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetResultObjectFromUSFReddawayPrepaidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResultObjectFromUSFReddawayPrepaid" />
+  </wsdl:message>
+  <wsdl:message name="GetResultObjectFromUSFReddawayPrepaidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResultObjectFromUSFReddawayPrepaidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResultObjectFromUSFReddawayPrepaidAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetResultObjectFromUSFReddawaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetResultObjectFromUSFReddaway" />
+  </wsdl:message>
+  <wsdl:message name="GetResultObjectFromUSFReddawaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetResultObjectFromUSFReddawayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResultObjectFromUSFReddawayAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="getResponseFromDLSSoapIn">
+    <wsdl:part name="parameters" element="tns:getResponseFromDLS" />
+  </wsdl:message>
+  <wsdl:message name="getResponseFromDLSSoapOut">
+    <wsdl:part name="parameters" element="tns:getResponseFromDLSResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResponseFromDLSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPackageBookingRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirPackageBookingRates" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPackageBookingRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirPackageBookingRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPackageBookingRatesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPackageRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirPackageRates" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPackageRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirPackageRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirPackageRatesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCodesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryCodesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryCodesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryCodesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIntermodalRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIntermodalRate" />
+  </wsdl:message>
+  <wsdl:message name="GetIntermodalRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIntermodalRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIntermodalRateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLTrackingInformationByShipmentIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLTrackingInformationByShipmentId" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLTrackingInformationByShipmentIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLTrackingInformationByShipmentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLTrackingInformationByShipmentIdAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingInformationByPONumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrackingInformationByPONumber" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingInformationByPONumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrackingInformationByPONumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingInformationByPONumberAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllExistingAddressesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllExistingAddresses" />
+  </wsdl:message>
+  <wsdl:message name="GetAllExistingAddressesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllExistingAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllExistingAddressesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingInformationByProNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrackingInformationByProNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingInformationByProNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrackingInformationByProNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingInformationByProNumberAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetGCMInsuranceCostSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGCMInsuranceCost" />
+  </wsdl:message>
+  <wsdl:message name="GetGCMInsuranceCostSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGCMInsuranceCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGCMInsuranceCostAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRateAAFESSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLRateAAFES" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRateAAFESSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLRateAAFESResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLRateAAFESAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateAAFESSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRateAAFES" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateAAFESSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLTLBookingRateAAFESResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLTLBookingRateAAFESAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFedExPackageRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFedExPackageRate" />
+  </wsdl:message>
+  <wsdl:message name="GetFedExPackageRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFedExPackageRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFedExPackageRateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFedExPackageBookingRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFedExPackageBookingRate" />
+  </wsdl:message>
+  <wsdl:message name="GetFedExPackageBookingRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFedExPackageBookingRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFedExPackageBookingRateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateFedExPackageBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFedExPackageBooking" />
+  </wsdl:message>
+  <wsdl:message name="CreateFedExPackageBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFedExPackageBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFedExPackageBookingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="processCyberSourcePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:processCyberSourcePayment" />
+  </wsdl:message>
+  <wsdl:message name="processCyberSourcePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:processCyberSourcePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="processCyberSourcePaymentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="getRateViaShipLinxSoapIn">
+    <wsdl:part name="parameters" element="tns:getRateViaShipLinx" />
+  </wsdl:message>
+  <wsdl:message name="getRateViaShipLinxSoapOut">
+    <wsdl:part name="parameters" element="tns:getRateViaShipLinxResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRateViaShipLinxAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingViaShipLinxSoapIn">
+    <wsdl:part name="parameters" element="tns:makeBookingViaShipLinx" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingViaShipLinxSoapOut">
+    <wsdl:part name="parameters" element="tns:makeBookingViaShipLinxResponse" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingViaShipLinxAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBookingAlex2015SoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePackageBookingAlex2015" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBookingAlex2015SoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePackageBookingAlex2015Response" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBookingAlex2015AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePackageBooking" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePackageBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBookingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_InternationalPackageRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUPS_InternationalPackageRates" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_InternationalPackageRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUPS_InternationalPackageRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_InternationalPackageRatesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRateAll_UPS_ServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageRateAll_UPS_Services" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRateAll_UPS_ServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageRateAll_UPS_ServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageRateAll_UPS_ServicesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_InternationalPackageBookingRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUPS_InternationalPackageBookingRates" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_InternationalPackageBookingRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUPS_InternationalPackageBookingRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_InternationalPackageBookingRatesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageBookingRateAll_UPS_ServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageBookingRateAll_UPS_Services" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageBookingRateAll_UPS_ServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageBookingRateAll_UPS_ServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageBookingRateAll_UPS_ServicesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBooking_OldSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePackageBooking_Old" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBooking_OldSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePackageBooking_OldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageBooking_OldAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="manualCancelBookingOnUPS_PackageSoapIn">
+    <wsdl:part name="parameters" element="tns:manualCancelBookingOnUPS_Package" />
+  </wsdl:message>
+  <wsdl:message name="manualCancelBookingOnUPS_PackageSoapOut">
+    <wsdl:part name="parameters" element="tns:manualCancelBookingOnUPS_PackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="manualCancelBookingOnUPS_PackageAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingOnUPS_PackageSoapIn">
+    <wsdl:part name="parameters" element="tns:makeBookingOnUPS_Package" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingOnUPS_PackageSoapOut">
+    <wsdl:part name="parameters" element="tns:makeBookingOnUPS_PackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingOnUPS_PackageAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingOnUPS_PackageAlex2015SoapIn">
+    <wsdl:part name="parameters" element="tns:makeBookingOnUPS_PackageAlex2015" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingOnUPS_PackageAlex2015SoapOut">
+    <wsdl:part name="parameters" element="tns:makeBookingOnUPS_PackageAlex2015Response" />
+  </wsdl:message>
+  <wsdl:message name="makeBookingOnUPS_PackageAlex2015AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="makeUPS_Package_BookingAPI_CallAlex2015SoapIn">
+    <wsdl:part name="parameters" element="tns:makeUPS_Package_BookingAPI_CallAlex2015" />
+  </wsdl:message>
+  <wsdl:message name="makeUPS_Package_BookingAPI_CallAlex2015SoapOut">
+    <wsdl:part name="parameters" element="tns:makeUPS_Package_BookingAPI_CallAlex2015Response" />
+  </wsdl:message>
+  <wsdl:message name="makeUPS_Package_BookingAPI_CallAlex2015AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_TransitTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUPS_TransitTime" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_TransitTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUPS_TransitTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUPS_TransitTimeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="RateService2Soap">
+    <wsdl:operation name="Authenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns API session id</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateSoapIn" />
+      <wsdl:output message="tns:AuthenticateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns API session id for customers</wsdl:documentation>
+      <wsdl:input message="tns:CustomerAuthenticateSoapIn" />
+      <wsdl:output message="tns:CustomerAuthenticateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MOTFS_Authenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns API session id</wsdl:documentation>
+      <wsdl:input message="tns:MOTFS_AuthenticateSoapIn" />
+      <wsdl:output message="tns:MOTFS_AuthenticateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns LTL rate</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLRateSoapIn" />
+      <wsdl:output message="tns:GetLTLRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns LTL rate for booking</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLBookingRateSoapIn" />
+      <wsdl:output message="tns:GetLTLBookingRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRateWithZips">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns LTL rate for booking without cities or states</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLBookingRateWithZipsSoapIn" />
+      <wsdl:output message="tns:GetLTLBookingRateWithZipsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create an LTL booking</wsdl:documentation>
+      <wsdl:input message="tns:CreateLTLBookingSoapIn" />
+      <wsdl:output message="tns:CreateLTLBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create an LTL booking</wsdl:documentation>
+      <wsdl:input message="tns:CreateLTLBooking2SoapIn" />
+      <wsdl:output message="tns:CreateLTLBooking2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking_3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create an LTL booking</wsdl:documentation>
+      <wsdl:input message="tns:CreateLTLBooking_3SoapIn" />
+      <wsdl:output message="tns:CreateLTLBooking_3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRatePoSystem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns LTL rate</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLRatePoSystemSoapIn" />
+      <wsdl:output message="tns:GetLTLRatePoSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRatePoSystem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns LTL rate for booking</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLBookingRatePoSystemSoapIn" />
+      <wsdl:output message="tns:GetLTLBookingRatePoSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBookingPoSystem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create an LTL booking for PO System</wsdl:documentation>
+      <wsdl:input message="tns:CreateLTLBookingPoSystemSoapIn" />
+      <wsdl:output message="tns:CreateLTLBookingPoSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLTotalRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns rate with adding markup</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLTotalRatesSoapIn" />
+      <wsdl:output message="tns:GetLTLTotalRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultObjectFromUSFReddawayPrepaid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns USFReddawayPrepaid rate</wsdl:documentation>
+      <wsdl:input message="tns:GetResultObjectFromUSFReddawayPrepaidSoapIn" />
+      <wsdl:output message="tns:GetResultObjectFromUSFReddawayPrepaidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultObjectFromUSFReddaway">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns USFReddawayPrepaid rate</wsdl:documentation>
+      <wsdl:input message="tns:GetResultObjectFromUSFReddawaySoapIn" />
+      <wsdl:output message="tns:GetResultObjectFromUSFReddawaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getResponseFromDLS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns DLS XML Response</wsdl:documentation>
+      <wsdl:input message="tns:getResponseFromDLSSoapIn" />
+      <wsdl:output message="tns:getResponseFromDLSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPackageBookingRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Package rate for booking</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPackageBookingRatesSoapIn" />
+      <wsdl:output message="tns:GetAirPackageBookingRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPackageRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Air Package rates</wsdl:documentation>
+      <wsdl:input message="tns:GetAirPackageRatesSoapIn" />
+      <wsdl:output message="tns:GetAirPackageRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetCountryCodes</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryCodesSoapIn" />
+      <wsdl:output message="tns:GetCountryCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetCountryCodes</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryCodesXMLSoapIn" />
+      <wsdl:output message="tns:GetCountryCodesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIntermodalRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Intermodal rate with quote id</wsdl:documentation>
+      <wsdl:input message="tns:GetIntermodalRateSoapIn" />
+      <wsdl:output message="tns:GetIntermodalRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLTrackingInformationByShipmentId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Domestic Shipment Tracking Information By Shipment ID</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLTrackingInformationByShipmentIdSoapIn" />
+      <wsdl:output message="tns:GetLTLTrackingInformationByShipmentIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingInformationByPONumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Domestic and International Shipment Tracking Information By PO Numbers</wsdl:documentation>
+      <wsdl:input message="tns:GetTrackingInformationByPONumberSoapIn" />
+      <wsdl:output message="tns:GetTrackingInformationByPONumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExistingAddresses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Array of BookingAddress type Object By UserName and ZipCode(Optional)</wsdl:documentation>
+      <wsdl:input message="tns:GetAllExistingAddressesSoapIn" />
+      <wsdl:output message="tns:GetAllExistingAddressesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingInformationByProNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Domestic and International Shipment Tracking Information By Pro Numbers</wsdl:documentation>
+      <wsdl:input message="tns:GetTrackingInformationByProNumberSoapIn" />
+      <wsdl:output message="tns:GetTrackingInformationByProNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGCMInsuranceCost">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the insurance cost of Global Cargo Manager</wsdl:documentation>
+      <wsdl:input message="tns:GetGCMInsuranceCostSoapIn" />
+      <wsdl:output message="tns:GetGCMInsuranceCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRateAAFES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns LTL rate</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLRateAAFESSoapIn" />
+      <wsdl:output message="tns:GetLTLRateAAFESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRateAAFES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns LTL rate for booking</wsdl:documentation>
+      <wsdl:input message="tns:GetLTLBookingRateAAFESSoapIn" />
+      <wsdl:output message="tns:GetLTLBookingRateAAFESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFedExPackageRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Package rate</wsdl:documentation>
+      <wsdl:input message="tns:GetFedExPackageRateSoapIn" />
+      <wsdl:output message="tns:GetFedExPackageRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFedExPackageBookingRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Package rate for booking</wsdl:documentation>
+      <wsdl:input message="tns:GetFedExPackageBookingRateSoapIn" />
+      <wsdl:output message="tns:GetFedExPackageBookingRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFedExPackageBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a FedEx Package booking</wsdl:documentation>
+      <wsdl:input message="tns:CreateFedExPackageBookingSoapIn" />
+      <wsdl:output message="tns:CreateFedExPackageBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="processCyberSourcePayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">processCyberSourcePayment</wsdl:documentation>
+      <wsdl:input message="tns:processCyberSourcePaymentSoapIn" />
+      <wsdl:output message="tns:processCyberSourcePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRateViaShipLinx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">getRateViaShipLinx</wsdl:documentation>
+      <wsdl:input message="tns:getRateViaShipLinxSoapIn" />
+      <wsdl:output message="tns:getRateViaShipLinxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingViaShipLinx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">getRateViaShipLinx</wsdl:documentation>
+      <wsdl:input message="tns:makeBookingViaShipLinxSoapIn" />
+      <wsdl:output message="tns:makeBookingViaShipLinxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBookingAlex2015">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a Package booking</wsdl:documentation>
+      <wsdl:input message="tns:CreatePackageBookingAlex2015SoapIn" />
+      <wsdl:output message="tns:CreatePackageBookingAlex2015SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a Package booking</wsdl:documentation>
+      <wsdl:input message="tns:CreatePackageBookingSoapIn" />
+      <wsdl:output message="tns:CreatePackageBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_InternationalPackageRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns UPS_International Package rates</wsdl:documentation>
+      <wsdl:input message="tns:GetUPS_InternationalPackageRatesSoapIn" />
+      <wsdl:output message="tns:GetUPS_InternationalPackageRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRateAll_UPS_Services">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Package rate</wsdl:documentation>
+      <wsdl:input message="tns:GetPackageRateAll_UPS_ServicesSoapIn" />
+      <wsdl:output message="tns:GetPackageRateAll_UPS_ServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_InternationalPackageBookingRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns UPS_International Package rate for bookings</wsdl:documentation>
+      <wsdl:input message="tns:GetUPS_InternationalPackageBookingRatesSoapIn" />
+      <wsdl:output message="tns:GetUPS_InternationalPackageBookingRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageBookingRateAll_UPS_Services">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Package rate for booking</wsdl:documentation>
+      <wsdl:input message="tns:GetPackageBookingRateAll_UPS_ServicesSoapIn" />
+      <wsdl:output message="tns:GetPackageBookingRateAll_UPS_ServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBooking_Old">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a Package booking</wsdl:documentation>
+      <wsdl:input message="tns:CreatePackageBooking_OldSoapIn" />
+      <wsdl:output message="tns:CreatePackageBooking_OldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="manualCancelBookingOnUPS_Package">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancel a Package booking</wsdl:documentation>
+      <wsdl:input message="tns:manualCancelBookingOnUPS_PackageSoapIn" />
+      <wsdl:output message="tns:manualCancelBookingOnUPS_PackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingOnUPS_Package">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Make a Package booking</wsdl:documentation>
+      <wsdl:input message="tns:makeBookingOnUPS_PackageSoapIn" />
+      <wsdl:output message="tns:makeBookingOnUPS_PackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingOnUPS_PackageAlex2015">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">makeBookingOnUPS_PackageAlex2015</wsdl:documentation>
+      <wsdl:input message="tns:makeBookingOnUPS_PackageAlex2015SoapIn" />
+      <wsdl:output message="tns:makeBookingOnUPS_PackageAlex2015SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeUPS_Package_BookingAPI_CallAlex2015">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">makeUPS_Package_BookingAPI_CallAlex2015</wsdl:documentation>
+      <wsdl:input message="tns:makeUPS_Package_BookingAPI_CallAlex2015SoapIn" />
+      <wsdl:output message="tns:makeUPS_Package_BookingAPI_CallAlex2015SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_TransitTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns UPS_International Transit Time</wsdl:documentation>
+      <wsdl:input message="tns:GetUPS_TransitTimeSoapIn" />
+      <wsdl:output message="tns:GetUPS_TransitTimeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RateService2Soap" type="tns:RateService2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://globalcargomanager.com/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticate">
+      <soap:operation soapAction="http://globalcargomanager.com/CustomerAuthenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MOTFS_Authenticate">
+      <soap:operation soapAction="http://globalcargomanager.com/MOTFS_Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRate">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRate">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLBookingRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLBookingRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRateWithZips">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLBookingRateWithZips" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLBookingRateWithZipsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking">
+      <soap:operation soapAction="http://globalcargomanager.com/CreateLTLBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateLTLBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking2">
+      <soap:operation soapAction="http://globalcargomanager.com/CreateLTLBooking2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking_3">
+      <soap:operation soapAction="http://globalcargomanager.com/CreateLTLBooking_3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateLTLBooking_3AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRatePoSystem">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLRatePoSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLRatePoSystemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRatePoSystem">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLBookingRatePoSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLBookingRatePoSystemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBookingPoSystem">
+      <soap:operation soapAction="http://globalcargomanager.com/CreateLTLBookingPoSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateLTLBookingPoSystemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLTotalRates">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLTotalRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLTotalRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultObjectFromUSFReddawayPrepaid">
+      <soap:operation soapAction="http://globalcargomanager.com/GetResultObjectFromUSFReddawayPrepaid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetResultObjectFromUSFReddawayPrepaidAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultObjectFromUSFReddaway">
+      <soap:operation soapAction="http://globalcargomanager.com/GetResultObjectFromUSFReddaway" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetResultObjectFromUSFReddawayAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResponseFromDLS">
+      <soap:operation soapAction="http://globalcargomanager.com/getResponseFromDLS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getResponseFromDLSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPackageBookingRates">
+      <soap:operation soapAction="http://globalcargomanager.com/GetAirPackageBookingRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAirPackageBookingRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPackageRates">
+      <soap:operation soapAction="http://globalcargomanager.com/GetAirPackageRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAirPackageRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodes">
+      <soap:operation soapAction="http://globalcargomanager.com/GetCountryCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodesXML">
+      <soap:operation soapAction="http://globalcargomanager.com/GetCountryCodesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntermodalRate">
+      <soap:operation soapAction="http://globalcargomanager.com/GetIntermodalRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetIntermodalRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLTrackingInformationByShipmentId">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLTrackingInformationByShipmentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLTrackingInformationByShipmentIdAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingInformationByPONumber">
+      <soap:operation soapAction="http://globalcargomanager.com/GetTrackingInformationByPONumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrackingInformationByPONumberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExistingAddresses">
+      <soap:operation soapAction="http://globalcargomanager.com/GetAllExistingAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllExistingAddressesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingInformationByProNumber">
+      <soap:operation soapAction="http://globalcargomanager.com/GetTrackingInformationByProNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrackingInformationByProNumberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGCMInsuranceCost">
+      <soap:operation soapAction="http://globalcargomanager.com/GetGCMInsuranceCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGCMInsuranceCostAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRateAAFES">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLRateAAFES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLRateAAFESAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRateAAFES">
+      <soap:operation soapAction="http://globalcargomanager.com/GetLTLBookingRateAAFES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLTLBookingRateAAFESAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFedExPackageRate">
+      <soap:operation soapAction="http://globalcargomanager.com/GetFedExPackageRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFedExPackageRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFedExPackageBookingRate">
+      <soap:operation soapAction="http://globalcargomanager.com/GetFedExPackageBookingRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFedExPackageBookingRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFedExPackageBooking">
+      <soap:operation soapAction="http://globalcargomanager.com/CreateFedExPackageBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateFedExPackageBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="processCyberSourcePayment">
+      <soap:operation soapAction="http://globalcargomanager.com/processCyberSourcePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:processCyberSourcePaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRateViaShipLinx">
+      <soap:operation soapAction="http://globalcargomanager.com/getRateViaShipLinx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getRateViaShipLinxAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingViaShipLinx">
+      <soap:operation soapAction="http://globalcargomanager.com/makeBookingViaShipLinx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:makeBookingViaShipLinxAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBookingAlex2015">
+      <soap:operation soapAction="http://globalcargomanager.com/CreatePackageBookingAlex2015" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreatePackageBookingAlex2015AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBooking">
+      <soap:operation soapAction="http://globalcargomanager.com/CreatePackageBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreatePackageBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_InternationalPackageRates">
+      <soap:operation soapAction="http://globalcargomanager.com/GetUPS_InternationalPackageRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUPS_InternationalPackageRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRateAll_UPS_Services">
+      <soap:operation soapAction="http://globalcargomanager.com/GetPackageRateAll_UPS_Services" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPackageRateAll_UPS_ServicesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_InternationalPackageBookingRates">
+      <soap:operation soapAction="http://globalcargomanager.com/GetUPS_InternationalPackageBookingRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUPS_InternationalPackageBookingRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageBookingRateAll_UPS_Services">
+      <soap:operation soapAction="http://globalcargomanager.com/GetPackageBookingRateAll_UPS_Services" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPackageBookingRateAll_UPS_ServicesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBooking_Old">
+      <soap:operation soapAction="http://globalcargomanager.com/CreatePackageBooking_Old" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreatePackageBooking_OldAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="manualCancelBookingOnUPS_Package">
+      <soap:operation soapAction="http://globalcargomanager.com/manualCancelBookingOnUPS_Package" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:manualCancelBookingOnUPS_PackageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingOnUPS_Package">
+      <soap:operation soapAction="http://globalcargomanager.com/makeBookingOnUPS_Package" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:makeBookingOnUPS_PackageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingOnUPS_PackageAlex2015">
+      <soap:operation soapAction="http://globalcargomanager.com/makeBookingOnUPS_PackageAlex2015" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:makeBookingOnUPS_PackageAlex2015AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeUPS_Package_BookingAPI_CallAlex2015">
+      <soap:operation soapAction="http://globalcargomanager.com/makeUPS_Package_BookingAPI_CallAlex2015" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:makeUPS_Package_BookingAPI_CallAlex2015AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_TransitTime">
+      <soap:operation soapAction="http://globalcargomanager.com/GetUPS_TransitTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUPS_TransitTimeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RateService2Soap12" type="tns:RateService2Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://globalcargomanager.com/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerAuthenticate">
+      <soap12:operation soapAction="http://globalcargomanager.com/CustomerAuthenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MOTFS_Authenticate">
+      <soap12:operation soapAction="http://globalcargomanager.com/MOTFS_Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRate">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRate">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLBookingRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLBookingRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRateWithZips">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLBookingRateWithZips" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLBookingRateWithZipsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreateLTLBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateLTLBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking2">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreateLTLBooking2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBooking_3">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreateLTLBooking_3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateLTLBooking_3AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRatePoSystem">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLRatePoSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLRatePoSystemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRatePoSystem">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLBookingRatePoSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLBookingRatePoSystemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLTLBookingPoSystem">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreateLTLBookingPoSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateLTLBookingPoSystemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLTotalRates">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLTotalRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLTotalRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultObjectFromUSFReddawayPrepaid">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetResultObjectFromUSFReddawayPrepaid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetResultObjectFromUSFReddawayPrepaidAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultObjectFromUSFReddaway">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetResultObjectFromUSFReddaway" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetResultObjectFromUSFReddawayAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResponseFromDLS">
+      <soap12:operation soapAction="http://globalcargomanager.com/getResponseFromDLS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getResponseFromDLSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPackageBookingRates">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetAirPackageBookingRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAirPackageBookingRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirPackageRates">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetAirPackageRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAirPackageRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodes">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetCountryCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodesXML">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetCountryCodesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntermodalRate">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetIntermodalRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetIntermodalRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLTrackingInformationByShipmentId">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLTrackingInformationByShipmentId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLTrackingInformationByShipmentIdAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingInformationByPONumber">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetTrackingInformationByPONumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrackingInformationByPONumberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExistingAddresses">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetAllExistingAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllExistingAddressesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingInformationByProNumber">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetTrackingInformationByProNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrackingInformationByProNumberAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGCMInsuranceCost">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetGCMInsuranceCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGCMInsuranceCostAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLRateAAFES">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLRateAAFES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLRateAAFESAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLTLBookingRateAAFES">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetLTLBookingRateAAFES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLTLBookingRateAAFESAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFedExPackageRate">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetFedExPackageRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFedExPackageRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFedExPackageBookingRate">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetFedExPackageBookingRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFedExPackageBookingRateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFedExPackageBooking">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreateFedExPackageBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateFedExPackageBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="processCyberSourcePayment">
+      <soap12:operation soapAction="http://globalcargomanager.com/processCyberSourcePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:processCyberSourcePaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRateViaShipLinx">
+      <soap12:operation soapAction="http://globalcargomanager.com/getRateViaShipLinx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getRateViaShipLinxAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingViaShipLinx">
+      <soap12:operation soapAction="http://globalcargomanager.com/makeBookingViaShipLinx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:makeBookingViaShipLinxAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBookingAlex2015">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreatePackageBookingAlex2015" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreatePackageBookingAlex2015AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBooking">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreatePackageBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreatePackageBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_InternationalPackageRates">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetUPS_InternationalPackageRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUPS_InternationalPackageRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageRateAll_UPS_Services">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetPackageRateAll_UPS_Services" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPackageRateAll_UPS_ServicesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_InternationalPackageBookingRates">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetUPS_InternationalPackageBookingRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUPS_InternationalPackageBookingRatesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageBookingRateAll_UPS_Services">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetPackageBookingRateAll_UPS_Services" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPackageBookingRateAll_UPS_ServicesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageBooking_Old">
+      <soap12:operation soapAction="http://globalcargomanager.com/CreatePackageBooking_Old" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreatePackageBooking_OldAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="manualCancelBookingOnUPS_Package">
+      <soap12:operation soapAction="http://globalcargomanager.com/manualCancelBookingOnUPS_Package" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:manualCancelBookingOnUPS_PackageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingOnUPS_Package">
+      <soap12:operation soapAction="http://globalcargomanager.com/makeBookingOnUPS_Package" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:makeBookingOnUPS_PackageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeBookingOnUPS_PackageAlex2015">
+      <soap12:operation soapAction="http://globalcargomanager.com/makeBookingOnUPS_PackageAlex2015" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:makeBookingOnUPS_PackageAlex2015AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeUPS_Package_BookingAPI_CallAlex2015">
+      <soap12:operation soapAction="http://globalcargomanager.com/makeUPS_Package_BookingAPI_CallAlex2015" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:makeUPS_Package_BookingAPI_CallAlex2015AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPS_TransitTime">
+      <soap12:operation soapAction="http://globalcargomanager.com/GetUPS_TransitTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUPS_TransitTimeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RateService2">
+    <wsdl:port name="RateService2Soap" binding="tns:RateService2Soap">
+      <soap:address location="http://ws.globalcargomanager.com/RateService2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RateService2Soap12" binding="tns:RateService2Soap12">
+      <soap12:address location="http://ws.globalcargomanager.com/RateService2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

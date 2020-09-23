@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://webservices.rrts.com/ratequote/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://webservices.rrts.com/ratequote/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://webservices.rrts.com/ratequote/">
+      <s:element name="RateQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:QuoteRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QuoteRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentDetails" type="tns:ArrayOfShipmentDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalletCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinearFeet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CubicFeet" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pieces" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceDeliveryOptions" type="tns:ArrayOfServiceOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD" type="tns:CODFee" />
+          <s:element minOccurs="0" maxOccurs="1" name="Discount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListedConsigneeCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalUse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalletPosition" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShipmentDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShipmentDetail" nillable="true" type="tns:ShipmentDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShipmentDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActualClass" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceOptions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceOptions" nillable="true" type="tns:ServiceOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceOptions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CODFee">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Prepaid" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CODAmount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RateQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateQuoteResult" type="tns:QuoteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QuoteResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="QuoteNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetCharge" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Customer" type="tns:CustomerInformation" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoutingInfo" type="tns:RoutingInformation" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateDetails" type="tns:ArrayOfQuoteDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CODAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipmentDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerCubicFoot" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HawaiianRatedCubicFoot" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerInformation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccountNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoutingInformation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstimatedTransitDays" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginTerminal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuoteDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuoteDetail" nillable="true" type="tns:QuoteDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuoteDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ActualClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RatedClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Charge" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtraMessages" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthenticationHeader" type="tns:AuthenticationHeader" />
+      <s:complexType name="AuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Site" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="RateQuoteByAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:QuoteAccountRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QuoteAccountRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:QuoteRequest">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Account" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RateQuoteByAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateQuoteByAccountResult" type="tns:QuoteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RateQuoteByAccountByTerminal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:QuoteAccountByTerminalRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QuoteAccountByTerminalRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:QuoteAccountRequest">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RateQuoteByAccountByTerminalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateQuoteByAccountByTerminalResult" type="tns:QuoteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RateQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:RateQuote" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:RateQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteByAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:RateQuoteByAccount" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteByAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:RateQuoteByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteByAccountAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteByAccountByTerminalSoapIn">
+    <wsdl:part name="parameters" element="tns:RateQuoteByAccountByTerminal" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteByAccountByTerminalSoapOut">
+    <wsdl:part name="parameters" element="tns:RateQuoteByAccountByTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="RateQuoteByAccountByTerminalAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:portType name="RateQuoteSoap">
+    <wsdl:operation name="RateQuote">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method sends back a rate quote from the Road Runner Transportation Services System</wsdl:documentation>
+      <wsdl:input message="tns:RateQuoteSoapIn" />
+      <wsdl:output message="tns:RateQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RateQuoteByAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method sends back a rate quote from the Road Runner Transportation Services System</wsdl:documentation>
+      <wsdl:input message="tns:RateQuoteByAccountSoapIn" />
+      <wsdl:output message="tns:RateQuoteByAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RateQuoteByAccountByTerminal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method sends back a rate quote from the Road Runner Transportation Services System</wsdl:documentation>
+      <wsdl:input message="tns:RateQuoteByAccountByTerminalSoapIn" />
+      <wsdl:output message="tns:RateQuoteByAccountByTerminalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RateQuoteSoap" type="tns:RateQuoteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RateQuote">
+      <soap:operation soapAction="https://webservices.rrts.com/ratequote/RateQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RateQuoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateQuoteByAccount">
+      <soap:operation soapAction="https://webservices.rrts.com/ratequote/RateQuoteByAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RateQuoteByAccountAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateQuoteByAccountByTerminal">
+      <soap:operation soapAction="https://webservices.rrts.com/ratequote/RateQuoteByAccountByTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RateQuoteByAccountByTerminalAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RateQuoteSoap12" type="tns:RateQuoteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RateQuote">
+      <soap12:operation soapAction="https://webservices.rrts.com/ratequote/RateQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RateQuoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateQuoteByAccount">
+      <soap12:operation soapAction="https://webservices.rrts.com/ratequote/RateQuoteByAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RateQuoteByAccountAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateQuoteByAccountByTerminal">
+      <soap12:operation soapAction="https://webservices.rrts.com/ratequote/RateQuoteByAccountByTerminal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RateQuoteByAccountByTerminalAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RateQuote">
+    <wsdl:port name="RateQuoteSoap" binding="tns:RateQuoteSoap">
+      <soap:address location="https://webservices.rrts.com/rating/ratequote.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RateQuoteSoap12" binding="tns:RateQuoteSoap12">
+      <soap12:address location="https://webservices.rrts.com/rating/ratequote.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

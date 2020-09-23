@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.rlcarriers.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.rlcarriers.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.rlcarriers.com/">
+      <s:element name="GetRateQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:RateQuoteRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateQuoteRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseRequest">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="QuoteType" type="tns:QuoteType" />
+              <s:element minOccurs="1" maxOccurs="1" name="CODAmount" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Origin" type="tns:ServicePoint" />
+              <s:element minOccurs="0" maxOccurs="1" name="Destination" type="tns:ServicePoint" />
+              <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItem" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeclaredValue" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Accessorials" type="tns:ArrayOfAccessorial" />
+              <s:element minOccurs="1" maxOccurs="1" name="OverDimensionPcs" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Pallets" type="tns:ArrayOfPallet" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="QuoteType">
+        <s:restriction base="s:string">
+          <s:enumeration value="AlaskaHawaii" />
+          <s:enumeration value="Domestic" />
+          <s:enumeration value="International" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ServicePoint">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateOrProvince" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipOrPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Class" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAccessorial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Accessorial" type="tns:Accessorial" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Accessorial">
+        <s:restriction base="s:string">
+          <s:enumeration value="InsideDelivery" />
+          <s:enumeration value="ResidentialPickup" />
+          <s:enumeration value="ResidentialDelivery" />
+          <s:enumeration value="OriginLiftgate" />
+          <s:enumeration value="DestinationLiftgate" />
+          <s:enumeration value="DeliveryNotification" />
+          <s:enumeration value="Freezable" />
+          <s:enumeration value="Hazmat" />
+          <s:enumeration value="InsidePickup" />
+          <s:enumeration value="LimitedAccessPickup" />
+          <s:enumeration value="DockPickup" />
+          <s:enumeration value="DockDelivery" />
+          <s:enumeration value="AirportPickup" />
+          <s:enumeration value="AirportDelivery" />
+          <s:enumeration value="LimitedAccessDelivery" />
+          <s:enumeration value="CubicFeet" />
+          <s:enumeration value="KeepFromFreezing" />
+          <s:enumeration value="DoorToDoor" />
+          <s:enumeration value="COD" />
+          <s:enumeration value="SortAndSegregate" />
+          <s:enumeration value="OverDimension" />
+          <s:enumeration value="ZeroFuelSurcharge" />
+          <s:enumeration value="Tradeshow" />
+          <s:enumeration value="DishMachineInsideDelivery" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfPallet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pallet" nillable="true" type="tns:Pallet" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pallet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRateQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRateQuoteResult" type="tns:RateQuoteReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateQuoteReply">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseReply">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:QuoteDetails" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerData" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WasSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuoteDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Origin" type="tns:ServicePoint" />
+          <s:element minOccurs="0" maxOccurs="1" name="Destination" type="tns:ServicePoint" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginServiceCenter" type="tns:ServiceCenter" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationServiceCenter" type="tns:ServiceCenter" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerDiscounts" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Charges" type="tns:ArrayOfCharge" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceLevels" type="tns:ArrayOfServiceLevel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceCenter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCharge">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Charge" nillable="true" type="tns:Charge" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Charge">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Message">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceLevel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceLevel" nillable="true" type="tns:ServiceLevel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceLevel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuoteNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceDays" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Charge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NetCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HourlyWindow" type="tns:HourlyWindow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HourlyWindow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Start" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="End" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPalletTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPalletTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPalletTypesResult" type="tns:RateQuotePalletReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateQuotePalletReply">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseReply">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:ArrayOfPalletType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPalletType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PalletType" nillable="true" type="tns:PalletType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PalletType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPalletTypeByPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MyRLCID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationZip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPalletTypeByPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPalletTypeByPointsResult" type="tns:RateQuotePalletReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RateQuotePalletReply" nillable="true" type="tns:RateQuotePalletReply" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetRateQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRateQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetRateQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRateQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPalletTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPalletTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypeByPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPalletTypeByPoints" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypeByPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPalletTypeByPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypesHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:RateQuotePalletReply" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypeByPointsHttpGetIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="MyRLCID" type="s:string" />
+    <wsdl:part name="originCity" type="s:string" />
+    <wsdl:part name="originZip" type="s:string" />
+    <wsdl:part name="destinationCity" type="s:string" />
+    <wsdl:part name="destinationZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypeByPointsHttpGetOut">
+    <wsdl:part name="Body" element="tns:RateQuotePalletReply" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypesHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:RateQuotePalletReply" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypeByPointsHttpPostIn">
+    <wsdl:part name="APIKey" type="s:string" />
+    <wsdl:part name="MyRLCID" type="s:string" />
+    <wsdl:part name="originCity" type="s:string" />
+    <wsdl:part name="originZip" type="s:string" />
+    <wsdl:part name="destinationCity" type="s:string" />
+    <wsdl:part name="destinationZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletTypeByPointsHttpPostOut">
+    <wsdl:part name="Body" element="tns:RateQuotePalletReply" />
+  </wsdl:message>
+  <wsdl:portType name="RateQuoteServiceSoap">
+    <wsdl:operation name="GetRateQuote">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a Rate Quote.</wsdl:documentation>
+      <wsdl:input message="tns:GetRateQuoteSoapIn" />
+      <wsdl:output message="tns:GetRateQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets all pallet types</wsdl:documentation>
+      <wsdl:input message="tns:GetPalletTypesSoapIn" />
+      <wsdl:output message="tns:GetPalletTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypeByPoints">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets Pallet Types for MyRLCID and Service Points</wsdl:documentation>
+      <wsdl:input message="tns:GetPalletTypeByPointsSoapIn" />
+      <wsdl:output message="tns:GetPalletTypeByPointsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RateQuoteServiceHttpGet">
+    <wsdl:operation name="GetPalletTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets all pallet types</wsdl:documentation>
+      <wsdl:input message="tns:GetPalletTypesHttpGetIn" />
+      <wsdl:output message="tns:GetPalletTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypeByPoints">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets Pallet Types for MyRLCID and Service Points</wsdl:documentation>
+      <wsdl:input message="tns:GetPalletTypeByPointsHttpGetIn" />
+      <wsdl:output message="tns:GetPalletTypeByPointsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RateQuoteServiceHttpPost">
+    <wsdl:operation name="GetPalletTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets all pallet types</wsdl:documentation>
+      <wsdl:input message="tns:GetPalletTypesHttpPostIn" />
+      <wsdl:output message="tns:GetPalletTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypeByPoints">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets Pallet Types for MyRLCID and Service Points</wsdl:documentation>
+      <wsdl:input message="tns:GetPalletTypeByPointsHttpPostIn" />
+      <wsdl:output message="tns:GetPalletTypeByPointsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RateQuoteServiceSoap" type="tns:RateQuoteServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRateQuote">
+      <soap:operation soapAction="http://www.rlcarriers.com/GetRateQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypes">
+      <soap:operation soapAction="http://www.rlcarriers.com/GetPalletTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypeByPoints">
+      <soap:operation soapAction="http://www.rlcarriers.com/GetPalletTypeByPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RateQuoteServiceSoap12" type="tns:RateQuoteServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRateQuote">
+      <soap12:operation soapAction="http://www.rlcarriers.com/GetRateQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypes">
+      <soap12:operation soapAction="http://www.rlcarriers.com/GetPalletTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypeByPoints">
+      <soap12:operation soapAction="http://www.rlcarriers.com/GetPalletTypeByPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RateQuoteServiceHttpGet" type="tns:RateQuoteServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPalletTypes">
+      <http:operation location="/GetPalletTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypeByPoints">
+      <http:operation location="/GetPalletTypeByPoints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RateQuoteServiceHttpPost" type="tns:RateQuoteServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPalletTypes">
+      <http:operation location="/GetPalletTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletTypeByPoints">
+      <http:operation location="/GetPalletTypeByPoints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RateQuoteService">
+    <wsdl:port name="RateQuoteServiceSoap" binding="tns:RateQuoteServiceSoap">
+      <soap:address location="http://api.rlcarriers.com/1.0.2/RateQuoteService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RateQuoteServiceSoap12" binding="tns:RateQuoteServiceSoap12">
+      <soap12:address location="http://api.rlcarriers.com/1.0.2/RateQuoteService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RateQuoteServiceHttpGet" binding="tns:RateQuoteServiceHttpGet">
+      <http:address location="http://api.rlcarriers.com/1.0.2/RateQuoteService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RateQuoteServiceHttpPost" binding="tns:RateQuoteServiceHttpPost">
+      <http:address location="http://api.rlcarriers.com/1.0.2/RateQuoteService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

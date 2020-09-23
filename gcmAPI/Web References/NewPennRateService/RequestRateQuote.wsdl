@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://quoting.newpenn.com" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://quoting.newpenn.com" targetNamespace="http://quoting.newpenn.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://quoting.newpenn.com">
+      <xsd:element name="quoteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="quoteReturn" nillable="true" type="impl:ArrayOfRateQuote" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="quote">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="quoteUserId" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteWebPassword" nillable="true" type="xsd:string" />
+            <xsd:element name="quotePayor" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteShipperState" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteShipperCity" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteShipperZip" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteConsigneeState" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteConsigneeCity" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteConsigneeZip" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteTerms" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteClass1" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteClass2" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteClass3" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteClass4" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteClass5" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteWeight1" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteWeight2" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteWeight3" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteWeight4" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteWeight5" nillable="true" type="xsd:string" />
+            <xsd:element name="quotePurchaseOrderNumber" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteCashOnDelivery" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteAccessorial1" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteAccessorial2" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteAccessorial3" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteAccessorial4" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteAccessorial5" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteAccessorial6" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteHazard" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteFreeze" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteGuaranteedDelivery" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteOverLength" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteOverWidth" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteSkids" nillable="true" type="xsd:string" />
+            <xsd:element name="quoteDrums" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="RateQuote">
+        <xsd:sequence>
+          <xsd:element name="quoteAccessorialDescription1" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescription2" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescription3" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescription4" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescription5" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescription6" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescriptionId1" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescriptionId2" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescriptionId3" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescriptionId4" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescriptionId5" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAccessorialDescriptionId6" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAmount1" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAmount2" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAmount3" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAmount4" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAmount5" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteAmount6" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteCalculatedWeight" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteCanadianDiscountDollars" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteCanadianFrieghtCharges" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteCanadianFuelSurcharge" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteCanadianNetCharges" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteCanadianServiceCharge" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteClass1Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteClass2Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteClass3Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteClass4Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteClass5Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteClass6Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteClassWeightComment" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteDiscountDollars" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteErrorMessage" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteErrorMessageId" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteFreightCharges" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteFuelSurcharge" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteIncentiveCanadianCharges" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteIncentiveCharges" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteMessageId" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteMessageText" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteNetCharges" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteRatePerPound1" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteRatePerPound2" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteRatePerPound3" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteRatePerPound4" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteRatePerPound5" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteRatePerPound6" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteServiceCharges" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteWeight1Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteWeight2Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteWeight3Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteWeight4Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteWeight5Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteWeight6Output" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteDate" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteIncentiveExpireDate" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteProjectedDeliveryDate" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteTransitDays" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteTransitOriginPartnerCarrierCustomerServiceNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteTransitOriginPartnerCarrierTerminalPhone" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteTransitOriginPartnerCarrierTerminalText" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteTransitDestinationPartnerCarrierTransitLink" nillable="true" type="xsd:string" />
+          <xsd:element name="quoteTransitOriginPartnerCarrierTransitLink" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfRateQuote">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="RateQuote" nillable="true" type="impl:RateQuote" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="quoteResponse">
+    <wsdl:part name="parameters" element="impl:quoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="quoteRequest">
+    <wsdl:part name="parameters" element="impl:quote" />
+  </wsdl:message>
+  <wsdl:portType name="RequestRateQuoteV6">
+    <wsdl:operation name="quote">
+      <wsdl:input name="quoteRequest" message="impl:quoteRequest" />
+      <wsdl:output name="quoteResponse" message="impl:quoteResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RequestRateQuoteV6SoapBinding" type="impl:RequestRateQuoteV6">
+    <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" />
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="quote">
+      <wsdlsoap:operation soapAction="quote" />
+      <wsdl:input name="quoteRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="quoteResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RequestRateQuoteV6Service">
+    <wsdl:port name="RequestRateQuoteV6" binding="impl:RequestRateQuoteV6SoapBinding">
+      <wsdlsoap:address location="http://localhost:9080/rateQuoteWSV6/services/RequestRateQuoteV6" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

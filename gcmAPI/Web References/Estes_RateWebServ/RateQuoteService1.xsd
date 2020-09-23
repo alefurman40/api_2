@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:exla="http://ws.estesexpress.com/schema/vocabulary" xmlns:gsc="http://ws.estesexpress.com/schema/2017/07/ratequote" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/schema/2017/07/ratequote" xml:lang="en" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="RateQuoteService?xsd=rateQuoteCommon.xsd" />
+  <xsd:import schemaLocation="RateQuoteService?xsd=vocabulary.xsd" namespace="http://ws.estesexpress.com/schema/vocabulary" />
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">Rate quote. Copyright 2014 Estes Express Lines, Inc.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="rateQuote">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="requestID" type="gsc:RequestIdType" />
+        <xsd:element name="quote" type="gsc:RateQuoteType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="AccessorialDescriptionType">
+    <xsd:annotation />
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="50" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AccessorialInfoType">
+    <xsd:annotation>
+      <xsd:documentation>Accessorial charge information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="code" type="gsc:AccessorialCodeType" />
+      <xsd:element name="description" type="gsc:AccessorialDescriptionType" />
+      <xsd:element name="charge" type="xsd:decimal" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AccessorialsInfoType">
+    <xsd:annotation>
+      <xsd:documentation>List of accessorials</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="accessorial" type="gsc:AccessorialInfoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CommoditiesInfoType">
+    <xsd:annotation>
+      <xsd:documentation>List of Commodities</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="commodity" type="gsc:CommodityInfoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CommodityInfoType">
+    <xsd:annotation>
+      <xsd:documentation>Commodity information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="class" type="exla:ShipmentClassType" />
+      <xsd:element minOccurs="0" name="pieces" type="gsc:PiecesType" />
+      <xsd:element minOccurs="0" name="pieceType" type="exla:PackagingType" />
+      <xsd:element name="weight" type="gsc:WeightType" />
+      <xsd:element minOccurs="0" name="dimensions" type="gsc:DimensionsType" />
+      <xsd:element name="rate" type="xsd:decimal" />
+      <xsd:element name="charge" type="xsd:decimal" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DisclaimerType">
+    <xsd:annotation>
+      <xsd:documentation>Disclaimer information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="text" type="gsc:MessageType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="DiscountPercentageType">
+    <xsd:annotation>
+      <xsd:documentation>Discount Percentage</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:totalDigits value="5" />
+      <xsd:fractionDigits value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MessageType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="MessagesType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="message" type="gsc:MessageType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PricingInfoType">
+    <xsd:sequence>
+      <xsd:element name="deliveryDate" type="xsd:date" />
+      <xsd:element name="deliveryTime" type="xsd:time" />
+      <xsd:element name="serviceLevel" type="gsc:ServiceLevelType" />
+      <xsd:element minOccurs="0" name="minCharge" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="discount" type="gsc:DiscountPercentageType" />
+      <xsd:element minOccurs="0" name="totalDiscount" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="standardPrice" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="guaranteedPrice" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="accessorialInfo" type="gsc:AccessorialsInfoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PricingType">
+    <xsd:annotation>
+      <xsd:documentation>Pricing information</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="price" type="gsc:PricingInfoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="QuoteNumberType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="7" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="RateQuoteType">
+    <xsd:sequence>
+      <xsd:element name="quoteNumber" type="gsc:QuoteNumberType" />
+      <xsd:element name="account" type="gsc:AccountType" />
+      <xsd:element name="originPoint" type="gsc:PointType" />
+      <xsd:element name="destinationPoint" type="gsc:PointType" />
+      <xsd:element name="payor" type="gsc:PayorType" />
+      <xsd:element name="shipmentTerms" type="gsc:ShipmentTermsType" />
+      <xsd:element minOccurs="0" name="pickup" type="gsc:PickupType" />
+      <xsd:element minOccurs="0" name="liability" type="gsc:LiabilityType" />
+      <xsd:element minOccurs="0" name="declaredValue" type="gsc:DeclaredValueType" />
+      <xsd:element minOccurs="0" name="hazmat" type="gsc:YesNoBlankType" />
+      <xsd:element minOccurs="0" name="stackable" type="gsc:YesNoBlankType" />
+      <xsd:element minOccurs="0" name="foodWarehouse" type="gsc:FoodWarehouseType" />
+      <xsd:element minOccurs="0" name="equipmentType" type="gsc:EquipmentType" />
+      <xsd:element minOccurs="0" name="declaredValueWaived" type="gsc:YesNoBlankType" />
+      <xsd:element minOccurs="0" name="lane" type="xsd:positiveInteger" />
+      <xsd:element name="disclaimer" type="gsc:DisclaimerType" />
+      <xsd:element name="commodityInfo" type="gsc:CommoditiesInfoType" />
+      <xsd:element name="pricing" type="gsc:PricingType" />
+      <xsd:element minOccurs="0" name="info" type="gsc:MessagesType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ServiceLevelType">
+    <xsd:annotation>
+      <xsd:documentation>Service level</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="50" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

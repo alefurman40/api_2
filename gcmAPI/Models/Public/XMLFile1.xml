@@ -1,0 +1,32 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <h:AuthHeader xmlns:h="http://globalcargomanager.com/" xmlns="http://globalcargomanager.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <SessionID>33322WW139</SessionID>
+    </h:AuthHeader>
+  </s:Header>
+  <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <GetLTLBookingRate xmlns="http://globalcargomanager.com/">
+      <pickupDate>2020-08-05T06:33:54.9298783-07:00</pickupDate>
+      <originZip>95961</originZip>
+      <originCity>OLIVEHURST</originCity>
+      <originState>CA</originState>
+      <destinationZip>96734</destinationZip>
+      <destinationCity>KAILUA</destinationCity>
+      <destinationState>HI</destinationState>
+      <lineItems>
+        <LTLPiece>
+          <Quantity>2</Quantity>
+          <Weight>670</Weight>
+          <ItemUnit>PALLET_XXX</ItemUnit>
+          <FreightClass>250</FreightClass>
+          <HazMat>false</HazMat>
+          <Tag>1</Tag>
+          <Length>40</Length>
+          <Width>48</Width>
+          <Height>92</Height>
+        </LTLPiece>
+      </lineItems>
+      <additionalServices />
+    </GetLTLBookingRate>
+  </s:Body>
+</s:Envelope>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://tquoteapi.wsbeans.iseries" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://tquoteapi.wsbeans.iseries/xsd" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://tquoteapi.wsbeans.iseries" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>TQUOTEAPI</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tquoteapi.wsbeans.iseries/xsd">
+      <xs:element name="getquote_XML">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="args0" type="ns:GETQUOTEInput" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GETQUOTEInput">
+        <xs:sequence>
+          <xs:element name="QUOTE" type="ns:QUOTEDS" />
+          <xs:element name="SECURITYINFO" type="ns:SECURITYINFODS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QUOTEDS">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ACCESSORIAL" type="ns:ACCESSORIALDS" />
+          <xs:element name="ACCESSORIALCOUNT" type="xs:int" />
+          <xs:element name="BOL" type="xs:string" />
+          <xs:element name="CODAMT" type="xs:decimal" />
+          <xs:element name="CODTERMS" type="xs:string" />
+          <xs:element name="CODWHO" type="xs:string" />
+          <xs:element name="CONSIGNEE" type="ns:CUSTINFO" />
+          <xs:element name="IAM" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="ITEM" type="ns:ITEMDS" />
+          <xs:element name="ITEMCOUNT" type="xs:int" />
+          <xs:element name="PO" type="xs:string" />
+          <xs:element name="PPDCOL" type="xs:string" />
+          <xs:element name="SHIPPER" type="ns:CUSTINFO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ACCESSORIALDS">
+        <xs:sequence>
+          <xs:element name="CODE" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CUSTINFO">
+        <xs:sequence>
+          <xs:element name="ADDRESS1" type="xs:string" />
+          <xs:element name="ADDRESS2" type="xs:string" />
+          <xs:element name="CITY" type="xs:string" />
+          <xs:element name="NAME" type="xs:string" />
+          <xs:element name="STATE" type="xs:string" />
+          <xs:element name="ZIP" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ITEMDS">
+        <xs:sequence>
+          <xs:element name="DESCRIPTION" type="xs:string" />
+          <xs:element name="HAZ" type="xs:string" />
+          <xs:element name="PALLETS" type="xs:decimal" />
+          <xs:element name="PIECES" type="xs:decimal" />
+          <xs:element name="WEIGHT" type="xs:decimal" />
+          <xs:element name="_CLASS" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SECURITYINFODS">
+        <xs:sequence>
+          <xs:element name="PASSWORD" type="xs:string" />
+          <xs:element name="USERNAME" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getquote_XMLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getquote">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="args0" type="ns:GETQUOTEInput" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getquoteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="ns:GETQUOTEResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GETQUOTEResult">
+        <xs:sequence>
+          <xs:element name="RATECOUNT" type="xs:int" />
+          <xs:element maxOccurs="unbounded" name="RATEITEM" type="ns:RATEITEMDS" />
+          <xs:element name="RATING" type="ns:RATINGDS" />
+          <xs:element name="SERVICE" type="ns:SERVICEDS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RATEITEMDS">
+        <xs:sequence>
+          <xs:element name="ACCCODE" type="xs:string" />
+          <xs:element name="AMOUNT" type="xs:decimal" />
+          <xs:element name="DESCRIPTION" type="xs:string" />
+          <xs:element name="HAZ" type="xs:string" />
+          <xs:element name="PALLETS" type="xs:decimal" />
+          <xs:element name="PIECES" type="xs:decimal" />
+          <xs:element name="RATE" type="xs:decimal" />
+          <xs:element name="WEIGHT" type="xs:decimal" />
+          <xs:element name="_CLASS" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RATINGDS">
+        <xs:sequence>
+          <xs:element name="AMOUNT" type="xs:decimal" />
+          <xs:element name="BOL" type="xs:string" />
+          <xs:element name="CODAMT" type="xs:decimal" />
+          <xs:element name="CODTERMS" type="xs:string" />
+          <xs:element name="CODWHO" type="xs:string" />
+          <xs:element name="CONSIGNEE" type="ns:CUSTINFO" />
+          <xs:element name="DISCLAIMER" type="xs:string" />
+          <xs:element name="ERRORCODE" type="xs:string" />
+          <xs:element name="FUEL" type="xs:decimal" />
+          <xs:element name="PO" type="xs:string" />
+          <xs:element name="PPDCOL" type="xs:string" />
+          <xs:element name="QUOTENUMBER" type="xs:decimal" />
+          <xs:element name="SHIPPER" type="ns:CUSTINFO" />
+          <xs:element name="TOTALACCESSORIAL" type="xs:decimal" />
+          <xs:element name="TOTALFREIGHT" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SERVICEDS">
+        <xs:sequence>
+          <xs:element name="DAYS" type="xs:decimal" />
+          <xs:element name="DESTINATION" type="ns:SERVICEINFO" />
+          <xs:element name="ERRORCODE" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="ESTDELIVERY" type="xs:string" />
+          <xs:element name="ORIGIN" type="ns:SERVICEINFO" />
+          <xs:element maxOccurs="unbounded" name="SHIPDATE" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SERVICEINFO">
+        <xs:sequence>
+          <xs:element name="DIRIND" type="xs:string" />
+          <xs:element name="FRI" type="xs:string" />
+          <xs:element name="MON" type="xs:string" />
+          <xs:element name="PHONE" type="xs:string" />
+          <xs:element name="SAT" type="xs:string" />
+          <xs:element name="SUN" type="xs:string" />
+          <xs:element name="TERMINAL" type="xs:string" />
+          <xs:element name="THU" type="xs:string" />
+          <xs:element name="TUE" type="xs:string" />
+          <xs:element name="WED" type="xs:string" />
+          <xs:element name="ZIP" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getquote_XMLRequest">
+    <wsdl:part name="parameters" element="ns:getquote_XML" />
+  </wsdl:message>
+  <wsdl:message name="getquote_XMLResponse">
+    <wsdl:part name="parameters" element="ns:getquote_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getquoteRequest">
+    <wsdl:part name="parameters" element="ns:getquote" />
+  </wsdl:message>
+  <wsdl:message name="getquoteResponse">
+    <wsdl:part name="parameters" element="ns:getquoteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TQUOTEAPIPortType">
+    <wsdl:operation name="getquote_XML">
+      <wsdl:input wsaw:Action="urn:getquote_XML" message="tns:getquote_XMLRequest" />
+      <wsdl:output wsaw:Action="urn:getquote_XMLResponse" message="tns:getquote_XMLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getquote">
+      <wsdl:input wsaw:Action="urn:getquote" message="tns:getquoteRequest" />
+      <wsdl:output wsaw:Action="urn:getquoteResponse" message="tns:getquoteResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TQUOTEAPISoap11Binding" type="tns:TQUOTEAPIPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getquote_XML">
+      <soap:operation soapAction="urn:getquote_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getquote">
+      <soap:operation soapAction="urn:getquote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TQUOTEAPI">
+    <wsdl:port name="TQUOTEAPIHttpSoap11Endpoint" binding="tns:TQUOTEAPISoap11Binding">
+      <soap:address location="http://tgif1.bestovernite.com:10010/web/services/TQUOTEAPI.TQUOTEAPIHttpSoap11Endpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

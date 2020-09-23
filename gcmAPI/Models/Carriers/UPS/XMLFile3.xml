@@ -1,0 +1,83 @@
+﻿<PricesheetViewModel>
+  <AccessorialTotal>56.7179216</AccessorialTotal>
+  <AdjustedBenchmark>0</AdjustedBenchmark>
+  <CarrierId>(189647073707,3840,0)</CarrierId>
+  <CarrierName>Central Transport</CarrierName>
+  <ChargeModel>NORMALIZED_SMC</ChargeModel>
+  <Charges>
+    <RateChargeViewModel>
+      <Amount>383.2292</Amount>
+      <Description>Total Line Haul</Description>
+      <DimWeight>0</DimWeight>
+      <EdiCode></EdiCode>
+      <FakFreightClass>70</FakFreightClass>
+      <FreightClass>92.5</FreightClass>
+      <IsMax>false</IsMax>
+      <IsMin>false</IsMin>
+      <IsNontaxable>false</IsNontaxable>
+      <Quantity>10</Quantity>
+      <Rate>383.2292</Rate>
+      <RateQualifier>FR</RateQualifier>
+      <Type>ITEM</Type>
+      <Weight>1000</Weight>
+    </RateChargeViewModel>
+    <RateChargeViewModel>
+      <Amount>56.7179216</Amount>
+      <Description>Fuel Surcharge</Description>
+      <DimWeight>0</DimWeight>
+      <EdiCode>405</EdiCode>
+      <FakFreightClass>0</FakFreightClass>
+      <FreightClass>0</FreightClass>
+      <IsMax>false</IsMax>
+      <IsMin>false</IsMin>
+      <IsNontaxable>false</IsNontaxable>
+      <Quantity>330.37</Quantity>
+      <Rate>56.7179216</Rate>
+      <RateQualifier>FR</RateQualifier>
+      <Type>ACCESSORIAL_FUEL</Type>
+      <Weight>0</Weight>
+    </RateChargeViewModel>
+  </Charges>
+  <ContractId>(199182141666,3023,0)</ContractId>
+  <ContractName>1PSI Cost CTII Genera Corp ASP</ContractName>
+  <CurrencyCode>USD</CurrencyCode>
+  <DestinationService>D</DestinationService>
+  <Distance>1106</Distance>
+  <Id>1211796</Id>
+  <InsuranceTypes>
+    <InsuranceTypeViewModel>
+      <Amount>1000000</Amount>
+      <Company>CHEROKEE INSURANCE COMPANY</Company>
+      <ContactName>CHEROKEE INSURANCE COMPANY</ContactName>
+      <ContactPhone>8002010450</ContactPhone>
+      <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
+      <Type>Liability</Type>
+    </InsuranceTypeViewModel>
+    <InsuranceTypeViewModel>
+      <Amount>1000000</Amount>
+      <Company>CHEROKEE INSURANCE COMPANY</Company>
+      <ContactName>CHEROKEE INSURANCE COMPANY</ContactName>
+      <ContactPhone>8002010450</ContactPhone>
+      <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
+      <Type>Liability</Type>
+    </InsuranceTypeViewModel>
+    <InsuranceTypeViewModel>
+      <Amount>1000000</Amount>
+      <Company>CHEROKEE INSURANCE COMPANY</Company>
+      <ContactName>CHEROKEE INSURANCE COMPANY</ContactName>
+      <ContactPhone>8002010450</ContactPhone>
+      <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
+      <Type>Liability</Type>
+    </InsuranceTypeViewModel>
+  </InsuranceTypes>
+  <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
+  <IsSelected>false</IsSelected>
+  <Mode>LTL</Mode>
+  <OriginService>D</OriginService>
+  <Scac>CTII</Scac>
+  <Service>LTL</Service>
+  <ServiceDays>3</ServiceDays>
+  <SubTotal>383.2292</SubTotal>
+  <Total>439.9471216</Total>
+  <Type>Cost</Type>
+</PricesheetViewModel>

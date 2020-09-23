@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:exla="http://ws.estesexpress.com/schema/vocabulary" xmlns:gsc="http://ws.estesexpress.com/schema/2017/07/ratequote" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/schema/2017/07/ratequote" xml:lang="en" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="RateQuoteService?xsd=rateQuoteCommon.xsd" />
+  <xsd:import schemaLocation="RateQuoteService?xsd=vocabulary.xsd" namespace="http://ws.estesexpress.com/schema/vocabulary" />
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">Rate quote request. Copyright 2017 Estes Express Lines, Inc.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="rateRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="requestID" type="gsc:RequestIdType" />
+        <xsd:element name="account" type="gsc:AccountType" />
+        <xsd:element name="originPoint" type="gsc:PointType" />
+        <xsd:element name="destinationPoint" type="gsc:PointType" />
+        <xsd:element name="payor" type="gsc:PayorType" />
+        <xsd:element name="terms" type="gsc:ShipmentTermsType" />
+        <xsd:element minOccurs="0" name="pickup" type="gsc:PickupType" />
+        <xsd:element minOccurs="0" name="liability" type="gsc:LiabilityType" />
+        <xsd:element minOccurs="0" name="declaredValue" type="gsc:DeclaredValueType" />
+        <xsd:element minOccurs="0" name="hazmat" type="gsc:YesNoBlankType" />
+        <xsd:element minOccurs="0" name="stackable" type="gsc:YesNoBlankType" />
+        <xsd:element minOccurs="0" name="foodWarehouse" type="gsc:FoodWarehouseType" />
+        <xsd:element minOccurs="0" name="equipmentType" type="gsc:EquipmentType" />
+        <xsd:element minOccurs="0" name="declaredValueWaived" type="gsc:YesNoBlankType" />
+        <xsd:element minOccurs="0" name="sortSegregatePieces " type="gsc:SortSegPiecesType" />
+        <xsd:choice>
+          <xsd:element name="baseCommodities" type="gsc:BaseCommoditiesType" />
+          <xsd:element name="fullCommodities" type="gsc:FullCommoditiesType" />
+        </xsd:choice>
+        <xsd:element minOccurs="0" name="accessorials" type="gsc:AccessorialsType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="AccessorialsType">
+    <xsd:annotation>
+      <xsd:documentation>List of requested accessorials</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="90" name="accessorialCode" type="gsc:AccessorialCodeType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BaseCommoditiesType">
+    <xsd:annotation>
+      <xsd:documentation>List of requested commodities</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="99" name="commodity" type="gsc:BaseCommodityType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BaseCommodityType">
+    <xsd:sequence>
+      <xsd:element name="class" type="exla:ShipmentClassType" />
+      <xsd:element name="weight" type="gsc:WeightType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FullCommoditiesType">
+    <xsd:annotation>
+      <xsd:documentation>List of requested commodities</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="99" name="commodity" type="gsc:FullCommodityType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FullCommodityType">
+    <xsd:sequence>
+      <xsd:element name="baseCommodity" type="gsc:BaseCommodityType" />
+      <xsd:element name="pieces" type="gsc:PiecesType" />
+      <xsd:element name="pieceType" type="exla:PackagingType" />
+      <xsd:element name="dimensions" type="gsc:DimensionsType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="SortSegPiecesType">
+    <xsd:restriction base="xsd:positiveInteger">
+      <xsd:totalDigits value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

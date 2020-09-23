@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.rlcarriers.com/" xmlns:s1="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.rlcarriers.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.rlcarriers.com/">
+      <s:import namespace="http://tempuri.org/" />
+      <s:element name="GetTransitTimes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:TransitTimesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransitTimesRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfPickup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginPoint" type="s1:ServicePoint" />
+          <s:element minOccurs="0" maxOccurs="1" name="Destinations" type="s1:Destinations" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransitTimesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransitTimesResult" type="tns:TransitTimesReply" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransitTimesReply">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseReply">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Result" type="s1:GetTransitTimesResult" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseReply">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerData" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WasSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:complexType name="ServicePoint">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateOrProvince" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipOrPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Destinations">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationPoint" type="s1:ArrayOfServicePoint" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServicePoint">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServicePoint" nillable="true" type="s1:ServicePoint" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetTransitTimesResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TransitTimesID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MyRLCID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PickupDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s1:Origin" />
+          <s:element minOccurs="0" maxOccurs="1" name="Destinations" type="s1:ArrayOfDestination" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Origin">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OriginPoint" type="s1:ServicePoint" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterInfo" type="s1:ServiceCenterInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceCenterInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterPhone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDestination">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Destination" nillable="true" type="s1:Destination" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Destination">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationPoint" type="s1:ServicePoint" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterInfo" type="s1:ServiceCenterInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceLevels" type="s1:ArrayOfServiceLevel" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeliveryDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationNotes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s1:ErrorResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceLevel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceLevel" nillable="true" type="s1:ServiceLevel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceLevel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceLevelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceLevelName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Level" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTransitTimesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransitTimes" />
+  </wsdl:message>
+  <wsdl:message name="GetTransitTimesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransitTimesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TransitTimesServiceSoap">
+    <wsdl:operation name="GetTransitTimes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the transit times for the given input.</wsdl:documentation>
+      <wsdl:input message="tns:GetTransitTimesSoapIn" />
+      <wsdl:output message="tns:GetTransitTimesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransitTimesServiceHttpGet" />
+  <wsdl:portType name="TransitTimesServiceHttpPost" />
+  <wsdl:binding name="TransitTimesServiceSoap" type="tns:TransitTimesServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTransitTimes">
+      <soap:operation soapAction="http://www.rlcarriers.com/GetTransitTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransitTimesServiceSoap12" type="tns:TransitTimesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTransitTimes">
+      <soap12:operation soapAction="http://www.rlcarriers.com/GetTransitTimes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransitTimesServiceHttpGet" type="tns:TransitTimesServiceHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="TransitTimesServiceHttpPost" type="tns:TransitTimesServiceHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="TransitTimesService">
+    <wsdl:port name="TransitTimesServiceSoap" binding="tns:TransitTimesServiceSoap">
+      <soap:address location="http://api.rlcarriers.com/1.0.2/TransitTimesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransitTimesServiceSoap12" binding="tns:TransitTimesServiceSoap12">
+      <soap12:address location="http://api.rlcarriers.com/1.0.2/TransitTimesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransitTimesServiceHttpGet" binding="tns:TransitTimesServiceHttpGet">
+      <http:address location="http://api.rlcarriers.com/1.0.2/TransitTimesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransitTimesServiceHttpPost" binding="tns:TransitTimesServiceHttpPost">
+      <http:address location="http://api.rlcarriers.com/1.0.2/TransitTimesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://www.estes-express.com/tools/rating/ratequote/v3.0/services/RateQuoteService?xsd=vocabulary.xsd" filename="RateQuoteService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://www.estes-express.com/tools/rating/ratequote/v3.0/services/RateQuoteService?wsdl" filename="RateQuoteService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://www.estes-express.com/tools/rating/ratequote/v3.0/services/RateQuoteService?xsd=rateRequest.xsd" filename="RateQuoteService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://www.estes-express.com/tools/rating/ratequote/v3.0/services/RateQuoteService?xsd=rateQuote.xsd" filename="RateQuoteService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://www.estes-express.com/tools/rating/ratequote/v3.0/services/RateQuoteService?xsd=rateQuoteCommon.xsd" filename="RateQuoteService2.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

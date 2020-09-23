@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://api.rlcarriers.com/1.0.2/RateQuoteService.asmx?wsdl" filename="RateQuoteService.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

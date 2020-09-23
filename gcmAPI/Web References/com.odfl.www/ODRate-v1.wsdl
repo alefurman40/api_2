@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://odfl.com/ws/ODRate-v1" xmlns:v1_0="http://odfl.com/ws/ODRate-v1.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="ODRate-v1.wsdl" targetNamespace="http://odfl.com/ws/ODRate-v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://odfl.com/ws/ODRate-v1.0">
+      <xsd:complexType name="Freight">
+        <xsd:sequence>
+          <xsd:element name="nmfcClass" nillable="true" type="xsd:string" />
+          <xsd:element name="weight" nillable="true" type="xsd:string" />
+          <xsd:element name="length" nillable="true" type="xsd:string" />
+          <xsd:element name="width" nillable="true" type="xsd:string" />
+          <xsd:element name="height" nillable="true" type="xsd:string" />
+          <xsd:element name="handlingUnits" nillable="true" type="xsd:string" />
+          <xsd:element name="density" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Accessorial">
+        <xsd:sequence>
+          <xsd:element name="code" nillable="true" type="xsd:string" />
+          <xsd:element name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="rateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="rateReturn" nillable="true" type="v1_0:RateResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="rateRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="originPostalCode" nillable="true" type="xsd:string" />
+            <xsd:element name="originCountry" nillable="true" type="xsd:string" />
+            <xsd:element name="destinationPostalCode" nillable="true" type="xsd:string" />
+            <xsd:element name="destinationCountry" nillable="true" type="xsd:string" />
+            <xsd:element name="requestorType" nillable="true" type="xsd:string" />
+            <xsd:element name="odfl4meUser" nillable="true" type="xsd:string" />
+            <xsd:element name="odfl4mePassword" nillable="true" type="xsd:string" />
+            <xsd:element name="odflCustomerAccount" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="freightArray" nillable="true" type="v1_0:Freight" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="accessorialArray" nillable="true" type="v1_0:Accessorial" />
+            <xsd:element name="mexicoServiceCenter" nillable="true" type="xsd:string" />
+            <xsd:element name="currencyFormat" nillable="true" type="xsd:string" />
+            <xsd:element name="requestReferenceNumber" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ServiceCenter">
+        <xsd:sequence>
+          <xsd:element name="alphaCode" nillable="true" type="xsd:string" />
+          <xsd:element name="address" nillable="true" type="xsd:string" />
+          <xsd:element name="cityStateZip" nillable="true" type="xsd:string" />
+          <xsd:element name="country" nillable="true" type="xsd:string" />
+          <xsd:element name="emailAddress" nillable="true" type="xsd:string" />
+          <xsd:element name="fax" nillable="true" type="xsd:string" />
+          <xsd:element name="manager" nillable="true" type="xsd:string" />
+          <xsd:element name="name" nillable="true" type="xsd:string" />
+          <xsd:element name="phone" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CityServiceDays">
+        <xsd:sequence>
+          <xsd:element name="city" nillable="true" type="xsd:string" />
+          <xsd:element name="serviceDays" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AccessorialCharge">
+        <xsd:sequence>
+          <xsd:element name="amount" nillable="true" type="xsd:string" />
+          <xsd:element name="description" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EstimateDetail">
+        <xsd:sequence>
+          <xsd:element name="grossFreightCharge" nillable="true" type="xsd:string" />
+          <xsd:element name="discountPercentage" nillable="true" type="xsd:string" />
+          <xsd:element name="discountAmount" nillable="true" type="xsd:string" />
+          <xsd:element name="discountedFreightCharge" nillable="true" type="xsd:string" />
+          <xsd:element name="fuelSurcharge" nillable="true" type="xsd:string" />
+          <xsd:element name="variableAccessorialRate" type="xsd:boolean" />
+          <xsd:element name="totalAccessorialCharge" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="accessorialChargeArray" nillable="true" type="v1_0:AccessorialCharge" />
+          <xsd:element name="internationalCharge" nillable="true" type="xsd:string" />
+          <xsd:element name="netFreightCharge" nillable="true" type="xsd:string" />
+          <xsd:element name="ratedClass" nillable="true" type="xsd:string" />
+          <xsd:element name="guaranteedServiceOption" nillable="true" type="xsd:string" />
+          <xsd:element name="currencyFormat" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RateResult">
+        <xsd:sequence>
+          <xsd:element name="originatingServiceCenter" nillable="true" type="v1_0:ServiceCenter" />
+          <xsd:element name="destinationServiceCenter" nillable="true" type="v1_0:ServiceCenter" />
+          <xsd:element name="originatingInterlineCarrierName" nillable="true" type="xsd:string" />
+          <xsd:element name="originatingInterlineScac" nillable="true" type="xsd:string" />
+          <xsd:element name="destinationInterlineCarrierName" nillable="true" type="xsd:string" />
+          <xsd:element name="destinationInterlineScac" nillable="true" type="xsd:string" />
+          <xsd:element name="rateEstimate" nillable="true" type="v1_0:EstimateDetail" />
+          <xsd:element name="referenceNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="destinationCitiesArray" nillable="true" type="v1_0:CityServiceDays" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="errorMessages" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="rateRequest">
+    <wsdl:part name="parameters" element="v1_0:rateRequest" />
+  </wsdl:message>
+  <wsdl:message name="rateResponse">
+    <wsdl:part name="parameters" element="v1_0:rateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ODRate_v1_0">
+    <wsdl:operation name="getRateEstimate">
+      <wsdl:input name="rateRequest" message="tns:rateRequest" />
+      <wsdl:output name="rateResponse" message="tns:rateResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ODRate_v1_0_SOAPBinding" type="tns:ODRate_v1_0">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getRateEstimate">
+      <soap:operation soapAction="" />
+      <wsdl:input name="rateRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="rateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ODRate_v1_0">
+    <wsdl:port name="ODRate" binding="tns:ODRate_v1_0_SOAPBinding">
+      <soap:address location="https://www.odfl.com:443/wsRate_v1/services/ODRate" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

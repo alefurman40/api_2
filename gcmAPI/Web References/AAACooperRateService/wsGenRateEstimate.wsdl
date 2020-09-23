@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/wsGenRateEstimate/" name="wsGenRateEstimate" targetNamespace="http://tempuri.org/wsGenRateEstimate/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/wsGenRateEstimate/">
+      <xsd:element name="RateEstimateRequestVO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Token" type="xsd:string" />
+            <xsd:element name="CustomerNumber" type="xsd:string" />
+            <xsd:element name="OriginCity" type="xsd:string" />
+            <xsd:element name="OriginState" type="xsd:string" />
+            <xsd:element name="OriginZip" type="xsd:string" />
+            <xsd:element name="OriginCountryCode" type="xsd:string" />
+            <xsd:element name="DestinationCity" type="xsd:string" />
+            <xsd:element name="DestinationState" type="xsd:string" />
+            <xsd:element name="DestinationZip" type="xsd:string" />
+            <xsd:element name="DestinCountryCode" type="xsd:string" />
+            <xsd:element name="WhoAmI" type="xsd:string" />
+            <xsd:element name="BillDate" type="xsd:string" />
+            <xsd:element name="CODAmount" type="xsd:string" />
+            <xsd:element name="CODPayType" type="xsd:string" />
+            <xsd:element name="CODFeePaidBy" type="xsd:string" />
+            <xsd:element name="FullCoverage" type="xsd:string" />
+            <xsd:element name="FullCoverageAmount" type="xsd:string" />
+            <xsd:element name="PrePaidCollect" type="xsd:string" />
+            <xsd:element name="TotalPalletCount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="AccLine">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="AccCode" type="xsd:string" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="RateEstimateRequestLine">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Weight" type="xsd:string" />
+                  <xsd:element name="Class" type="xsd:string" />
+                  <xsd:element name="HandlingUnits" type="xsd:string" />
+                  <xsd:element name="HandlingUnitType" type="xsd:string" />
+                  <xsd:element name="Hazmat" type="xsd:string" />
+                  <xsd:element name="CubeU" type="xsd:string" />
+                  <xsd:element name="Length" type="xsd:string" />
+                  <xsd:element name="Height" type="xsd:string" />
+                  <xsd:element name="Width" type="xsd:string" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RateEstimateResponseVO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ErrorMessage" type="xsd:string" />
+            <xsd:element name="EstimateNumber" type="xsd:string" />
+            <xsd:element name="EstimateSequence" type="xsd:string" />
+            <xsd:element name="ShipperNumber" type="xsd:string" />
+            <xsd:element name="ShipperName" type="xsd:string" />
+            <xsd:element name="OriginCity" type="xsd:string" />
+            <xsd:element name="OriginState" type="xsd:string" />
+            <xsd:element name="OriginZip" type="xsd:string" />
+            <xsd:element name="OriginCountryCode" type="xsd:string" />
+            <xsd:element name="OriginTerminal" type="xsd:string" />
+            <xsd:element name="OriginTerminalPhone" type="xsd:string" />
+            <xsd:element name="ConsigneeNumber" type="xsd:string" />
+            <xsd:element name="ConsigneeName" type="xsd:string" />
+            <xsd:element name="DestinationCity" type="xsd:string" />
+            <xsd:element name="DestinationState" type="xsd:string" />
+            <xsd:element name="DestinationZip" type="xsd:string" />
+            <xsd:element name="DestinCountryCode" type="xsd:string" />
+            <xsd:element name="DestinTerminal" type="xsd:string" />
+            <xsd:element name="DestinTerminalPhone" type="xsd:string" />
+            <xsd:element name="BillDate" type="xsd:string" />
+            <xsd:element name="PrePaidCollect" type="xsd:string" />
+            <xsd:element name="MinimumCharge" type="xsd:string" />
+            <xsd:element name="Tariff" type="xsd:string" />
+            <xsd:element name="Discount" type="xsd:string" />
+            <xsd:element name="RateBase" type="xsd:string" />
+            <xsd:element name="HouseHoldGoodsRateBase" type="xsd:string" />
+            <xsd:element name="TotalActualWeight" type="xsd:string" />
+            <xsd:element name="TotalAsWeight" type="xsd:string" />
+            <xsd:element name="DetailLineCount" type="xsd:string" />
+            <xsd:element name="Density" type="xsd:string" />
+            <xsd:element name="FuelSurchargePercent" type="xsd:string" />
+            <xsd:element name="InterlineFlag" type="xsd:string" />
+            <xsd:element name="TotalCharges" type="xsd:string" />
+            <xsd:element name="TotalMisc" type="xsd:string" />
+            <xsd:element name="InformationCode" type="xsd:string" />
+            <xsd:element name="InformationMessage" type="xsd:string" />
+            <xsd:element name="CODAmount" type="xsd:string" />
+            <xsd:element name="FullCoverageAmount" type="xsd:string" />
+            <xsd:element name="CODPayType" type="xsd:string" />
+            <xsd:element name="CODFee" type="xsd:string" />
+            <xsd:element name="UnitOfMeasure" type="xsd:string" />
+            <xsd:element name="WhoAmI" type="xsd:string" />
+            <xsd:element name="FullValueCoverage" type="xsd:string" />
+            <xsd:element name="TotalTransit" type="xsd:string" />
+            <xsd:element name="TotalPalletCount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="RateEstimateResponseLine">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="HandlingUnits" type="xsd:string" />
+                  <xsd:element name="HandlingUnitType" type="xsd:string" />
+                  <xsd:element name="HazMat" type="xsd:string" />
+                  <xsd:element name="Description" type="xsd:string" />
+                  <xsd:element name="Class" type="xsd:string" />
+                  <xsd:element name="Weight" type="xsd:string" />
+                  <xsd:element name="Rate" type="xsd:string" />
+                  <xsd:element name="Charges" type="xsd:string" />
+                  <xsd:element name="Misc" type="xsd:string" />
+                  <xsd:element name="Accessorial" type="xsd:string" />
+                  <xsd:element name="PrePaidCollect" type="xsd:string" />
+                  <xsd:element name="Length" type="xsd:string" />
+                  <xsd:element name="Width" type="xsd:string" />
+                  <xsd:element name="Height" type="xsd:string" />
+                  <xsd:element name="CubeUnit" type="xsd:string" />
+                  <xsd:element name="Cube" type="xsd:string" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="GuaranteedDeliveryFee" type="xsd:string" />
+            <xsd:element name="TotChgWGuarDelFee" type="xsd:string" />
+            <xsd:element name="TotChgWFVCFee" type="xsd:string" />
+            <xsd:element name="TotChgWFVCAndGDA" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RateEstimateResponseVO">
+    <wsdl:part name="RateEstimateResponseVO" element="tns:RateEstimateResponseVO" />
+  </wsdl:message>
+  <wsdl:message name="RateEstimateRequestVO">
+    <wsdl:part name="RateEstimateRequestVO" element="tns:RateEstimateRequestVO" />
+  </wsdl:message>
+  <wsdl:portType name="wsGenRateEstimate">
+    <wsdl:operation name="wsGenRateEstimate">
+      <wsdl:input message="tns:RateEstimateRequestVO" />
+      <wsdl:output message="tns:RateEstimateResponseVO" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsGenRateEstimateSOAP" type="tns:wsGenRateEstimate">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsGenRateEstimate">
+      <soap:operation soapAction="http://tempuri.org/wsGenRateEstimate/NewOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsGenRateEstimate">
+    <wsdl:port name="wsGenRateEstimateSOAP" binding="tns:wsGenRateEstimateSOAP">
+      <soap:address location="http://wsportal.aaacooper.com:8188/wsportal20/wsGenEst" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

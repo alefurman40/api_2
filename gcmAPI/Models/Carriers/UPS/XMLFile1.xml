@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetRateQuote xmlns="http://www.rlcarriers.com/">
+      <APIKey>UtZ1YmIDliNzE1ZWYtY2MyNS00OWExLWJiN2NTE0MzMzOzgGC</APIKey>
+      <request>
+        <CustomerData />
+        <QuoteType>Domestic</QuoteType>
+        <CODAmount>0</CODAmount>
+        <Origin>
+          <City>COPPELL</City>
+          <StateOrProvince>TX</StateOrProvince>
+          <ZipOrPostalCode>75019</ZipOrPostalCode>
+          <CountryCode>USA</CountryCode>
+        </Origin>
+        <Destination>
+          <City>NORTH LITTLE ROCK</City>
+          <StateOrProvince>AR</StateOrProvince>
+          <ZipOrPostalCode>72118</ZipOrPostalCode>
+          <CountryCode>USA</CountryCode>
+        </Destination>
+        <Items>
+          <Item>
+            <Class>175.0</Class>
+            <Weight>1177</Weight>
+            <Width>0</Width>
+            <Height>0</Height>
+            <Length>0</Length>
+          </Item>
+        </Items>
+        <DeclaredValue>0</DeclaredValue>
+        <Accessorials></Accessorials>
+        <OverDimensionPcs>0</OverDimensionPcs>
+      </request>
+    </GetRateQuote>
+  </soap:Body>
+</soap:Envelope>

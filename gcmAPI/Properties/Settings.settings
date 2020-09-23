@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="gcmAPI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="gcmAPI_wstest_RateService2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wstest.globalcargomanager.com/RateService2.asmx</Value>
+    </Setting>
+    <Setting Name="gcmAPI_AAACooperRateService_wsGenRateEstimate" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsportal.aaacooper.com:8188/wsportal20/wsGenEst</Value>
+    </Setting>
+    <Setting Name="gcmAPI_gcmWebService_RateService2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.globalcargomanager.com/RateService2.asmx</Value>
+    </Setting>
+    <Setting Name="gcmAPI_UPS_PackagePickupService_PickupService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://onlinetools.ups.com/webservices/Pickup</Value>
+    </Setting>
+    <Setting Name="gcmAPI_stdfRateService_Rating" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.standardforwarding.com/STDFServices/Rating.asmx</Value>
+    </Setting>
+    <Setting Name="gcmAPI_RRTS_WebService_RateQuote" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.rrts.com/rating/ratequote.asmx</Value>
+    </Setting>
+    <Setting Name="gcmAPI_com_daytonfreight_www_ShippingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://legacy.daytonfreight.com/WebServices_v1.0/ShippingService.asmx</Value>
+    </Setting>
+    <Setting Name="gcmAPI_com_odfl_www_ODRate_v1_0" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.odfl.com:443/wsRate_v1/services/ODRate</Value>
+    </Setting>
+    <Setting Name="gcmAPI_RL_CarriersAPI_RateQuoteService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.rlcarriers.com/1.0.2/RateQuoteService.asmx</Value>
+    </Setting>
+    <Setting Name="gcmAPI_RL_CarriersTransitTimes_API_TransitTimesService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.rlcarriers.com/1.0.2/TransitTimesService.asmx</Value>
+    </Setting>
+    <Setting Name="gcmAPI_Estes_RateWebServ_RateQuoteService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.estes-express.com/tools/rating/ratequote/v3.0/services/RateQuoteService</Value>
+    </Setting>
+    <Setting Name="gcmAPI_Best_Overnite_RateService_TQUOTEAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://tgif1.bestovernite.com:10010/web/services/TQUOTEAPI.TQUOTEAPIHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="gcmAPI_NewPennRateService_RequestRateQuoteV6Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9080/rateQuoteWSV6/services/RequestRateQuoteV6</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

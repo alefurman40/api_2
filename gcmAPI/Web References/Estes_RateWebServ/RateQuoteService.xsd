@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:exla="http://ws.estesexpress.com/schema/vocabulary" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/schema/vocabulary" xml:lang="en" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">Vocabulary schema. Copyright 2012 Estes Express Lines, Inc.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="PackagingType">
+    <xsd:annotation>
+      <xsd:documentation>Packaging units of measure</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BD" />
+      <xsd:enumeration value="BG" />
+      <xsd:enumeration value="BK" />
+      <xsd:enumeration value="BL" />
+      <xsd:enumeration value="BR" />
+      <xsd:enumeration value="BX" />
+      <xsd:enumeration value="CN" />
+      <xsd:enumeration value="CR" />
+      <xsd:enumeration value="CS" />
+      <xsd:enumeration value="CT" />
+      <xsd:enumeration value="CY" />
+      <xsd:enumeration value="DR" />
+      <xsd:enumeration value="JC" />
+      <xsd:enumeration value="KT" />
+      <xsd:enumeration value="PC" />
+      <xsd:enumeration value="PK" />
+      <xsd:enumeration value="PL" />
+      <xsd:enumeration value="PT" />
+      <xsd:enumeration value="RE" />
+      <xsd:enumeration value="RL" />
+      <xsd:enumeration value="SK" />
+      <xsd:enumeration value="TL" />
+      <xsd:enumeration value="TO" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ShipmentClassType">
+    <xsd:annotation>
+      <xsd:documentation>Shipment classes</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:enumeration value="50" />
+      <xsd:enumeration value="55" />
+      <xsd:enumeration value="60" />
+      <xsd:enumeration value="65" />
+      <xsd:enumeration value="70" />
+      <xsd:enumeration value="77.5" />
+      <xsd:enumeration value="85" />
+      <xsd:enumeration value="92.5" />
+      <xsd:enumeration value="100" />
+      <xsd:enumeration value="110" />
+      <xsd:enumeration value="125" />
+      <xsd:enumeration value="150" />
+      <xsd:enumeration value="175" />
+      <xsd:enumeration value="200" />
+      <xsd:enumeration value="250" />
+      <xsd:enumeration value="300" />
+      <xsd:enumeration value="400" />
+      <xsd:enumeration value="500" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetRateQuoteResponse xmlns="http://www.rlcarriers.com/">
+      <GetRateQuoteResult>
+        <CustomerData />
+        <WasSuccess>true</WasSuccess>
+        <Messages />
+        <Result>
+          <Origin>
+            <City>COPPELL</City>
+            <StateOrProvince>TX</StateOrProvince>
+            <ZipOrPostalCode>75019</ZipOrPostalCode>
+            <CountryCode>USA</CountryCode>
+          </Origin>
+          <Destination>
+            <City>NORTH LITTLE ROCK</City>
+            <StateOrProvince>AR</StateOrProvince>
+            <ZipOrPostalCode>72118</ZipOrPostalCode>
+            <CountryCode>USA</CountryCode>
+          </Destination>
+          <OriginServiceCenter>
+            <Code>SGR</Code>
+            <Location>Sanger</Location>
+            <ZipCode>76266</ZipCode>
+            <Phone>1-888-327-8003</Phone>
+            <Address1>4000 N STEMMONS FREEWAY</Address1>
+            <Address2 />
+            <City>Sanger</City>
+            <State>TX</State>
+          </OriginServiceCenter>
+          <DestinationServiceCenter>
+            <Code>LRA</Code>
+            <Location>Little Rock, AR</Location>
+            <ZipCode>72209</ZipCode>
+            <Phone>1-800-799-0184</Phone>
+            <Address1>8606 Mabelvale Pike</Address1>
+            <Address2 />
+            <City>Little Rock</City>
+            <State>AR</State>
+          </DestinationServiceCenter>
+          <CustomerDiscounts>$1,308.06</CustomerDiscounts>
+          <Charges>
+            <Charge>
+              <Type />
+              <Title>Class: 175 / Rated 70</Title>
+              <Weight>1177</Weight>
+              <Rate>$135.53</Rate>
+              <Amount>$1,595.19</Amount>
+            </Charge>
+            <Charge>
+              <Type>GROSS</Type>
+              <Title>Gross Charge</Title>
+              <Weight>1177</Weight>
+              <Rate />
+              <Amount>$1,595.19</Amount>
+            </Charge>
+            <Charge>
+              <Type>DISCNT</Type>
+              <Title>R+L Discount Saves This Much</Title>
+              <Weight />
+              <Rate>82%</Rate>
+              <Amount>$1,308.06</Amount>
+            </Charge>
+            <Charge>
+              <Type>DISCNF</Type>
+              <Title>Discounted Freight Charge</Title>
+              <Weight />
+              <Rate />
+              <Amount>$287.13</Amount>
+            </Charge>
+            <Charge>
+              <Type>FUEL</Type>
+              <Title>Fuel Surcharge</Title>
+              <Weight />
+              <Rate>18.1%</Rate>
+              <Amount>$51.97</Amount>
+            </Charge>
+            <Charge>
+              <Type>NET</Type>
+              <Title>Net Charge</Title>
+              <Weight />
+              <Rate />
+              <Amount>$339.10</Amount>
+            </Charge>
+          </Charges>
+          <Messages>
+            <Message>
+              <Title />
+              <Text>Rates Message</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>FAK 70 APPLIES TO CLASS 70 TO 250</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>General Message</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>* Not to Exceed 20 Feet or 20,000 Lbs.</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>Note: Some residential deliveries may require additional days of service.</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>* This quote is based on information you provide. The actual charges shall be determined by actual shipment characteristics, and any accessorial charges that are applicable to the shipment at time of shipment.</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>For classes higher than 300, contact the Rate department at 800-535-1983.</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>Please note that a sufferance and in-bond storage charges accumulated in the customs process are the responsibility of the debtor of the freight charges.</Text>
+            </Message>
+            <Message>
+              <Title />
+              <Text>This rate is not applicable to tradeshows. Please contact our Rate Specialist at 800-535-1983 for more information.</Text>
+            </Message>
+          </Messages>
+          <ServiceLevels>
+            <ServiceLevel>
+              <Title>Standard Service</Title>
+              <Code>STD</Code>
+              <QuoteNumber>5261113</QuoteNumber>
+              <ServiceDays>1</ServiceDays>
+              <Charge>$1,595.19</Charge>
+              <NetCharge>$339.10</NetCharge>
+            </ServiceLevel>
+            <ServiceLevel>
+              <Title>Guaranteed Service</Title>
+              <Code>GSDS</Code>
+              <QuoteNumber>29367469</QuoteNumber>
+              <ServiceDays>1</ServiceDays>
+              <Charge>$57.42</Charge>
+              <NetCharge>$396.52</NetCharge>
+            </ServiceLevel>
+            <ServiceLevel>
+              <Title>Guaranteed AM Service</Title>
+              <Code>GSAM</Code>
+              <QuoteNumber>31892848</QuoteNumber>
+              <ServiceDays>1</ServiceDays>
+              <Charge>$87.20</Charge>
+              <NetCharge>$426.30</NetCharge>
+            </ServiceLevel>
+            <ServiceLevel>
+              <Title>Guaranteed HW Service</Title>
+              <Code>GSHW</Code>
+              <QuoteNumber>47763027</QuoteNumber>
+              <ServiceDays>1</ServiceDays>
+              <Charge>$114.85</Charge>
+              <NetCharge>$453.95</NetCharge>
+              <HourlyWindow>
+                <Start>9:00 AM</Start>
+                <End>5:00 PM</End>
+              </HourlyWindow>
+            </ServiceLevel>
+          </ServiceLevels>
+        </Result>
+      </GetRateQuoteResult>
+    </GetRateQuoteResponse>
+  </soap:Body>
+</soap:Envelope>
