@@ -4524,28 +4524,49 @@ public class LTL_Carriers
         #region Log in
 
         http.method = "GET";
-        http.url = "https://cloud.p-44.com/";
-        http.accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8";
+        http.url = "https://na12.voc.project44.com/portal/v2/login";
+        http.accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
         http.Make_http_request();
 
         http.method = "POST";
         http.referrer = http.url;
-        http.url = "https://cloud.p-44.com/signin";
+        http.content_type = "application/json";
+        http.url = "https://na12.voc.project44.com/api/portal/v2/login";
 
-        http.post_data = string.Concat("susername=", login_info.username, "&spassword=", login_info.password);
+        http.post_data = string.Concat("{\"username\":\"", login_info.username.Replace("%40", "@"),
+            "\",\"password\":\"", login_info.password, "\"}");      
+      
         http.Make_http_request();
-        //
-        // Set headers
-        http.header_names = new string[1];
-        http.header_names[0] = "X-Requested-With";
-        http.header_values = new string[1];
-        http.header_values[0] = "XMLHttpRequest";
 
         http.method = "GET";
-        http.referrer = "https://cloud.p-44.com/portal/vltl-ltl-rates";
-        http.url = "https://cloud.p-44.com/portal/session/renew";
-        http.accept = "application/json";
+        http.referrer = "";
+        http.url = "https://na12.voc.project44.com/portal/vltl-ltl-rates";
+        http.accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
         http.Make_http_request();
+
+        //http.method = "GET";
+        //http.url = "https://cloud.p-44.com/";
+        //http.accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8";
+        //http.Make_http_request();
+
+        //http.method = "POST";
+        //http.referrer = http.url;
+        //http.url = "https://cloud.p-44.com/signin";
+
+        //http.post_data = string.Concat("susername=", login_info.username, "&spassword=", login_info.password);
+        //http.Make_http_request();
+        ////
+        //// Set headers
+        //http.header_names = new string[1];
+        //http.header_names[0] = "X-Requested-With";
+        //http.header_values = new string[1];
+        //http.header_values[0] = "XMLHttpRequest";
+
+        //http.method = "GET";
+        //http.referrer = "https://cloud.p-44.com/portal/vltl-ltl-rates";
+        //http.url = "https://cloud.p-44.com/portal/session/renew";
+        //http.accept = "application/json";
+        //http.Make_http_request();
 
         #endregion
 
@@ -4753,9 +4774,19 @@ public class LTL_Carriers
             Total_lineal_feet = Convert.ToInt32(quoteData.linealFeet);
         }
 
+        //http.content_type = "application/json";
+        //http.method = "POST";
+        //http.url = "https://cloud.p-44.com/portal/vltl/quotes/rates/query";
+
+        http.header_names = new string[1];
+        http.header_names[0] = "X-Requested-With";
+        http.header_values = new string[1];
+        http.header_values[0] = "XMLHttpRequest";
         http.content_type = "application/json";
         http.method = "POST";
-        http.url = "https://cloud.p-44.com/portal/vltl/quotes/rates/query";
+        http.accept = "application/json";
+        http.referrer = http.url;
+        http.url = "https://na12.voc.project44.com/portal/vltl/quotes/rates/query";
 
         http.post_data = string.Concat("{\"originAddress\":{\"postalCode\":\"", quoteData.origZip, "\",",
             "\"addressLines\":[],\"city\":\"", quoteData.origCity.ToUpper(),
