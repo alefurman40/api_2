@@ -5389,6 +5389,14 @@ public class LTL_Carriers
             return;
         }
 
+        if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits > 5)
+        {
+            //oThreadDLS_Genera.Start();
+            //ltl_threads.Add(oThreadDLS_Genera);
+
+            return;
+        }
+
 
         #region For username gwwshipus
 
