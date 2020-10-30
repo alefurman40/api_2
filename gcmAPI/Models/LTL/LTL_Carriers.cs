@@ -5388,6 +5388,18 @@ public class LTL_Carriers
 
             return;
         }
+        else if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits == 6)
+        {
+            return;
+        }
+        else if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits > 7)
+        {         
+            return;
+        }
+        else
+        {
+            // Do nothing
+        }
 
         if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits > 5)
         {
