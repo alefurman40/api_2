@@ -251,19 +251,19 @@ public class LTL_Carriers
     {
         #region Testing log request data
 
-        //DB.Log("test", string.Concat(" subdomain:", quoteData.subdomain,
-        //    " mode:", quoteData.mode,
-        //    " puDate:", quoteData.puDate, " isHazmat:", quoteData.isHazmat,
-        //    " quoteData.hasDimensions:", quoteData.hasDimensions, " showDLSRates:",
-        //    quoteData.showDLSRates, " isDUR:", quoteData.isDUR, " isAssociationID_5:", quoteData.isAssociationID_5, " isCommodity:",
-        //    quoteData.isCommodity, " isCommodityLkupHHG:", quoteData.isCommodityLkupHHG, " isHHG:", quoteData.isHHG, " isUSED:",
-        //    quoteData.isUSED, " isHHG_AndUnder500:",
-        //    quoteData.isHHG_AndUnder500, " isUserVanguard:", quoteData.isUserVanguard, " username:", quoteData.username, " origZip:",
-        //    quoteData.origZip, " origCity:", quoteData.origCity, " origState:", quoteData.origState, " destZip:", quoteData.destZip, " destCity:",
-        //    quoteData.destCity, " destState:", quoteData.destState
+        DB.Log("test", string.Concat(" subdomain:", quoteData.subdomain,
+            " mode:", quoteData.mode,
+            " puDate:", quoteData.puDate, " isHazmat:", quoteData.isHazmat,
+            " quoteData.hasDimensions:", quoteData.hasDimensions, " showDLSRates:",
+            quoteData.showDLSRates, " isDUR:", quoteData.isDUR, " isAssociationID_5:", quoteData.isAssociationID_5, " isCommodity:",
+            quoteData.isCommodity, " isCommodityLkupHHG:", quoteData.isCommodityLkupHHG, " isHHG:", quoteData.isHHG, " isUSED:",
+            quoteData.isUSED, " isHHG_AndUnder500:",
+            quoteData.isHHG_AndUnder500, " isUserVanguard:", quoteData.isUserVanguard, " username:", quoteData.username, " origZip:",
+            quoteData.origZip, " origCity:", quoteData.origCity, " origState:", quoteData.origState, " destZip:", quoteData.destZip, " destCity:",
+            quoteData.destCity, " destState:", quoteData.destState
 
-        //    )
-        //    );
+            )
+            );
 
         //for (int i = 0; i < m_lPiece.Length; i++)
         //{
