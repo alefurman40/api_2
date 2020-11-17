@@ -298,10 +298,16 @@ namespace gcmAPI.Models.Carriers.DLS
                     }
                     else if (UserName == "Genera Corp")
                     {
-
-                        DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
-                        DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
-
+                        if(is_xpo==true)
+                        {
+                            DB.Log("getRateFromDLS_XPO Genera Corp res_part_1", res_part_1);
+                            DB.Log("getRateFromDLS_XPO Genera Corp res_part_2", res_part_2);
+                        }
+                        else
+                        {
+                            DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
+                            DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
+                        }                      
                     }
                     else
                     {
