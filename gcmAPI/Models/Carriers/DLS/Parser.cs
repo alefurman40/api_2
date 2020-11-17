@@ -39,7 +39,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
         #region Parse_Results
 
-        public void Parse_results(ref List<dlsPricesheet> dlsPricesheets, ref string doc, ref bool isOverlengthUPS, ref bool is_xpo)
+        public void Parse_results(ref List<dlsPricesheet> dlsPricesheets, ref string doc, ref bool isOverlengthUPS)
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(doc);
@@ -228,44 +228,6 @@ namespace gcmAPI.Models.Carriers.DLS
                 pSheet.ContractName = nodeList[i]["ContractName"].InnerText.Trim();
 
                 pSheet.Scac = nodeList[i]["Scac"].InnerText.Trim();
-
-                if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
-                {
-                    //if (is_xpo == true && pSheet.Scac == "CNWY")
-                    //{
-                    //    // Do nothing
-                    //}
-                    //else if (is_xpo == false && pSheet.Scac == "CNWY")
-                    //{
-                    //    continue;
-                    //}
-                    //else
-                    //{
-                    //    continue;
-                    //}
-
-                    if(pSheet.Scac == "CNWY")
-                    {
-                        if (is_xpo == true)
-                        {
-                            // Do nothing
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        // Do nothing
-                    }
-                }
-                else
-                {
-                    // Do nothing
-                }
-
-                
 
                 if (quoteData.totalUnits == 7)
                 {

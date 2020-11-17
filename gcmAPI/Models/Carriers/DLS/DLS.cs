@@ -21,7 +21,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
         QuoteData quoteData;
         bool guaranteedService;//, is_cust_rates;
-        bool is_Estes_HHG_Under_500, is_Estes_HHG_Under_500_GLTL, is_xpo;
+        bool is_Estes_HHG_Under_500, is_Estes_HHG_Under_500_GLTL;
         string UserName, APIKey;
         //bool need_log = false;
 
@@ -39,7 +39,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
         // Constructor
         public DLS(ref List<dlsPricesheet> dlsPricesheets, ref QuoteData quoteData, bool guaranteedService, 
-            ref string UserName, ref string APIKey, ref bool is_Estes_HHG_Under_500, ref bool is_Estes_HHG_Under_500_GLTL, ref bool is_xpo)
+            ref string UserName, ref string APIKey, ref bool is_Estes_HHG_Under_500, ref bool is_Estes_HHG_Under_500_GLTL)
         {
             //Tester tester = new Tester();
             //need_log = tester.Is_in_log_mode();
@@ -52,7 +52,6 @@ namespace gcmAPI.Models.Carriers.DLS
             this.APIKey = APIKey;
             this.is_Estes_HHG_Under_500 = is_Estes_HHG_Under_500;
             this.is_Estes_HHG_Under_500_GLTL = is_Estes_HHG_Under_500_GLTL;
-            this.is_xpo = is_xpo;
 
             getRateFromDLS(ref dlsPricesheets, ref guaranteedService);
 
@@ -157,24 +156,10 @@ namespace gcmAPI.Models.Carriers.DLS
                     }
 
                     sbiItems.Append(string.Concat("<FreightClass>", fClass, "</FreightClass>"));
-
-                    if(is_xpo==true)
-                    {
-                        sbiItems.Append(string.Concat("<Height>0.0</Height>"));
-                        sbiItems.Append(string.Concat("<Length>0.0</Length>"));
-                        sbiItems.Append(string.Concat("<Name>ItemName</Name>"));
-                        sbiItems.Append(string.Concat("<Quantity>1</Quantity>"));
-                    }
-                    else
-                    {
-                        sbiItems.Append(string.Concat("<Height>", (int)quoteData.m_lPiece[i].Height, ".0</Height>"));
-                        sbiItems.Append(string.Concat("<Length>", (int)quoteData.m_lPiece[i].Length, ".0</Length>"));
-                        sbiItems.Append(string.Concat("<Name>ItemName</Name>"));
-                        sbiItems.Append(string.Concat("<Quantity>", quoteData.m_lPiece[i].Quantity, "</Quantity>"));
-                    }
-                    
-
-
+                    sbiItems.Append(string.Concat("<Height>", (int)quoteData.m_lPiece[i].Height, ".0</Height>"));
+                    sbiItems.Append(string.Concat("<Length>", (int)quoteData.m_lPiece[i].Length, ".0</Length>"));
+                    sbiItems.Append(string.Concat("<Name>ItemName</Name>"));
+                    sbiItems.Append(string.Concat("<Quantity>", quoteData.m_lPiece[i].Quantity, "</Quantity>"));
                     sbiItems.Append(string.Concat("<QuantityUnits>Unit</QuantityUnits>"));
 
                     if(is_Estes_HHG_Under_500 == true || is_Estes_HHG_Under_500_GLTL == true)
@@ -298,16 +283,10 @@ namespace gcmAPI.Models.Carriers.DLS
                     }
                     else if (UserName == "Genera Corp")
                     {
-                        if(is_xpo==true)
-                        {
-                            DB.Log("getRateFromDLS_XPO Genera Corp res_part_1", res_part_1);
-                            DB.Log("getRateFromDLS_XPO Genera Corp res_part_2", res_part_2);
-                        }
-                        else
-                        {
-                            DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
-                            DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
-                        }                      
+
+                        DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
+                        DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
+
                     }
                     else
                     {
@@ -330,7 +309,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
                 else
                 {
-                    parser.Parse_results(ref dlsPricesheets, ref doc, ref isOverlengthUPS, ref is_xpo);
+                    parser.Parse_results(ref dlsPricesheets, ref doc, ref isOverlengthUPS);
                 }
 
                 dlsPricesheets = dlsPricesheets.Distinct().ToList();
@@ -518,15 +497,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 #region Post Data
 
-                if(is_xpo==true)
-                {
-                    DB.Log("getRateFromDLS_XPO Alex2015 data", data);
-                }
-                else
-                {
-                    DB.Log("getRateFromDLS Alex2015 data", data);
-                }
-                
+                DB.Log("getRateFromDLS Alex2015 data", data);
 
                 #endregion
 
