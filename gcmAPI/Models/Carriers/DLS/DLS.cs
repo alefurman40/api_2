@@ -518,7 +518,15 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 #region Post Data
 
-                DB.Log("getRateFromDLS Alex2015 data", data);
+                if(is_xpo==true)
+                {
+                    DB.Log("getRateFromDLS_XPO Alex2015 data", data);
+                }
+                else
+                {
+                    DB.Log("getRateFromDLS Alex2015 data", data);
+                }
+                
 
                 #endregion
 
