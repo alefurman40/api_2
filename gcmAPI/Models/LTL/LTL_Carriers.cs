@@ -895,7 +895,7 @@ public class LTL_Carriers
             {
                 if (totalQuotes[i].DisplayName.Contains("Volume") || totalQuotes[i].DisplayName == "RRD Truckload")
                 {
-                    totalQuotes[i].BillTo = "TForce Worldwide 1000 Wyndham Pkwy Bolingbrook, IL 60490";
+                    totalQuotes[i].BillTo = "DLS Worldwide 1000 Wyndham Pkwy Bolingbrook, IL 60490";
                 }
                 else if (totalQuotes[i].DisplayName.Contains("Genera"))
                 {
@@ -8123,8 +8123,7 @@ public class LTL_Carriers
             if (dlsPricesheets != null && dlsPricesheets.Count > 0)
             {
                 string UserName = "PNW - Burien WA";
-                bool is_xpo = false;
-                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets, ref totalQuotes, ref UserName, ref is_xpo);
+                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets, ref totalQuotes, ref UserName);
             }
 
             // dlsPricesheets
@@ -8139,8 +8138,7 @@ public class LTL_Carriers
             {
                 string UserName = "Ben Franklin Crafts - Macon";
                 //DB.Log("dlsPricesheets_BenFranklinCraftsMacon.Count > 0", "");
-                bool is_xpo = false;
-                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_BenFranklinCraftsMacon, ref totalQuotes, ref UserName, ref is_xpo);
+                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_BenFranklinCraftsMacon, ref totalQuotes, ref UserName);
 
             }
             else
@@ -8152,8 +8150,7 @@ public class LTL_Carriers
             {
                 string UserName = "Genera Corp";
                 //DB.Log("dlsPricesheets_Genera.Count > 0", "");
-                bool is_xpo = false;
-                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera, ref totalQuotes, ref UserName, ref is_xpo);
+                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera, ref totalQuotes, ref UserName);
 
             }
             else
@@ -8164,9 +8161,8 @@ public class LTL_Carriers
             if (dlsPricesheets_Genera_xpo != null && dlsPricesheets_Genera_xpo.Count > 0)
             {
                 string UserName = "Genera Corp";
-                DB.Log("dlsPricesheets_Genera_XPO.Count > 0", "");
-                bool is_xpo = true;
-                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera_xpo, ref totalQuotes, ref UserName, ref is_xpo);
+                //DB.Log("dlsPricesheets_Genera.Count > 0", "");
+                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera_xpo, ref totalQuotes, ref UserName);
 
             }
             else
@@ -8204,8 +8200,7 @@ public class LTL_Carriers
 
                 //DB.Log("DLS GLTL", "DLS GLTL");
                 string UserName = "PNW - Burien WA";
-                bool is_xpo = false;
-                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheetsGLTL, ref totalQuotes, ref UserName, ref is_xpo);
+                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheetsGLTL, ref totalQuotes, ref UserName);
 
                 //foreach (SharedLTL.dlsPricesheet objCarrier in dlsPricesheetsGLTL)
                 //{

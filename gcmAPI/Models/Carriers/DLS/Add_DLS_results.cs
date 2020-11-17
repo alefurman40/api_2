@@ -35,9 +35,9 @@ namespace gcmAPI.Models.Carriers.DLS
 
         #region AddDLS_ResultToArray
 
-        public void AddDLS_ResultToArray(ref List<dlsPricesheet> dlsPricesheets, ref GCMRateQuote[] totalQuotes, ref string UserName, ref bool is_xpo)
+        public void AddDLS_ResultToArray(ref List<dlsPricesheet> dlsPricesheets, ref GCMRateQuote[] totalQuotes, ref string UserName)
         {
-
+           
             //DB.Log("AddDLS_ResultToArray", dupreRRTS_Buy.ToString());
 
             HelperFuncs.dlsMarkup dlsMarkup = new HelperFuncs.dlsMarkup();
@@ -67,7 +67,7 @@ namespace gcmAPI.Models.Carriers.DLS
             dlsPercent = Convert.ToDecimal(dlsMarkup.DLSMU) / 100;
 
             //DB.Log("GetDLS_Markup dlsPercent, minDollar", dlsPercent.ToString() + " " + dlsMarkup.DLSMinDollar.ToString());
-
+            
             // Get Overlenth Fee
             int overlengthFee = 0;
             HelperFuncs.GetOverlengthFee(ref quoteData.m_lPiece, ref overlengthFee, 143, 216, 288, 100, 150, 200);
@@ -99,7 +99,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 can_add_carrier_result = Can_add_carrier_result(objCarrier, ref foundDLS_CTII);
 
-                if (can_add_carrier_result == true)
+                if(can_add_carrier_result==true)
                 {
                     // Do nothing
                 }
@@ -110,7 +110,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 try
                 {
-
+                  
                     GCMRateQuote objQuote = new GCMRateQuote();
 
                     objQuote.base_rate = objCarrier.base_rate;
@@ -151,7 +151,7 @@ namespace gcmAPI.Models.Carriers.DLS
                         objQuote.DisplayName = string.Concat(objQuote.DisplayName, " DLS SPC");
                         ////objCarrier.Total = objCarrier.Total * 0.7519M;
                     }
-                    else if (UserName == "Ben Franklin Crafts - Macon")
+                    else if(UserName == "Ben Franklin Crafts - Macon")
                     {
                         continue;
                     }
@@ -159,7 +159,7 @@ namespace gcmAPI.Models.Carriers.DLS
                     {
                         // Do nothing
                     }
-
+                  
 
                     if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
                     {
@@ -184,22 +184,6 @@ namespace gcmAPI.Models.Carriers.DLS
                     else
                         objQuote.OurRate = Convert.ToDouble(objCarrier.Total);
 
-
-                    if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
-                    {
-                        if(is_xpo == true)
-                        {
-                            DB.Log("getRateFromDLS_XPO objQuote.OurRate", objQuote.OurRate.ToString());
-                        }
-                        else
-                        {
-                            DB.Log("getRateFromDLS objQuote.OurRate", objQuote.OurRate.ToString());
-                        }
-                    }
-                    else
-                    {
-                        // Do nothing
-                    }
                     //DB.Log("objQuote.OurRate", objQuote.OurRate.ToString());
 
                     if (quoteData.mode.Equals("NetNet"))
@@ -224,11 +208,11 @@ namespace gcmAPI.Models.Carriers.DLS
                             {
                                 // Do nothing
                             }
-                        }
+                        }                           
                         else
                         {
                             objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
-                        }
+                        }                           
                     }
                     else
                     {
@@ -267,7 +251,7 @@ namespace gcmAPI.Models.Carriers.DLS
                                 {
                                     objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsPercentSum);
                                 }
-
+                              
                                 //DB.Log("adding markup", dlsPercentSum.ToString());
                                 //DB.Log("objQuote.TotalPrice", objQuote.TotalPrice.ToString());
                                 //objQuote.TotalPrice += Convert.ToDouble(dlsCTII_Addition);
@@ -285,7 +269,7 @@ namespace gcmAPI.Models.Carriers.DLS
                                 {
                                     objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsMarkup.DLSMinDollar);
                                 }
-
+                                    
 
                                 //objQuote.TotalPrice += Convert.ToDouble(dlsCTII_Addition);
 
@@ -311,7 +295,7 @@ namespace gcmAPI.Models.Carriers.DLS
                     objQuote.TotalPrice += addition;
                     objQuote.OurRate += addition;
 
-                    if (objQuote.TotalPrice > 0)
+                    if(objQuote.TotalPrice > 0)
                     {
                         // Do nothing
                     }
@@ -400,7 +384,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 {
                     // Do nothing
                 }
-                else if (objCarrier.Scac != "EXLA")
+                else if (objCarrier.Scac != "EXLA" )
                 {
                     // Do nothing
                 }
@@ -468,12 +452,12 @@ namespace gcmAPI.Models.Carriers.DLS
             {
                 // Do nothing
             }
-
+            
             if (quoteData.is_AAFES_quote.Equals(true) && objCarrier.Scac == "RDFS")
             {
                 return false;
             }
-
+            
             if (objCarrier.CarrierName.StartsWith("Central Transport") && foundDLS_CTII.Equals(true)) // Don't add CTII twice
             {
                 return false;
