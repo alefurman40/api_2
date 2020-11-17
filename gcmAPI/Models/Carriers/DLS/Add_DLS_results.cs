@@ -206,29 +206,31 @@ namespace gcmAPI.Models.Carriers.DLS
                     {
                         objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
 
-                        if (quoteData.is_Genera_quote == true)
-                        {
-                            if (quoteData.totalUnits == 7 || quoteData.totalUnits == 6)
-                            {
-                                if (objQuote.Scac == "CNWY")
-                                {
-                                    // Add 25%
-                                    objQuote.TotalPrice *= 1.25;
-                                }
-                                else
-                                {
-                                    // Do nothing
-                                }
-                            }
-                            else
-                            {
-                                // Do nothing
-                            }
-                        }
-                        else
-                        {
-                            objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
-                        }
+                        //if (quoteData.is_Genera_quote == true)
+                        //{
+                        //    if (quoteData.totalUnits == 7 || quoteData.totalUnits == 6)
+                        //    {
+                        //        if (objQuote.Scac == "CNWY")
+                        //        {
+                        //            // Add 25%
+                        //            objQuote.TotalPrice *= 1.25;
+                        //        }
+                        //        else
+                        //        {
+                        //            // Do nothing
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //        // Do nothing
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
+                        //}
+
+                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
                     }
                     else
                     {
