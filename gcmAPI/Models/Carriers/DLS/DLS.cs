@@ -163,7 +163,7 @@ namespace gcmAPI.Models.Carriers.DLS
                         sbiItems.Append(string.Concat("<Height>0.0</Height>"));
                         sbiItems.Append(string.Concat("<Length>0.0</Length>"));
                         sbiItems.Append(string.Concat("<Name>ItemName</Name>"));
-                        sbiItems.Append(string.Concat("<Quantity>0</Quantity>"));
+                        sbiItems.Append(string.Concat("<Quantity>1</Quantity>"));
                     }
                     else
                     {
