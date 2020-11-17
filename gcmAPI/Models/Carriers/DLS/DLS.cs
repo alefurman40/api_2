@@ -21,7 +21,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
         QuoteData quoteData;
         bool guaranteedService;//, is_cust_rates;
-        bool is_Estes_HHG_Under_500, is_Estes_HHG_Under_500_GLTL;
+        bool is_Estes_HHG_Under_500, is_Estes_HHG_Under_500_GLTL, is_xpo;
         string UserName, APIKey;
         //bool need_log = false;
 
@@ -39,7 +39,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
         // Constructor
         public DLS(ref List<dlsPricesheet> dlsPricesheets, ref QuoteData quoteData, bool guaranteedService, 
-            ref string UserName, ref string APIKey, ref bool is_Estes_HHG_Under_500, ref bool is_Estes_HHG_Under_500_GLTL)
+            ref string UserName, ref string APIKey, ref bool is_Estes_HHG_Under_500, ref bool is_Estes_HHG_Under_500_GLTL, ref bool is_xpo)
         {
             //Tester tester = new Tester();
             //need_log = tester.Is_in_log_mode();
@@ -52,6 +52,7 @@ namespace gcmAPI.Models.Carriers.DLS
             this.APIKey = APIKey;
             this.is_Estes_HHG_Under_500 = is_Estes_HHG_Under_500;
             this.is_Estes_HHG_Under_500_GLTL = is_Estes_HHG_Under_500_GLTL;
+            this.is_xpo = is_xpo;
 
             getRateFromDLS(ref dlsPricesheets, ref guaranteedService);
 
@@ -156,10 +157,24 @@ namespace gcmAPI.Models.Carriers.DLS
                     }
 
                     sbiItems.Append(string.Concat("<FreightClass>", fClass, "</FreightClass>"));
-                    sbiItems.Append(string.Concat("<Height>", (int)quoteData.m_lPiece[i].Height, ".0</Height>"));
-                    sbiItems.Append(string.Concat("<Length>", (int)quoteData.m_lPiece[i].Length, ".0</Length>"));
-                    sbiItems.Append(string.Concat("<Name>ItemName</Name>"));
-                    sbiItems.Append(string.Concat("<Quantity>", quoteData.m_lPiece[i].Quantity, "</Quantity>"));
+
+                    if(is_xpo==true)
+                    {
+                        sbiItems.Append(string.Concat("<Height>0.0</Height>"));
+                        sbiItems.Append(string.Concat("<Length>0.0</Length>"));
+                        sbiItems.Append(string.Concat("<Name>ItemName</Name>"));
+                        sbiItems.Append(string.Concat("<Quantity>0</Quantity>"));
+                    }
+                    else
+                    {
+                        sbiItems.Append(string.Concat("<Height>", (int)quoteData.m_lPiece[i].Height, ".0</Height>"));
+                        sbiItems.Append(string.Concat("<Length>", (int)quoteData.m_lPiece[i].Length, ".0</Length>"));
+                        sbiItems.Append(string.Concat("<Name>ItemName</Name>"));
+                        sbiItems.Append(string.Concat("<Quantity>", quoteData.m_lPiece[i].Quantity, "</Quantity>"));
+                    }
+                    
+
+
                     sbiItems.Append(string.Concat("<QuantityUnits>Unit</QuantityUnits>"));
 
                     if(is_Estes_HHG_Under_500 == true || is_Estes_HHG_Under_500_GLTL == true)
@@ -309,7 +324,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
                 else
                 {
-                    parser.Parse_results(ref dlsPricesheets, ref doc, ref isOverlengthUPS);
+                    parser.Parse_results(ref dlsPricesheets, ref doc, ref isOverlengthUPS, ref is_xpo);
                 }
 
                 dlsPricesheets = dlsPricesheets.Distinct().ToList();

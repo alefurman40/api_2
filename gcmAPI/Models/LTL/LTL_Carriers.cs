@@ -39,7 +39,7 @@ public class LTL_Carriers
     Thread oThread_P44, oThread_USF_volume, oThread_ABF_volume, oThread_Estes_volume, oThread_XPO_volume,
         oThread_YRC_volume, oThread_Sunset_volume;
 
-    Thread oThreadDLS, oThreadDLS_GLTL, oThreadDLS_cust_rates, oThreadDLS_BenFranklinCraftsMacon, oThreadDLS_Genera,
+    Thread oThreadDLS, oThreadDLS_GLTL, oThreadDLS_cust_rates, oThreadDLS_BenFranklinCraftsMacon, oThreadDLS_Genera, oThreadDLS_Genera_XPO,
         oThreadDLS_HHG_Under_500, oThreadDLS_GLTL_HHG_Under_500,
         oThreadRR, oThreadRR_Class50, 
         oThreadPittOhio_API, oThreadPittOhio_API_SPC, oThreadPittOhio_API_Durachem,
@@ -185,6 +185,7 @@ public class LTL_Carriers
     List<DLS.dlsPricesheet> dls_cust_rates_Pricesheets;
     List<DLS.dlsPricesheet> dlsPricesheets_BenFranklinCraftsMacon;
     List<DLS.dlsPricesheet> dlsPricesheets_Genera;
+    List<DLS.dlsPricesheet> dlsPricesheets_Genera_xpo;
     List<DLS.dlsPricesheet> dlsPricesheets_HHG_Under_500;
     List<DLS.dlsPricesheet> dlsPricesheetsGLTL_HHG_Under_500;
 
@@ -1050,10 +1051,10 @@ public class LTL_Carriers
         
         //DB.LogGenera("credentials test", "UserName,APIKey", UserName + " " + APIKey);
 
-        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false;
+        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false, is_xpo = false;
         dlsPricesheets = new List<DLS.dlsPricesheet>();
         DLS dls = new DLS(ref dlsPricesheets, ref quoteData, guaranteedService,
-            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
 
 
         //string GS = "";
@@ -1098,11 +1099,11 @@ public class LTL_Carriers
 
             string UserName = login_info.username, APIKey = login_info.API_Key;
            
-            bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false;
+            bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false, is_xpo = false;
 
             dlsPricesheetsGLTL = new List<DLS.dlsPricesheet>();
             DLS dls = new DLS(ref dlsPricesheetsGLTL, ref quoteData, guaranteedService,
-                ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+                ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
             
         }
         else
@@ -1134,11 +1135,11 @@ public class LTL_Carriers
 
         string UserName = login_info.username, APIKey = login_info.API_Key;
        
-        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false;
+        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false, is_xpo = false;
 
         dls_cust_rates_Pricesheets = new List<DLS.dlsPricesheet>();
         DLS dls = new DLS(ref dls_cust_rates_Pricesheets, ref quoteData, guaranteedService,
-            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
 
     }
 
@@ -1165,11 +1166,11 @@ public class LTL_Carriers
 
         string UserName = login_info.username, APIKey = login_info.API_Key;
        
-        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false;
+        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false, is_xpo = false;
 
         dlsPricesheets_BenFranklinCraftsMacon = new List<DLS.dlsPricesheet>();
         DLS dls = new DLS(ref dlsPricesheets_BenFranklinCraftsMacon, ref quoteData, guaranteedService,
-            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
 
     }
 
@@ -1202,11 +1203,53 @@ public class LTL_Carriers
 
         string UserName = login_info.username, APIKey = login_info.API_Key;
         
-        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false;
+        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false, is_xpo = false;
 
         dlsPricesheets_Genera = new List<DLS.dlsPricesheet>();
         DLS dls = new DLS(ref dlsPricesheets_Genera, ref quoteData, guaranteedService,
-            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
+
+        //--
+        stopwatch.Stop();
+        carriersResult.elapsed_milliseconds_DLS_Genera = (int)stopwatch.ElapsedMilliseconds;
+        //--
+
+    }
+
+    #endregion
+
+    #region GetResultObjectFromDLS_Genera_XPO
+
+    private void GetResultObjectFromDLS_Genera_XPO()
+    {
+        //--
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        //--
+
+        if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera) //quoteData.is_Genera_quote == true || 
+        {
+            // Do nothing
+            // quoteData.username == AppCodeConstants.un_genera for LiveGCM and API
+        }
+        else
+        {
+            return;
+        }
+
+        bool guaranteedService = false;
+
+        Logins.Login_info login_info;
+        Logins logins = new Logins();
+        logins.Get_login_info(109, out login_info);
+
+        string UserName = login_info.username, APIKey = login_info.API_Key;
+
+        bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false, is_xpo=true;
+
+        dlsPricesheets_Genera_xpo = new List<DLS.dlsPricesheet>();
+        DLS dls = new DLS(ref dlsPricesheets_Genera_xpo, ref quoteData, guaranteedService,
+            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
 
         //--
         stopwatch.Stop();
@@ -1252,10 +1295,10 @@ public class LTL_Carriers
             APIKey = login_info.API_Key;          
         }
 
-        bool is_Estes_HHG_Under_500 = true, is_Estes_HHG_Under_500_GLTL = false;
+        bool is_Estes_HHG_Under_500 = true, is_Estes_HHG_Under_500_GLTL = false, is_xpo = false;
         dlsPricesheets_HHG_Under_500 = new List<DLS.dlsPricesheet>();
         DLS dls = new DLS(ref dlsPricesheets_HHG_Under_500, ref quoteData, guaranteedService,
-            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+            ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
 
         if (dlsPricesheets_HHG_Under_500 != null && dlsPricesheets_HHG_Under_500.Count > 0)
         {
@@ -1305,11 +1348,11 @@ public class LTL_Carriers
 
             string UserName = login_info.username, APIKey = login_info.API_Key;
            
-            bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = true;
+            bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = true, is_xpo = false;
 
             dlsPricesheetsGLTL_HHG_Under_500 = new List<DLS.dlsPricesheet>();
             DLS dls = new DLS(ref dlsPricesheetsGLTL_HHG_Under_500, ref quoteData, guaranteedService,
-                ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+                ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL, ref is_xpo);
 
         }
         else
@@ -5222,11 +5265,13 @@ public class LTL_Carriers
         }
 
         #region Thread declarations
-
+        //oThreadDLS_Genera_XPO
         oThreadDLS = new Thread(new ThreadStart(GetResultObjectFromDLS));
         oThreadDLS_GLTL = new Thread(new ThreadStart(GetResultObjectFromDLS_GLTL));
         //Thread oThreadDLS_cust_rates = new Thread(new ThreadStart(GetResultObjectFromDLS_cust_rates));
         oThreadDLS_Genera = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera));
+
+        oThreadDLS_Genera_XPO = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera_XPO));
 
         oThreadDLS_HHG_Under_500 = new Thread(new ThreadStart(GetResultObjectFromDLS_HHG_Under_500));
 
@@ -5386,6 +5431,11 @@ public class LTL_Carriers
             oThreadDLS_Genera.Start();
             ltl_threads.Add(oThreadDLS_Genera);
 
+            //
+
+            oThreadDLS_Genera_XPO.Start();
+            ltl_threads.Add(oThreadDLS_Genera_XPO);
+
             return;
         }
         else if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits == 6)
@@ -5476,6 +5526,8 @@ public class LTL_Carriers
             //ltl_threads.Add(oThreadDLS_Genera);
 
             Start_thread(ref oThreadDLS_Genera);
+
+            Start_thread(ref oThreadDLS_Genera_XPO);
 
             //oThreadDLS_HHG_Under_500.Start();
             //ltl_threads.Add(oThreadDLS_HHG_Under_500);
@@ -5926,6 +5978,8 @@ public class LTL_Carriers
 
         oThreadDLS_Genera = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera));
 
+        oThreadDLS_Genera_XPO = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera_XPO));
+
         oThreadDLS_HHG_Under_500 = new Thread(new ThreadStart(GetResultObjectFromDLS_HHG_Under_500));
 
         oThreadDLS_GLTL_HHG_Under_500 = new Thread(new ThreadStart(GetResultObjectFromDLS_GLTL_HHG_Under_500));
@@ -6127,6 +6181,9 @@ public class LTL_Carriers
 
                 oThreadDLS_Genera.Start();
                 ltl_threads.Add(oThreadDLS_Genera);
+
+                oThreadDLS_Genera_XPO.Start();
+                ltl_threads.Add(oThreadDLS_Genera_XPO);
 
                 oThreadDLS_HHG_Under_500.Start();
                 ltl_threads.Add(oThreadDLS_HHG_Under_500);
@@ -6365,6 +6422,9 @@ public class LTL_Carriers
                     {
                         oThreadDLS_Genera = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera));
                         Start_thread(ref oThreadDLS_Genera);
+
+                        oThreadDLS_Genera_XPO = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera_XPO));
+                        Start_thread(ref oThreadDLS_Genera_XPO);
                     }
                     else if (quoteData.totalUnits < 7)
                     {
@@ -8091,6 +8151,18 @@ public class LTL_Carriers
                 string UserName = "Genera Corp";
                 //DB.Log("dlsPricesheets_Genera.Count > 0", "");
                 add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera, ref totalQuotes, ref UserName);
+
+            }
+            else
+            {
+                //DB.Log("dlsPricesheets_Genera", " was empty");
+            }
+
+            if (dlsPricesheets_Genera_xpo != null && dlsPricesheets_Genera_xpo.Count > 0)
+            {
+                string UserName = "Genera Corp";
+                //DB.Log("dlsPricesheets_Genera.Count > 0", "");
+                add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera_xpo, ref totalQuotes, ref UserName);
 
             }
             else
