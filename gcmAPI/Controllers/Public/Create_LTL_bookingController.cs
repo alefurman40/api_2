@@ -318,8 +318,11 @@ namespace gcmAPI.Controllers.Public
                 Models.Public.LTL.Helper public_helper = new Models.Public.LTL.Helper();
                 string content_type = "application/json";
 
-                string sql = string.Concat("INSERT INTO Genera_Booking_2(Booking_request,Booking_Response,PNW) VALUES(",
-                   "'", data, "','", response_string, "','", DLS_PrimaryReferencePNW, "')");
+                string sql = string.Concat("INSERT INTO Genera_Booking_2(Booking_request,Booking_request_escaped,Booking_Response,PNW) VALUES(",
+                   "'", data, "','",
+                   data.Replace("\"", "\\\""), "','",
+                   response_string, "','", 
+                   DLS_PrimaryReferencePNW, "')");
 
                 HelperFuncs.ExecuteNonQuery(AppCodeConstants.connStringAesAPI, ref sql, "Get_LTL_ratesController");
 
