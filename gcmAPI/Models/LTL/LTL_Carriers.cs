@@ -627,7 +627,7 @@ public class LTL_Carriers
             //    // Do nothing
             //}
 
-            if (quoteData.totalUnits == 7)
+            if (quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
             {
                 // Start DLS threads, to get only XPO rate
                 Start_join_LTL_threads("start");
@@ -664,7 +664,7 @@ public class LTL_Carriers
 
             #region Join_LTL_threads
 
-            if (quoteData.totalUnits == 7)
+            if (quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
             {
                 // Join DLS threads, to get only XPO rate
                 Start_join_LTL_threads_if_density_not_low("join");
@@ -5381,7 +5381,8 @@ public class LTL_Carriers
 
         #endregion
 
-        if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits == 7)
+        if (quoteData.username == AppCodeConstants.un_genera && 
+            (quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9))
         {
             oThreadDLS_Genera.Start();
             ltl_threads.Add(oThreadDLS_Genera);
@@ -6361,7 +6362,7 @@ public class LTL_Carriers
 
                 if (quoteData.is_Genera_quote == true)
                 {
-                    if(quoteData.totalUnits == 7)
+                    if(quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
                     {
                         oThreadDLS_Genera = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera));
                         Start_thread(ref oThreadDLS_Genera);
@@ -6402,7 +6403,7 @@ public class LTL_Carriers
 
                 if (quoteData.is_Genera_quote == true)
                 {
-                    if (quoteData.totalUnits == 7)
+                    if (quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
                     {
                         Join_threads();
                     }
