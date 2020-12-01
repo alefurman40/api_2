@@ -375,6 +375,12 @@ namespace gcmAPI.Models.Carriers.DLS
 
         private bool Can_add_carrier_result(dlsPricesheet objCarrier, ref bool foundDLS_CTII)
         {
+            if (objCarrier.CarrierName.StartsWith("TForce"))
+            {
+                return false;
+            }
+
+
             if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
             {
                 if (quoteData.destZip == "11570" && objCarrier.Scac == "CTII")
