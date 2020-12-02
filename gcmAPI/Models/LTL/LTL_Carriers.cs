@@ -249,6 +249,11 @@ public class LTL_Carriers
 
     public SharedLTL.CarriersResult GetRates()
     {
+        // Test abc
+
+        // Test 2 abc
+
+
         #region Testing log request data
 
         DB.Log("test", string.Concat(" subdomain:", quoteData.subdomain,
