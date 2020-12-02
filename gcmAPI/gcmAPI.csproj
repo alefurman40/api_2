@@ -416,9 +416,7 @@
     <None Include="Properties\PublishProfiles\profile1.pubxml" />
     <Content Include="Models\Carriers\DLS\StyleSheet1.css" />
     <Content Include="Models\Carriers\DLS\XMLFile1.xml" />
-    <Content Include="Models\Carriers\DLS\XMLFile2.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Models\Carriers\DLS\XMLFile2.xml" />
     <Content Include="Models\Carriers\UPS\XMLFile1.xml" />
     <Content Include="Models\Carriers\UPS\XMLFile2.xml">
       <SubType>Designer</SubType>
