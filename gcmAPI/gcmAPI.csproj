@@ -288,6 +288,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\Best_Overnite_RateService_2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\com.daytonfreight.www\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -581,6 +586,14 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <None Include="Web References\Best_Overnite_RateService\TQUOTEAPI.wsdl" />
+    <Content Include="Web References\Best_Overnite_RateService_2\getquoteResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\Best_Overnite_RateService_2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\Best_Overnite_RateService_2\TQUOTEAPI.wsdl" />
     <None Include="Web References\Estes_RateWebServ\RateQuoteService.wsdl" />
     <None Include="Web References\Estes_RateWebServ\RateQuoteService.xsd">
       <SubType>Designer</SubType>
@@ -796,6 +809,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>gcmAPI_NewPennRateService_RequestRateQuoteV6Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://tgif.bestovernite.com:10032/web/services/TQUOTEAPIService/TQUOTEAPI%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Best_Overnite_RateService_2\</RelPath>
+      <UpdateFromURL>http://tgif.bestovernite.com:10032/web/services/TQUOTEAPIService/TQUOTEAPI%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>gcmAPI_Best_Overnite_RateService_2_TQUOTEAPI</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://tgif1.bestovernite.com:10010/web/services/TQUOTEAPI%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>

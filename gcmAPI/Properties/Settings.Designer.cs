@@ -12,7 +12,7 @@ namespace gcmAPI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -148,10 +148,20 @@ namespace gcmAPI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:9080/rateQuoteWSV6/services/RequestRateQuoteV6")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webservices.newpenn.com/rateQuoteWSV6/services/RequestRateQuoteV6")]
         public string gcmAPI_NewPennRateService_RequestRateQuoteV6Service {
             get {
                 return ((string)(this["gcmAPI_NewPennRateService_RequestRateQuoteV6Service"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://tgif.bestovernite.com:10032/web/services/TQUOTEAPIService/TQUOTEAPI")]
+        public string gcmAPI_Best_Overnite_RateService_2_TQUOTEAPI {
+            get {
+                return ((string)(this["gcmAPI_Best_Overnite_RateService_2_TQUOTEAPI"]));
             }
         }
     }

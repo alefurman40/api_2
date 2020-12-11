@@ -1,1 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <getquote xmlns="http://tquoteapi.wsbeans.iseries/xsd">
+      <args0>
+        <QUOTE>
+          <ACCESSORIALCOUNT>0</ACCESSORIALCOUNT>
+          <CODAMT>0</CODAMT>
+          <CONSIGNEE>
+            <ADDRESS1>test adddress1</ADDRESS1>
+            <ADDRESS2 />
+            <CITY>San Jose</CITY>
+            <NAME />
+            <STATE>CA</STATE>
+            <ZIP>95119</ZIP>
+          </CONSIGNEE>
+          <IAM>D</IAM>
+          <ITEM>
+            <PALLETS>0</PALLETS>
+            <PIECES>0</PIECES>
+            <WEIGHT>500</WEIGHT>
+            <_CLASS>70</_CLASS>
+          </ITEM>
+          <ITEMCOUNT>1</ITEMCOUNT>
+          <SHIPPER>
+            <ADDRESS1>test adddress1</ADDRESS1>
+            <ADDRESS2 />
+            <CITY>Fontana</CITY>
+            <NAME />
+            <STATE>CA</STATE>
+            <ZIP>92335</ZIP>
+          </SHIPPER>
+        </QUOTE>
+        <SECURITYINFO>
+          <PASSWORD>genera</PASSWORD>
+          <USERNAME>GENERAAPI</USERNAME>
+        </SECURITYINFO>
+      </args0>
+    </getquote>
+  </soap:Body>
+</soap:Envelope>

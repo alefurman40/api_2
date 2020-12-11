@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://tquoteapi.wsbeans.iseries/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="TQUOTEAPI" targetNamespace="http://tquoteapi.wsbeans.iseries/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tquoteapi.wsbeans.iseries/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getquote" type="tns:getquote" />
+      <xs:element name="getquoteResponse" type="tns:getquoteResponse" />
+      <xs:complexType name="getquote">
+        <xs:sequence>
+          <xs:element name="arg0" type="tns:getquoteInput" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getquoteInput">
+        <xs:sequence>
+          <xs:element name="QUOTE" type="tns:quoteds" />
+          <xs:element name="RATECOUNT" type="xs:int" />
+          <xs:element maxOccurs="unbounded" name="RATEITEM" type="tns:rateitemds" />
+          <xs:element name="RATING" type="tns:ratingds" />
+          <xs:element name="SECURITYINFO" type="tns:securityinfods" />
+          <xs:element name="SERVICE" type="tns:serviceds" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="quoteds">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ACCESSORIAL" type="tns:accessorialds" />
+          <xs:element name="ACCESSORIALCOUNT" type="xs:int" />
+          <xs:element name="BOL" type="xs:string" />
+          <xs:element name="CODAMT" type="xs:decimal" />
+          <xs:element name="CODTERMS" type="xs:string" />
+          <xs:element name="CODWHO" type="xs:string" />
+          <xs:element name="CONSIGNEE" type="tns:custinfo" />
+          <xs:element name="IAM" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="ITEM" type="tns:itemds" />
+          <xs:element name="ITEMCOUNT" type="xs:int" />
+          <xs:element name="PO" type="xs:string" />
+          <xs:element name="PPDCOL" type="xs:string" />
+          <xs:element name="SHIPPER" type="tns:custinfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accessorialds">
+        <xs:sequence>
+          <xs:element name="CODE" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="custinfo">
+        <xs:sequence>
+          <xs:element name="ADDRESS1" type="xs:string" />
+          <xs:element name="ADDRESS2" type="xs:string" />
+          <xs:element name="CITY" type="xs:string" />
+          <xs:element name="NAME" type="xs:string" />
+          <xs:element name="STATE" type="xs:string" />
+          <xs:element name="ZIP" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemds">
+        <xs:sequence>
+          <xs:element name="DESCRIPTION" type="xs:string" />
+          <xs:element name="HAZ" type="xs:string" />
+          <xs:element name="PALLETS" type="xs:decimal" />
+          <xs:element name="PIECES" type="xs:decimal" />
+          <xs:element name="WEIGHT" type="xs:decimal" />
+          <xs:element name="_CLASS" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rateitemds">
+        <xs:sequence>
+          <xs:element name="ACCCODE" type="xs:string" />
+          <xs:element name="AMOUNT" type="xs:decimal" />
+          <xs:element name="DESCRIPTION" type="xs:string" />
+          <xs:element name="HAZ" type="xs:string" />
+          <xs:element name="PALLETS" type="xs:decimal" />
+          <xs:element name="PIECES" type="xs:decimal" />
+          <xs:element name="RATE" type="xs:decimal" />
+          <xs:element name="WEIGHT" type="xs:decimal" />
+          <xs:element name="_CLASS" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ratingds">
+        <xs:sequence>
+          <xs:element name="AMOUNT" type="xs:decimal" />
+          <xs:element name="BOL" type="xs:string" />
+          <xs:element name="CODAMT" type="xs:decimal" />
+          <xs:element name="CODTERMS" type="xs:string" />
+          <xs:element name="CODWHO" type="xs:string" />
+          <xs:element name="CONSIGNEE" type="tns:custinfo" />
+          <xs:element name="DISCLAIMER" type="xs:string" />
+          <xs:element name="ERRORCODE" type="xs:string" />
+          <xs:element name="FUEL" type="xs:decimal" />
+          <xs:element name="PO" type="xs:string" />
+          <xs:element name="PPDCOL" type="xs:string" />
+          <xs:element name="QUOTENUMBER" type="xs:decimal" />
+          <xs:element name="SHIPPER" type="tns:custinfo" />
+          <xs:element name="TOTALACCESSORIAL" type="xs:decimal" />
+          <xs:element name="TOTALFREIGHT" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="securityinfods">
+        <xs:sequence>
+          <xs:element name="PASSWORD" type="xs:string" />
+          <xs:element name="USERNAME" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="serviceds">
+        <xs:sequence>
+          <xs:element name="DAYS" type="xs:decimal" />
+          <xs:element name="DESTINATION" type="tns:serviceinfo" />
+          <xs:element name="ERRORCODE" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="ESTDELIVERY" type="xs:string" />
+          <xs:element name="ORIGIN" type="tns:serviceinfo" />
+          <xs:element maxOccurs="unbounded" name="SHIPDATE" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="serviceinfo">
+        <xs:sequence>
+          <xs:element name="DIRIND" type="xs:string" />
+          <xs:element name="FRI" type="xs:string" />
+          <xs:element name="MON" type="xs:string" />
+          <xs:element name="PHONE" type="xs:string" />
+          <xs:element name="SAT" type="xs:string" />
+          <xs:element name="SUN" type="xs:string" />
+          <xs:element name="TERMINAL" type="xs:string" />
+          <xs:element name="THU" type="xs:string" />
+          <xs:element name="TUE" type="xs:string" />
+          <xs:element name="WED" type="xs:string" />
+          <xs:element name="ZIP" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getquoteResponse">
+        <xs:sequence>
+          <xs:element name="return" type="tns:getquoteResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getquoteResult">
+        <xs:sequence>
+          <xs:element name="RATECOUNT" type="xs:int" />
+          <xs:element maxOccurs="unbounded" name="RATEITEM" type="tns:rateitemds" />
+          <xs:element name="RATING" type="tns:ratingds" />
+          <xs:element name="SERVICE" type="tns:serviceds" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="getquoteResponse">
+    <part name="parameters" element="tns:getquoteResponse" />
+  </message>
+  <message name="getquote">
+    <part name="parameters" element="tns:getquote" />
+  </message>
+  <portType name="TQUOTEAPIServices">
+    <operation name="getquote">
+      <input wsam:Action="http://tquoteapi.wsbeans.iseries/TQUOTEAPIServices/getquoteRequest" message="tns:getquote" />
+      <output wsam:Action="http://tquoteapi.wsbeans.iseries/TQUOTEAPIServices/getquoteResponse" message="tns:getquoteResponse" />
+    </operation>
+  </portType>
+  <binding name="TQUOTEAPIServicesPortBinding" type="tns:TQUOTEAPIServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getquote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TQUOTEAPI">
+    <port name="TQUOTEAPIServicesPort" binding="tns:TQUOTEAPIServicesPortBinding">
+      <soap:address location="http://tgif.bestovernite.com:10032/web/services/TQUOTEAPIService/TQUOTEAPI" />
+    </port>
+  </service>
+</definitions>

@@ -39,7 +39,10 @@
       <Value Profile="(Default)">http://tgif1.bestovernite.com:10010/web/services/TQUOTEAPI.TQUOTEAPIHttpSoap11Endpoint/</Value>
     </Setting>
     <Setting Name="gcmAPI_NewPennRateService_RequestRateQuoteV6Service" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:9080/rateQuoteWSV6/services/RequestRateQuoteV6</Value>
+      <Value Profile="(Default)">http://www.webservices.newpenn.com/rateQuoteWSV6/services/RequestRateQuoteV6</Value>
+    </Setting>
+    <Setting Name="gcmAPI_Best_Overnite_RateService_2_TQUOTEAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://tgif.bestovernite.com:10032/web/services/TQUOTEAPIService/TQUOTEAPI</Value>
     </Setting>
   </Settings>
 </SettingsFile>
