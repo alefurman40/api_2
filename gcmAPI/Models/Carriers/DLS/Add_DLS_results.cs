@@ -383,6 +383,11 @@ namespace gcmAPI.Models.Carriers.DLS
 
             if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
             {
+                if (objCarrier.CarrierName=="Fedex LTL Economy")
+                {
+                    return false;
+                }
+
                 if (quoteData.destZip == "11570" && objCarrier.Scac == "CTII")
                     return false;
 

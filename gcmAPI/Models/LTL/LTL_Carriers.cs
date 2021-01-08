@@ -23,7 +23,7 @@ using gcmAPI.Models.Customers;
 //using static gcmAPI.Models.Utilities.Mail;
 
 #endregion
-
+    
 public class LTL_Carriers
 {
 
@@ -7176,6 +7176,18 @@ public class LTL_Carriers
                     continue;
                 }
 
+                if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera) 
+                {
+                    if (P44_results[i].carrier_name.Contains("FedEx"))
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    // Do nothing
+                }
+                
                 GCMRateQuote objQuote = new GCMRateQuote
                 {
                     BookingKey = "#1#",
