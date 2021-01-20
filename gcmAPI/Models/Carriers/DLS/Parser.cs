@@ -244,7 +244,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
                 else
                 {
-                    DB.Log("CarrierName, total not 6to9", pSheet.CarrierName + " " + pSheet.Total);
+                    DB.Log("CarrierName, total not 6to9 units " + quoteData.totalUnits.ToString(), pSheet.CarrierName + " " + pSheet.Total);
                     // Do nothing
                 }
 
