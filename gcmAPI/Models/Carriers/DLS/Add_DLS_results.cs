@@ -94,8 +94,8 @@ namespace gcmAPI.Models.Carriers.DLS
 
             foreach (dlsPricesheet objCarrier in dlsPricesheets)
             {
-                //DB.LogGenera("CTII test", "CTII test", objCarrier.CarrierName + " " + objCarrier.ContractName + " " + 
-                //    objCarrier.Total.ToString());
+                DB.LogGenera("XPO test", "XPO test", objCarrier.CarrierName + " " + objCarrier.ContractName + " " +
+                    objCarrier.Total.ToString());
 
                 can_add_carrier_result = Can_add_carrier_result(objCarrier, ref foundDLS_CTII);
 

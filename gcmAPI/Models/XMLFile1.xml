@@ -1,112 +1,29 @@
 ﻿<ArrayOfPricesheetViewModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy">
   <PricesheetViewModel>
-    <AccessorialTotal>26.2579456</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(32740883631,3840,0)</CarrierId>
-    <CarrierName>UPS Freight</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>232.3712</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>232.3712</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>26.2579456</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>200.32</Quantity>
-        <Rate>26.2579456</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199063111751,3023,0)</ContractId>
-    <ContractName>1CRM Cost UPGF</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>001218208</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>LIBERTY MUTUAL INSURANCE CO NATL INS NORTHEAST</Company>
-        <ContactName>LIBERTY MUTUAL INSURANCE</ContactName>
-        <ContactPhone>7818918900</ContactPhone>
-        <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>LIBERTY MUTUAL INSURANCE CO NATL INS NORTHEAST</Company>
-        <ContactName>LIBERTY MUTUAL INSURANCE</ContactName>
-        <ContactPhone>7818918900</ContactPhone>
-        <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>LIBERTY MUTUAL INSURANCE CO NATL INS NORTHEAST</Company>
-        <ContactName>LIBERTY MUTUAL INSURANCE</ContactName>
-        <ContactPhone>7818918900</ContactPhone>
-        <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>UPGF</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>232.3712</SubTotal>
-    <Total>258.6291456</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>103.0626128</AccessorialTotal>
+    <AccessorialTotal>137.6839728</AccessorialTotal>
     <AdjustedBenchmark>0</AdjustedBenchmark>
     <CarrierId>(143945,3840,0)</CarrierId>
     <CarrierName>Fedex LTL Priority</CarrierName>
     <ChargeModel>NORMALIZED_SMC</ChargeModel>
     <Charges>
       <RateChargeViewModel>
-        <Amount>486.1444</Amount>
+        <Amount>565.5928</Amount>
         <Description>Total Line Haul</Description>
         <DimWeight>0</DimWeight>
         <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
+        <FakFreightClass>70</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>486.1444</Rate>
+        <Quantity>17.99</Quantity>
+        <Rate>565.5928</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ITEM</Type>
-        <Weight>738</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>103.0626128</Amount>
+        <Amount>127.8239728</Amount>
         <Description>Fuel Surcharge</Description>
         <DimWeight>0</DimWeight>
         <EdiCode>405</EdiCode>
@@ -115,10 +32,26 @@
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>419.09</Quantity>
-        <Rate>103.0626128</Rate>
+        <Quantity>487.58</Quantity>
+        <Rate>127.8239728</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>9.86</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>9.86</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
         <Weight>0</Weight>
       </RateChargeViewModel>
     </Charges>
@@ -126,7 +59,7 @@
     <ContractName>1PSI Cost FXFE Genera Corp ASP</ContractName>
     <CurrencyCode>USD</CurrencyCode>
     <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
+    <Distance>2008</Distance>
     <Id>2200949</Id>
     <InsuranceTypes>
       <InsuranceTypeViewModel>
@@ -160,36 +93,36 @@
     <OriginService>D</OriginService>
     <Scac>FXFE</Scac>
     <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>486.1444</SubTotal>
-    <Total>589.2070128</Total>
+    <ServiceDays>3</ServiceDays>
+    <SubTotal>565.5928</SubTotal>
+    <Total>703.2767728</Total>
     <Type>Cost</Type>
   </PricesheetViewModel>
   <PricesheetViewModel>
-    <AccessorialTotal>100.4853712</AccessorialTotal>
+    <AccessorialTotal>134.4069728</AccessorialTotal>
     <AdjustedBenchmark>0</AdjustedBenchmark>
     <CarrierId>(2631944531,3840,0)</CarrierId>
     <CarrierName>Fedex LTL Economy</CarrierName>
     <ChargeModel>NORMALIZED_SMC</ChargeModel>
     <Charges>
       <RateChargeViewModel>
-        <Amount>473.9876</Amount>
+        <Amount>551.0928</Amount>
         <Description>Total Line Haul</Description>
         <DimWeight>0</DimWeight>
         <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
+        <FakFreightClass>70</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>473.9876</Rate>
+        <Quantity>17.99</Quantity>
+        <Rate>551.0928</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ITEM</Type>
-        <Weight>738</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>100.4853712</Amount>
+        <Amount>124.5469728</Amount>
         <Description>Fuel Surcharge</Description>
         <DimWeight>0</DimWeight>
         <EdiCode>405</EdiCode>
@@ -198,10 +131,26 @@
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>408.61</Quantity>
-        <Rate>100.4853712</Rate>
+        <Quantity>475.08</Quantity>
+        <Rate>124.5469728</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>9.86</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>9.86</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
         <Weight>0</Weight>
       </RateChargeViewModel>
     </Charges>
@@ -209,7 +158,7 @@
     <ContractName>1PSI Cost FXNL Genera Corp ASP</ContractName>
     <CurrencyCode>USD</CurrencyCode>
     <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
+    <Distance>2008</Distance>
     <Id>1213139</Id>
     <InsuranceTypes>
       <InsuranceTypeViewModel>
@@ -243,317 +192,36 @@
     <OriginService>D</OriginService>
     <Scac>FXNL</Scac>
     <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>473.9876</SubTotal>
-    <Total>574.4729712</Total>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>551.0928</SubTotal>
+    <Total>685.4997728</Total>
     <Type>Cost</Type>
   </PricesheetViewModel>
   <PricesheetViewModel>
-    <AccessorialTotal>140.14714</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(142691,3840,0)</CarrierId>
-    <CarrierName>SAIA</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>274.978</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>274.978</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>35.74714</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>237.05</Quantity>
-        <Rate>35.74714</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>104.4</Amount>
-        <Description>High Cost Delivery Area</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>MSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>104.4</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(198770193768,3023,0)</ContractId>
-    <ContractName>1CRM Cost SAIA</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>1020182</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>SAIA</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>274.978</SubTotal>
-    <Total>415.12514</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>165.783575</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(8210554331,3840,0)</CarrierId>
-    <CarrierName>FORWARD AIR, INC.</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>265.5124</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>265.5124</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>49.783575</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>228.89</Quantity>
-        <Rate>49.783575</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>116</Amount>
-        <Description>High Cost Delivery Area</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>MSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>116</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199362842491,3023,0)</ContractId>
-    <ContractName>1CRM Cost FWDA</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>1211821</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>FWDA</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>265.5124</SubTotal>
-    <Total>431.295975</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>24.8829203539823</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(144023,3840,0)</CarrierId>
-    <CarrierName>New Penn Motor Express, Inc.</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>191.40707964601771</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>191.40707964601771</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>24.8829203539823</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>160.43</Quantity>
-        <Rate>24.8829203539823</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199763874205,3023,0)</ContractId>
-    <ContractName>1CRM Cost NPME D 1 of 2</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>1014904</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>NPME</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>191.40707964601771</SubTotal>
-    <Total>216.29</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>132.01612</AccessorialTotal>
+    <AccessorialTotal>78.141428</AccessorialTotal>
     <AdjustedBenchmark>0</AdjustedBenchmark>
     <CarrierId>(29269919131,3840,0)</CarrierId>
     <CarrierName>YRC Freight</CarrierName>
     <ChargeModel>NORMALIZED_SMC</ChargeModel>
     <Charges>
       <RateChargeViewModel>
-        <Amount>306.124</Amount>
+        <Amount>425.5576</Amount>
         <Description>Total Line Haul</Description>
         <DimWeight>0</DimWeight>
         <EdiCode></EdiCode>
         <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
+        <FreightClass>92.5</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>306.124</Rate>
+        <Quantity>17.99</Quantity>
+        <Rate>425.5576</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ITEM</Type>
-        <Weight>738</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>39.79612</Amount>
+        <Amount>65.961428</Amount>
         <Description>Fuel Surcharge</Description>
         <DimWeight>0</DimWeight>
         <EdiCode>405</EdiCode>
@@ -562,34 +230,34 @@
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>263.9</Quantity>
-        <Rate>39.79612</Rate>
+        <Quantity>366.86</Quantity>
+        <Rate>65.961428</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL_FUEL</Type>
         <Weight>0</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>92.22</Amount>
-        <Description>High Cost Delivery Area</Description>
+        <Amount>12.18</Amount>
+        <Description>CA High Cost Fee</Description>
         <DimWeight>0</DimWeight>
-        <EdiCode>MSC</EdiCode>
+        <EdiCode>CAP</EdiCode>
         <FakFreightClass>0</FakFreightClass>
         <FreightClass>0</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
         <Quantity>0</Quantity>
-        <Rate>92.22</Rate>
+        <Rate>12.18</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
     </Charges>
     <ContractId>(199783888458,3023,0)</ContractId>
     <ContractName>1PSI Cost RDWY</ContractName>
     <CurrencyCode>USD</CurrencyCode>
     <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
+    <Distance>2008</Distance>
     <Id>2006319</Id>
     <InsuranceTypes>
       <InsuranceTypeViewModel>
@@ -623,36 +291,36 @@
     <OriginService>D</OriginService>
     <Scac>RDWY</Scac>
     <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>306.124</SubTotal>
-    <Total>438.14012</Total>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>425.5576</SubTotal>
+    <Total>503.699028</Total>
     <Type>Cost</Type>
   </PricesheetViewModel>
   <PricesheetViewModel>
-    <AccessorialTotal>87.60436</AccessorialTotal>
+    <AccessorialTotal>158.403104</AccessorialTotal>
     <AdjustedBenchmark>0</AdjustedBenchmark>
     <CarrierId>(33514152931,3840,0)</CarrierId>
     <CarrierName>Estes Express Lines</CarrierName>
     <ChargeModel>NORMALIZED_SMC</ChargeModel>
     <Charges>
       <RateChargeViewModel>
-        <Amount>361.572</Amount>
+        <Amount>970.3168</Amount>
         <Description>Total Line Haul</Description>
         <DimWeight>0</DimWeight>
         <EdiCode></EdiCode>
-        <FakFreightClass>85</FakFreightClass>
-        <FreightClass>175</FreightClass>
+        <FakFreightClass>70</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>361.572</Rate>
+        <Quantity>17.99</Quantity>
+        <Rate>970.3168</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ITEM</Type>
-        <Weight>738</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>47.00436</Amount>
+        <Amount>150.399104</Amount>
         <Description>Fuel Surcharge</Description>
         <DimWeight>0</DimWeight>
         <EdiCode>405</EdiCode>
@@ -661,34 +329,34 @@
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>311.7</Quantity>
-        <Rate>47.00436</Rate>
+        <Quantity>836.48</Quantity>
+        <Rate>150.399104</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL_FUEL</Type>
         <Weight>0</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>40.6</Amount>
-        <Description>High Cost Area Surcharge</Description>
+        <Amount>8.004</Amount>
+        <Description>CA High Cost Fee</Description>
         <DimWeight>0</DimWeight>
-        <EdiCode>MSC</EdiCode>
+        <EdiCode>CAP</EdiCode>
         <FakFreightClass>0</FakFreightClass>
         <FreightClass>0</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
         <Quantity>0</Quantity>
-        <Rate>40.6</Rate>
+        <Rate>8.004</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL</Type>
-        <Weight>738</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
     </Charges>
     <ContractId>(199841265830,3023,0)</ContractId>
     <ContractName>1PSI Cost EXLA Genera Corp ASP</ContractName>
     <CurrencyCode>USD</CurrencyCode>
     <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
+    <Distance>2008</Distance>
     <Id>1020011</Id>
     <InsuranceTypes>
       <InsuranceTypeViewModel>
@@ -722,36 +390,36 @@
     <OriginService>D</OriginService>
     <Scac>EXLA</Scac>
     <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>361.572</SubTotal>
-    <Total>449.17636</Total>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>970.3168</SubTotal>
+    <Total>1128.719904</Total>
     <Type>Cost</Type>
   </PricesheetViewModel>
   <PricesheetViewModel>
-    <AccessorialTotal>27.80504424778761</AccessorialTotal>
+    <AccessorialTotal>139.076576</AccessorialTotal>
     <AdjustedBenchmark>0</AdjustedBenchmark>
     <CarrierId>(143899,3840,0)</CarrierId>
     <CarrierName>XPO Logistics Freight, Inc.</CarrierName>
     <ChargeModel>NORMALIZED_SMC</ChargeModel>
     <Charges>
       <RateChargeViewModel>
-        <Amount>213.88495575221239</Amount>
+        <Amount>841.1392</Amount>
         <Description>Total Line Haul</Description>
         <DimWeight>0</DimWeight>
         <EdiCode></EdiCode>
-        <FakFreightClass>85</FakFreightClass>
-        <FreightClass>175</FreightClass>
+        <FakFreightClass>70</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>213.88495575221239</Rate>
+        <Quantity>17.99</Quantity>
+        <Rate>841.1392</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ITEM</Type>
-        <Weight>738</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>27.80504424778761</Amount>
+        <Amount>130.376576</Amount>
         <Description>Fuel Surcharge</Description>
         <DimWeight>0</DimWeight>
         <EdiCode>405</EdiCode>
@@ -760,18 +428,34 @@
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>182.91</Quantity>
-        <Rate>27.80504424778761</Rate>
+        <Quantity>725.12</Quantity>
+        <Rate>130.376576</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL_FUEL</Type>
         <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>8.7</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>8.7</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
     </Charges>
     <ContractId>(199920943727,3023,0)</ContractId>
     <ContractName>1PSI Cost CNWY Genera Corp ASP</ContractName>
     <CurrencyCode>USD</CurrencyCode>
     <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
+    <Distance>2008</Distance>
     <Id>1225092</Id>
     <InsuranceTypes>
       <InsuranceTypeViewModel>
@@ -805,384 +489,36 @@
     <OriginService>D</OriginService>
     <Scac>CNWY</Scac>
     <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>213.88495575221239</SubTotal>
-    <Total>241.69</Total>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>841.1392</SubTotal>
+    <Total>980.215776</Total>
     <Type>Cost</Type>
   </PricesheetViewModel>
   <PricesheetViewModel>
-    <AccessorialTotal>30.6124</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(39606157931,3840,0)</CarrierId>
-    <CarrierName>RIST Transport LTD dba Howards Express</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>235.48</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>235.48</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>30.6124</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>203</Quantity>
-        <Rate>30.6124</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199978588579,3023,0)</ContractId>
-    <ContractName>1CRM Cost HWEP</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>1224732</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>OLD REPUBLIC INSURANCE COMPANY</Company>
-        <ContactName>REAGAN INSURANCE</ContactName>
-        <ContactPhone>3156732094</ContactPhone>
-        <ExpirationDate>2018-02-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>OLD REPUBLIC INSURANCE COMPANY</Company>
-        <ContactName>REAGAN INSURANCE</ContactName>
-        <ContactPhone>3156732094</ContactPhone>
-        <ExpirationDate>2018-02-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>OLD REPUBLIC INSURANCE COMPANY</Company>
-        <ContactName>REAGAN INSURANCE</ContactName>
-        <ContactPhone>3156732094</ContactPhone>
-        <ExpirationDate>2018-02-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>HWEP</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>235.48</SubTotal>
-    <Total>266.0924</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>54.410148</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(195279637052,3840,0)</CarrierId>
-    <CarrierName>Ward Trucking, Llc</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>418.5396</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>418.5396</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>54.410148</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>360.81</Quantity>
-        <Rate>54.410148</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199991447218,3023,0)</ContractId>
-    <ContractName>1CRM Cost WARD 1 of 2 D</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>1020240</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY CO OF CT</Company>
-        <ContactName>NEXTIER INSURANCE SERVICES</ContactName>
-        <ContactPhone>7247766077</ContactPhone>
-        <ExpirationDate>2019-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY CO OF CT</Company>
-        <ContactName>NEXTIER INSURANCE SERVICES</ContactName>
-        <ContactPhone>7247766077</ContactPhone>
-        <ExpirationDate>2019-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY CO OF CT</Company>
-        <ContactName>NEXTIER INSURANCE SERVICES</ContactName>
-        <ContactPhone>7247766077</ContactPhone>
-        <ExpirationDate>2019-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>WARD</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>418.5396</SubTotal>
-    <Total>472.949748</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>80.738436</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(33514152931,3840,0)</CarrierId>
-    <CarrierName>Estes Express Lines</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>308.7572</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>308.7572</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>40.138436</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>266.17</Quantity>
-        <Rate>40.138436</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>40.6</Amount>
-        <Description>High Cost Area Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>MSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>40.6</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(200101651560,3023,0)</ContractId>
-    <ContractName>1CRM Cost EXLA</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>1020011</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>10000000</Amount>
-        <Company>NATIONAL UNION FIRE INS CO OF PITTSBURGH</Company>
-        <ContactName>AON RISK SERVICES SOUTH INC</ContactName>
-        <ContactPhone>8662837122</ContactPhone>
-        <ExpirationDate>2018-05-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>10000000</Amount>
-        <Company>NATIONAL UNION FIRE INS CO OF PITTSBURGH</Company>
-        <ContactName>AON RISK SERVICES SOUTH INC</ContactName>
-        <ContactPhone>8662837122</ContactPhone>
-        <ExpirationDate>2018-05-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>10000000</Amount>
-        <Company>NATIONAL UNION FIRE INS CO OF PITTSBURGH</Company>
-        <ContactName>AON RISK SERVICES SOUTH INC</ContactName>
-        <ContactPhone>8662837122</ContactPhone>
-        <ExpirationDate>2018-05-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>EXLA</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>308.7572</SubTotal>
-    <Total>389.495636</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>45.02888</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(141129559431,3840,0)</CarrierId>
-    <CarrierName>A DUIE PYLE INC </CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>346.376</Amount>
-        <Description>ITEMNAME</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>175</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>346.376</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>738</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>45.02888</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>298.6</Quantity>
-        <Rate>45.02888</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199864227091,3023,0)</ContractId>
-    <ContractName>1CRM Cost PYLE</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
-    <Id>1239880</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>2000000</Amount>
-        <Company>United States Fire Insurance Company</Company>
-        <ContactName>Aon Risk Services Southwest, Inc</ContactName>
-        <ContactPhone>5013749300</ContactPhone>
-        <ExpirationDate>2020-10-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>2000000</Amount>
-        <Company>United States Fire Insurance Company</Company>
-        <ContactName>Aon Risk Services Southwest, Inc</ContactName>
-        <ContactPhone>5013749300</ContactPhone>
-        <ExpirationDate>2020-10-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>2000000</Amount>
-        <Company>United States Fire Insurance Company</Company>
-        <ContactName>Aon Risk Services Southwest, Inc</ContactName>
-        <ContactPhone>5013749300</ContactPhone>
-        <ExpirationDate>2020-10-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>PYLE</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>346.376</SubTotal>
-    <Total>391.40488</Total>
-    <Type>Cost</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>19.741830863121187</AccessorialTotal>
+    <AccessorialTotal>142.0727864</AccessorialTotal>
     <AdjustedBenchmark>0</AdjustedBenchmark>
     <CarrierId>(189647073707,3840,0)</CarrierId>
     <CarrierName>Central Transport</CarrierName>
     <ChargeModel>NORMALIZED_SMC</ChargeModel>
     <Charges>
       <RateChargeViewModel>
-        <Amount>134.29816913687881</Amount>
+        <Amount>828.40239999999994</Amount>
         <Description>Total Line Haul</Description>
         <DimWeight>0</DimWeight>
         <EdiCode></EdiCode>
-        <FakFreightClass>85</FakFreightClass>
-        <FreightClass>175</FreightClass>
+        <FakFreightClass>70</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>7.38</Quantity>
-        <Rate>134.29816913687881</Rate>
+        <Quantity>17.99</Quantity>
+        <Rate>828.40239999999994</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ITEM</Type>
-        <Weight>738</Weight>
+        <Weight>1799</Weight>
       </RateChargeViewModel>
       <RateChargeViewModel>
-        <Amount>19.741830863121187</Amount>
+        <Amount>133.3727864</Amount>
         <Description>Fuel Surcharge</Description>
         <DimWeight>0</DimWeight>
         <EdiCode>405</EdiCode>
@@ -1191,18 +527,34 @@
         <IsMax>false</IsMax>
         <IsMin>false</IsMin>
         <IsNontaxable>false</IsNontaxable>
-        <Quantity>103.78</Quantity>
-        <Rate>19.741830863121187</Rate>
+        <Quantity>714.14</Quantity>
+        <Rate>133.3727864</Rate>
         <RateQualifier>FR</RateQualifier>
         <Type>ACCESSORIAL_FUEL</Type>
         <Weight>0</Weight>
       </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>8.7</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>8.7</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
     </Charges>
-    <ContractId>(199182141666,3023,0)</ContractId>
+    <ContractId>(200405696092,3023,0)</ContractId>
     <ContractName>1PSI Cost CTII Genera Corp ASP</ContractName>
     <CurrencyCode>USD</CurrencyCode>
     <DestinationService>D</DestinationService>
-    <Distance>57</Distance>
+    <Distance>2008</Distance>
     <Id>1211796</Id>
     <InsuranceTypes>
       <InsuranceTypeViewModel>
@@ -1231,14 +583,640 @@
       </InsuranceTypeViewModel>
     </InsuranceTypes>
     <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>true</IsSelected>
+    <IsSelected>false</IsSelected>
     <Mode>LTL</Mode>
     <OriginService>D</OriginService>
     <Scac>CTII</Scac>
     <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>134.29816913687881</SubTotal>
-    <Total>154.04</Total>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>828.40239999999994</SubTotal>
+    <Total>970.4751864</Total>
+    <Type>Cost</Type>
+  </PricesheetViewModel>
+  <PricesheetViewModel>
+    <AccessorialTotal>85.452908</AccessorialTotal>
+    <AdjustedBenchmark>0</AdjustedBenchmark>
+    <CarrierId>(32740883631,3840,0)</CarrierId>
+    <CarrierName>UPS Freight</CarrierName>
+    <ChargeModel>NORMALIZED_SMC</ChargeModel>
+    <Charges>
+      <RateChargeViewModel>
+        <Amount>511.676</Amount>
+        <Description>Total Line Haul</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode></EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>17.99</Quantity>
+        <Rate>511.676</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ITEM</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>68.052908</Amount>
+        <Description>Fuel Surcharge</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>405</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>441.1</Quantity>
+        <Rate>68.052908</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>17.4</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>17.4</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+    </Charges>
+    <ContractId>(200518377007,3023,0)</ContractId>
+    <ContractName>1CRM Cost UPGF</ContractName>
+    <CurrencyCode>USD</CurrencyCode>
+    <DestinationService>D</DestinationService>
+    <Distance>2008</Distance>
+    <Id>1218208</Id>
+    <InsuranceTypes>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>Liberty Mutual Fire Insurance Company</Company>
+        <ContactName>Liberty Mutual Insurance Co</ContactName>
+        <ContactPhone>7158706376</ContactPhone>
+        <ExpirationDate>2021-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>Liberty Mutual Fire Insurance Company</Company>
+        <ContactName>Liberty Mutual Insurance Co</ContactName>
+        <ContactPhone>7158706376</ContactPhone>
+        <ExpirationDate>2021-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>Liberty Mutual Fire Insurance Company</Company>
+        <ContactName>Liberty Mutual Insurance Co</ContactName>
+        <ContactPhone>7158706376</ContactPhone>
+        <ExpirationDate>2021-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+    </InsuranceTypes>
+    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
+    <IsSelected>false</IsSelected>
+    <Mode>LTL</Mode>
+    <OriginService>D</OriginService>
+    <Scac>UPGF</Scac>
+    <Service>LTL</Service>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>511.676</SubTotal>
+    <Total>597.128908</Total>
+    <Type>Cost</Type>
+  </PricesheetViewModel>
+  <PricesheetViewModel>
+    <AccessorialTotal>104.815222</AccessorialTotal>
+    <AdjustedBenchmark>0</AdjustedBenchmark>
+    <CarrierId>(144077,3840,0)</CarrierId>
+    <CarrierName>R &amp; L Carriers, Inc.</CarrierName>
+    <ChargeModel>NORMALIZED_SMC</ChargeModel>
+    <Charges>
+      <RateChargeViewModel>
+        <Amount>608.8724</Amount>
+        <Description>Total Line Haul</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode></EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>17.99</Quantity>
+        <Rate>608.8724</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ITEM</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>94.375222</Amount>
+        <Description>Fuel Surcharge</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>405</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>524.89</Quantity>
+        <Rate>94.375222</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>10.44</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>10.44</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+    </Charges>
+    <ContractId>(200560731745,3023,0)</ContractId>
+    <ContractName>1CRM Cost RNLO</ContractName>
+    <CurrencyCode>USD</CurrencyCode>
+    <DestinationService>D</DestinationService>
+    <Distance>2008</Distance>
+    <Id>1048753</Id>
+    <InsuranceTypes>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>PROTECTIVE INSURANCE COMPANY</Company>
+        <ContactName>BALDWIN &amp; LYONS INC</ContactName>
+        <ContactPhone>8002316024</ContactPhone>
+        <ExpirationDate>2017-10-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>PROTECTIVE INSURANCE COMPANY</Company>
+        <ContactName>BALDWIN &amp; LYONS INC</ContactName>
+        <ContactPhone>8002316024</ContactPhone>
+        <ExpirationDate>2017-10-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>PROTECTIVE INSURANCE COMPANY</Company>
+        <ContactName>BALDWIN &amp; LYONS INC</ContactName>
+        <ContactPhone>8002316024</ContactPhone>
+        <ExpirationDate>2017-10-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+    </InsuranceTypes>
+    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
+    <IsSelected>false</IsSelected>
+    <Mode>LTL</Mode>
+    <OriginService>D</OriginService>
+    <Scac>RNLO</Scac>
+    <Service>LTL</Service>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>608.8724</SubTotal>
+    <Total>713.687622</Total>
+    <Type>Cost</Type>
+  </PricesheetViewModel>
+  <PricesheetViewModel>
+    <AccessorialTotal>360.049152</AccessorialTotal>
+    <AdjustedBenchmark>0</AdjustedBenchmark>
+    <CarrierId>(8210554331,3840,0)</CarrierId>
+    <CarrierName>FORWARD AIR, INC.</CarrierName>
+    <ChargeModel>NORMALIZED_SMC</ChargeModel>
+    <Charges>
+      <RateChargeViewModel>
+        <Amount>1597.0416</Amount>
+        <Description>Total Line Haul</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode></EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>17.99</Quantity>
+        <Rate>1597.0416</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ITEM</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>351.349152</Amount>
+        <Description>Fuel Surcharge</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>405</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>1376.76</Quantity>
+        <Rate>351.349152</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>8.7</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>8.7</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+    </Charges>
+    <ContractId>(200725867076,3023,0)</ContractId>
+    <ContractName>1CRM Cost FWDA</ContractName>
+    <CurrencyCode>USD</CurrencyCode>
+    <DestinationService>D</DestinationService>
+    <Distance>2008</Distance>
+    <Id>1211821</Id>
+    <InsuranceTypes>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+    </InsuranceTypes>
+    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
+    <IsSelected>false</IsSelected>
+    <Mode>LTL</Mode>
+    <OriginService>D</OriginService>
+    <Scac>FWDA</Scac>
+    <Service>LTL</Service>
+    <ServiceDays>3</ServiceDays>
+    <SubTotal>1597.0416</SubTotal>
+    <Total>1957.090752</Total>
+    <Type>Cost</Type>
+  </PricesheetViewModel>
+  <PricesheetViewModel>
+    <AccessorialTotal>132.922776</AccessorialTotal>
+    <AdjustedBenchmark>0</AdjustedBenchmark>
+    <CarrierId>(144090,3840,0)</CarrierId>
+    <CarrierName>Roadrunner Transportation Services, Inc</CarrierName>
+    <ChargeModel>NORMALIZED_SMC</ChargeModel>
+    <Charges>
+      <RateChargeViewModel>
+        <Amount>387.5792</Amount>
+        <Description>Total Line Haul</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode></EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>17.99</Quantity>
+        <Rate>387.5792</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ITEM</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>60.074776</Amount>
+        <Description>Fuel Surcharge</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>405</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>334.12</Quantity>
+        <Rate>60.074776</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>29</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>29</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>43.848</Amount>
+        <Description>Linehaul Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>MSC</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>43.848</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+    </Charges>
+    <ContractId>(200783906474,3023,0)</ContractId>
+    <ContractName>1CRM Cost RDFS</ContractName>
+    <CurrencyCode>USD</CurrencyCode>
+    <DestinationService>D</DestinationService>
+    <Distance>2008</Distance>
+    <Id>1213191</Id>
+    <InsuranceTypes>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>VELOCITY INSURANCE COMPANY, A RISK RETENTION GROU</Company>
+        <ContactName>HNI RISK SERVICES</ContactName>
+        <ContactPhone>2627823940</ContactPhone>
+        <ExpirationDate>2018-08-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>VELOCITY INSURANCE COMPANY, A RISK RETENTION GROU</Company>
+        <ContactName>HNI RISK SERVICES</ContactName>
+        <ContactPhone>2627823940</ContactPhone>
+        <ExpirationDate>2018-08-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>1000000</Amount>
+        <Company>VELOCITY INSURANCE COMPANY, A RISK RETENTION GROU</Company>
+        <ContactName>HNI RISK SERVICES</ContactName>
+        <ContactPhone>2627823940</ContactPhone>
+        <ExpirationDate>2018-08-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+    </InsuranceTypes>
+    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
+    <IsSelected>false</IsSelected>
+    <Mode>LTL</Mode>
+    <OriginService>D</OriginService>
+    <Scac>RDFS</Scac>
+    <Service>LTL</Service>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>387.5792</SubTotal>
+    <Total>520.501976</Total>
+    <Type>Cost</Type>
+  </PricesheetViewModel>
+  <PricesheetViewModel>
+    <AccessorialTotal>159.653236</AccessorialTotal>
+    <AdjustedBenchmark>0</AdjustedBenchmark>
+    <CarrierId>(142691,3840,0)</CarrierId>
+    <CarrierName>SAIA</CarrierName>
+    <ChargeModel>NORMALIZED_SMC</ChargeModel>
+    <Charges>
+      <RateChargeViewModel>
+        <Amount>657.43</Amount>
+        <Description>Total Line Haul</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode></EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>17.99</Quantity>
+        <Rate>657.43</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ITEM</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>148.053236</Amount>
+        <Description>Fuel Surcharge</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>405</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>566.75</Quantity>
+        <Rate>148.053236</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>11.6</Amount>
+        <Description>CA High Cost Surcharge</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAD</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>11.6</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+    </Charges>
+    <ContractId>(200990202361,3023,0)</ContractId>
+    <ContractName>1CRM Cost SAIA</ContractName>
+    <CurrencyCode>USD</CurrencyCode>
+    <DestinationService>D</DestinationService>
+    <Distance>2008</Distance>
+    <Id>1020182</Id>
+    <InsuranceTypes>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+    </InsuranceTypes>
+    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
+    <IsSelected>false</IsSelected>
+    <Mode>LTL</Mode>
+    <OriginService>D</OriginService>
+    <Scac>SAIA</Scac>
+    <Service>LTL</Service>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>657.43</SubTotal>
+    <Total>817.083236</Total>
+    <Type>Cost</Type>
+  </PricesheetViewModel>
+  <PricesheetViewModel>
+    <AccessorialTotal>85.739312</AccessorialTotal>
+    <AdjustedBenchmark>0</AdjustedBenchmark>
+    <CarrierId>(165183620731,3840,0)</CarrierId>
+    <CarrierName>Frontline Freight</CarrierName>
+    <ChargeModel>NORMALIZED_SMC</ChargeModel>
+    <Charges>
+      <RateChargeViewModel>
+        <Amount>231.3504</Amount>
+        <Description>Total Line Haul</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode></EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>92.5</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>17.99</Quantity>
+        <Rate>231.3504</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ITEM</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>35.859312</Amount>
+        <Description>Fuel Surcharge</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>405</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>199.44</Quantity>
+        <Rate>35.859312</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL_FUEL</Type>
+        <Weight>0</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>26.68</Amount>
+        <Description>Linehaul Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>MSC</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>26.68</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+      <RateChargeViewModel>
+        <Amount>23.2</Amount>
+        <Description>CA High Cost Fee</Description>
+        <DimWeight>0</DimWeight>
+        <EdiCode>CAP</EdiCode>
+        <FakFreightClass>0</FakFreightClass>
+        <FreightClass>0</FreightClass>
+        <IsMax>false</IsMax>
+        <IsMin>false</IsMin>
+        <IsNontaxable>false</IsNontaxable>
+        <Quantity>0</Quantity>
+        <Rate>23.2</Rate>
+        <RateQualifier>FR</RateQualifier>
+        <Type>ACCESSORIAL</Type>
+        <Weight>1799</Weight>
+      </RateChargeViewModel>
+    </Charges>
+    <ContractId>(199426379056,3023,0)</ContractId>
+    <ContractName>1CRM Cost FCSY</ContractName>
+    <CurrencyCode>USD</CurrencyCode>
+    <DestinationService>D</DestinationService>
+    <Distance>2008</Distance>
+    <Id>1243805</Id>
+    <InsuranceTypes>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+      <InsuranceTypeViewModel>
+        <Amount>0</Amount>
+        <Company></Company>
+        <ContactName></ContactName>
+        <ContactPhone></ContactPhone>
+        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+        <Type>Liability</Type>
+      </InsuranceTypeViewModel>
+    </InsuranceTypes>
+    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
+    <IsSelected>true</IsSelected>
+    <Mode>LTL</Mode>
+    <OriginService>D</OriginService>
+    <Scac>FCSY</Scac>
+    <Service>LTL</Service>
+    <ServiceDays>4</ServiceDays>
+    <SubTotal>231.3504</SubTotal>
+    <Total>317.089712</Total>
     <Type>Cost</Type>
   </PricesheetViewModel>
 </ArrayOfPricesheetViewModel>
