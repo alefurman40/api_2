@@ -485,7 +485,8 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
 
                 #region Add results while adding DLS Worldwide carrier only once
-
+                DB.Log("regular adding not DLS Worldwide",
+                       "before add results");
                 // Add DLS Worldwide carrier only once
                 if (!pSheet.Scac.Equals("DRRQ"))
                 {
@@ -508,6 +509,10 @@ namespace gcmAPI.Models.Carriers.DLS
                     //    DB.Log("regular adding not DLS Worldwide", 
                     //        string.Concat("car name: ", pSheet.CarrierName, " scac: ", pSheet.Scac));
                     //}
+
+
+                    DB.Log("regular adding not DLS Worldwide",
+                        string.Concat("car name: ", pSheet.CarrierName, " scac: ", pSheet.Scac));
 
                     dlsPricesheets.Add(pSheet);
                 }
