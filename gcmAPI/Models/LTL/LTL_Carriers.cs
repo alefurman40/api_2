@@ -8096,7 +8096,7 @@ public class LTL_Carriers
             if (dlsPricesheets_Genera != null && dlsPricesheets_Genera.Count > 0)
             {
                 string UserName = "Genera Corp";
-                //DB.Log("dlsPricesheets_Genera.Count > 0", "");
+                DB.Log("dlsPricesheets_Genera.Count > 0", "");
                 add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera, ref totalQuotes, ref UserName);
 
             }
