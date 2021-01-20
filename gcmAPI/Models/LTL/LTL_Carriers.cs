@@ -6960,6 +6960,7 @@ public class LTL_Carriers
     private void AddCarrierResultsToArray(ref int transitAddition, ref double addition, bool hasHazmat, ref int newLogId)
     {
         //sunset_volume_result
+        DB.Log("AddCarrierResultsToArray", "1");
 
         #region sunset_volume_result
 
@@ -8064,10 +8065,14 @@ public class LTL_Carriers
 
         #endregion
 
+        DB.Log("AddCarrierResultsToArray", "before dlsPricesheets");
+
         #region dlsPricesheets
 
         if (quoteData.showDLSRates == true)
         {
+            DB.Log("AddCarrierResultsToArray", "showDLSRates == true");
+
             Add_DLS_results add_dls_results = new Add_DLS_results(ref quoteData);
             add_dls_results.transitAddition = transitAddition;
             add_dls_results.addition = addition;
