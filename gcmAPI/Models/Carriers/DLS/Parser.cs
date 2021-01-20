@@ -229,7 +229,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 pSheet.Scac = nodeList[i]["Scac"].InnerText.Trim();
 
-                if (quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+                if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
                 {
                     if (pSheet.Scac == "CNWY")
                     {
