@@ -8093,6 +8093,8 @@ public class LTL_Carriers
                 //DB.Log("dlsPricesheets_BenFranklinCraftsMacon", " was empty");
             }
 
+            DB.Log("dlsPricesheets_Genera Count", dlsPricesheets_Genera.Count.ToString());
+
             if (dlsPricesheets_Genera != null && dlsPricesheets_Genera.Count > 0)
             {
                 string UserName = "Genera Corp";
@@ -8102,7 +8104,7 @@ public class LTL_Carriers
             }
             else
             {
-                //DB.Log("dlsPricesheets_Genera", " was empty");
+                DB.Log("dlsPricesheets_Genera", " was empty");
             }
 
             if (dlsPricesheets_HHG_Under_500 != null && dlsPricesheets_HHG_Under_500.Count > 0)
