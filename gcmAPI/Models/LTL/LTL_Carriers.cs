@@ -1198,9 +1198,15 @@ public class LTL_Carriers
         
         bool is_Estes_HHG_Under_500 = false, is_Estes_HHG_Under_500_GLTL = false;
 
+        DB.Log("STARTING GENERA DLS", "START");
+
         dlsPricesheets_Genera = new List<DLS.dlsPricesheet>();
         DLS dls = new DLS(ref dlsPricesheets_Genera, ref quoteData, guaranteedService,
             ref UserName, ref APIKey, ref is_Estes_HHG_Under_500, ref is_Estes_HHG_Under_500_GLTL);
+
+        DB.Log("STARTING GENERA DLS", "END");
+
+        DB.Log("dlsPricesheets_Genera count", dlsPricesheets_Genera.Count.ToString());
 
         //--
         stopwatch.Stop();
@@ -8093,7 +8099,7 @@ public class LTL_Carriers
                 //DB.Log("dlsPricesheets_BenFranklinCraftsMacon", " was empty");
             }
 
-            DB.Log("dlsPricesheets_Genera Count", dlsPricesheets_Genera.Count.ToString());
+            //DB.Log("dlsPricesheets_Genera Count", dlsPricesheets_Genera.Count.ToString());
 
             if (dlsPricesheets_Genera != null && dlsPricesheets_Genera.Count > 0)
             {
