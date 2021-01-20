@@ -231,9 +231,11 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
                 {
+                    DB.Log("CarrierName, total 6to9", pSheet.CarrierName + " " + pSheet.Total);
                     if (pSheet.Scac == "CNWY")
                     {
                         // Do nothing
+                        DB.Log("CarrierName, total 6to9 CNWY", pSheet.CarrierName + " " + pSheet.Total);
                     }
                     else
                     {
@@ -242,6 +244,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
                 else
                 {
+                    DB.Log("CarrierName, total not 6to9", pSheet.CarrierName + " " + pSheet.Total);
                     // Do nothing
                 }
 
