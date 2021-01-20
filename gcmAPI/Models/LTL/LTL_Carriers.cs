@@ -559,7 +559,7 @@ public class LTL_Carriers
             }
             NetNetStartAndJoinThreads();
         }
-        else if (quoteData.mode.Equals("ws") && quoteData.username == AppCodeConstants.un_genera) // Genera if (quoteData.totalUnits == 7)
+        else if (quoteData.mode.Equals("ws") && quoteData.username == AppCodeConstants.un_genera) // Genera if 
         {
             //if (quoteData.totalUnits > 9)
             //{
@@ -619,19 +619,7 @@ public class LTL_Carriers
 
             #region Start_LTL_threads
 
-            //if (quoteData.totalUnits == 7)
-            //{
-            //    // Start DLS threads, to get only XPO rate
-            //    Start_join_LTL_threads_if_density_not_low("start");
-            //}
-            //else if (quoteData.totalUnits < 7)
-            //{
-            //    Start_join_LTL_threads_if_density_not_low("start");
-            //}
-            //else
-            //{
-            //    // Do nothing
-            //}
+            
 
             if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
             {
@@ -5388,17 +5376,17 @@ public class LTL_Carriers
         #endregion
 
         if (quoteData.username == AppCodeConstants.un_genera && 
-            (quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9))
+            (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9))
         {
             oThreadDLS_Genera.Start();
             ltl_threads.Add(oThreadDLS_Genera);
 
             return;
         }
-        else if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits == 6)
-        {
-            return;
-        }
+        //else if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits == 6)
+        //{
+        //    return;
+        //}
         else if (quoteData.username == AppCodeConstants.un_genera && quoteData.totalUnits > 7)
         {         
             return;
@@ -6368,12 +6356,12 @@ public class LTL_Carriers
 
                 if (quoteData.is_Genera_quote == true)
                 {
-                    if(quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+                    if(quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
                     {
                         oThreadDLS_Genera = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera));
                         Start_thread(ref oThreadDLS_Genera);
                     }
-                    else if (quoteData.totalUnits < 7)
+                    else if (quoteData.totalUnits < 6)
                     {
                         NetNet_Start_LTL_threads();
                     }
@@ -6409,11 +6397,11 @@ public class LTL_Carriers
 
                 if (quoteData.is_Genera_quote == true)
                 {
-                    if (quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+                    if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
                     {
                         Join_threads();
                     }
-                    else if (quoteData.totalUnits < 7)
+                    else if (quoteData.totalUnits < 6)
                     {
                         Join_threads();
                     }
