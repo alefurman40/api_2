@@ -1206,7 +1206,14 @@ public class LTL_Carriers
 
         DB.Log("STARTING GENERA DLS", "END");
 
-        DB.Log("dlsPricesheets_Genera count", dlsPricesheets_Genera.Count.ToString());
+        if(dlsPricesheets_Genera != null)
+        {
+            DB.Log("dlsPricesheets_Genera count", dlsPricesheets_Genera.Count.ToString());
+        }
+        else
+        {
+            DB.Log("dlsPricesheets_Genera count", "was null");
+        }
 
         //--
         stopwatch.Stop();
