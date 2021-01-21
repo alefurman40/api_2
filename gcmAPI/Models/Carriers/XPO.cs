@@ -215,8 +215,8 @@ public class XPO
 
     private string[] getConWayFreightRate(ref string userId, ref string passWd, ref string rateRequest)
     {
-        DB.Log("getConWayFreightRate", "getConWayFreightRate");
-        DB.Log("rateRequest", rateRequest);
+        //DB.Log("getConWayFreightRate", "getConWayFreightRate");
+        //DB.Log("rateRequest", rateRequest);
         string[] res = new string[4];
 
         String authType = "basic";
@@ -252,7 +252,7 @@ public class XPO
         xmlRateQuote.Load(xmlReader);
         // The entire XML Response String 
         String respString = xmlRateQuote.InnerXml;
-        DB.Log("Con Way (Live) respString", respString);
+        //DB.Log("Con Way (Live) respString", respString);
 
         // Here is how to get a value out of a specific XML element: 
         String netCharge = xmlRateQuote.GetElementsByTagName("NetCharge").Item(0).InnerText;
@@ -260,7 +260,7 @@ public class XPO
         res[0] = "success";
         res[2] = transitTime;
         res[3] = netCharge;
-        DB.Log("Con Way (Live) netCharge", netCharge);
+        //DB.Log("Con Way (Live) netCharge", netCharge);
         return res;
     }
 
@@ -354,7 +354,7 @@ public class XPO
             string items_str = items.ToString().Remove(items.ToString().Length - 1);
             //strgroupids = strgroupids.Remove(strgroupids.Length - 1);
 
-            DB.Log("XPO_Spot_Quote items", items_str);
+            //DB.Log("XPO_Spot_Quote items", items_str);
 
             #endregion
 

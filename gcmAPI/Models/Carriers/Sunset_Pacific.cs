@@ -128,7 +128,7 @@ namespace gcmAPI.Models.Carriers
                     total_units += quoteData.m_lPiece[i].Units;
                 }
 
-                DB.Log("Sunset Pacific items", items.ToString());
+                //DB.Log("Sunset Pacific items", items.ToString());
 
                 #endregion
 
@@ -163,7 +163,7 @@ namespace gcmAPI.Models.Carriers
 
                 int.TryParse(quoteData.origZip, out orig_zip_code);
 
-                DB.Log("Get_Sunset_Pacific_rates dest_zip_code", orig_zip_code.ToString());
+                //DB.Log("Get_Sunset_Pacific_rates dest_zip_code", orig_zip_code.ToString());
 
                 string Origin_code = "1"; //1 s. California, 2 n. California
 
@@ -177,7 +177,7 @@ namespace gcmAPI.Models.Carriers
                     "&Weight=", quoteData.totalWeight, "&IsFloorLoaded=null&ShippingRemarks=&MeasurementLFT=0",
                     "&NonFloorLoadeds=[]&FloorLoadeds=[]");
 
-                DB.Log("Get_Sunset_Pacific_rates data", data);
+                //DB.Log("Get_Sunset_Pacific_rates data", data);
 
                 Web_client http = new Web_client
                 {
@@ -195,7 +195,7 @@ namespace gcmAPI.Models.Carriers
 
                 string doc = http.Make_http_request();
 
-                DB.Log("Get_Sunset_Pacific_rates result", doc);
+                //DB.Log("Get_Sunset_Pacific_rates result", doc);
 
                 #region Parse result
 

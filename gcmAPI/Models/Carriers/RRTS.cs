@@ -54,7 +54,7 @@ namespace gcmAPI.Models.Carriers
 
         private void GetRateFromRRTS_QuoteByAccount(ref gcmAPI.RRTS_WebService.QuoteResponse objRoadRunnerResult)
         {
-            DB.Log("GetRateFromRRTS_QuoteByAccount", "");
+            //DB.Log("GetRateFromRRTS_QuoteByAccount", "");
             try
             {
                 if (quoteData.username.Equals("durachem"))
@@ -151,7 +151,7 @@ namespace gcmAPI.Models.Carriers
 
         private void GetRateFromRRTS(ref gcmAPI.RRTS_WebService.QuoteResponse objRoadRunnerResult)
         {
-            DB.Log("GetRateFromRRTS", "");
+            //DB.Log("GetRateFromRRTS", "");
             try
             {
                 if (quoteData.username.Equals("durachem"))

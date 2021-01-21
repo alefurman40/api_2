@@ -98,7 +98,7 @@ namespace gcmAPI.Models.Carriers
                 "<PUInstruction1></PUInstruction1><PUInstruction2></PUInstruction2>",
                 "</SMTLRateRequest>");
 
-                DB.Log("SMTL data", data);
+                //DB.Log("SMTL data", data);
 
                 Web_client http = new Web_client();
 
@@ -114,7 +114,7 @@ namespace gcmAPI.Models.Carriers
 
                 string doc = http.Make_http_request();
 
-                DB.Log("SMTL doc", doc);
+                //DB.Log("SMTL doc", doc);
 
                 #region Parse result
 
@@ -426,7 +426,7 @@ namespace gcmAPI.Models.Carriers
   "<ThrFrtIdNbr> 357357 </ThrFrtIdNbr>",
 "</SMTLPickUpRequest> ");
 
-                DB.Log("SMTL Pickup Request data", data);
+                //DB.Log("SMTL Pickup Request data", data);
 
                 Web_client http = new Web_client();
 
@@ -442,7 +442,7 @@ namespace gcmAPI.Models.Carriers
 
                 string doc = http.Make_http_request();
 
-                DB.Log("SMTL Pickup Request doc", doc);
+                //DB.Log("SMTL Pickup Request doc", doc);
 
                 #region Parse result
 

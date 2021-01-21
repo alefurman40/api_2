@@ -351,7 +351,7 @@ namespace gcmAPI.Models.Carriers
 
                 string costStr = HelperFuncs.scrapeFromPage(tokens, doc);
 
-                DB.Log("YRC_Live costStr", costStr);
+                //DB.Log("YRC_Live costStr", costStr);
 
                 int costInt = -1;
                 int costCents = 0;
@@ -361,13 +361,13 @@ namespace gcmAPI.Models.Carriers
                     costInt = testInt / 100;
                     costCents = testInt % 100;
 
-                    DB.Log("YRC_Live costInt costCents", costInt + " " + costCents);
+                    //DB.Log("YRC_Live costInt costCents", costInt + " " + costCents);
                 }
 
                 if (double.TryParse(string.Concat(costInt, ".", costCents.ToString().PadLeft(2, '0')), out double costDouble))
                 {
                     YRC_Res.standardLTL = costDouble;
-                    DB.Log("YRC_Live costDouble", costDouble.ToString());
+                    //DB.Log("YRC_Live costDouble", costDouble.ToString());
                 }
 
                 YRC_Res.days = 5;

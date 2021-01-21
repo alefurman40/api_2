@@ -191,7 +191,7 @@ namespace gcmAPI.Models.Carriers.UPS
             http.accept = "application/json";
             http.content_type = "application/json";
 
-            DB.Log("UPS_FREIGHT post data", http.post_data);
+            //DB.Log("UPS_FREIGHT post data", http.post_data);
             UPS_FREIGHT_Quote = new GCMRateQuote();
             // Test
             //return;
@@ -207,7 +207,7 @@ namespace gcmAPI.Models.Carriers.UPS
             }
             
 
-            DB.Log("UPS_FREIGHT result", doc);
+            //DB.Log("UPS_FREIGHT result", doc);
 
             #region Parse result
 

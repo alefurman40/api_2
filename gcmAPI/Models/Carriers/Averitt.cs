@@ -185,7 +185,7 @@ namespace gcmAPI.Models.Carriers
       "</soapenv:Body>",
     "</soapenv:Envelope>");
 
-                DB.LogGenera("averitt.XMLRequest", "averitt.XMLRequest", XMLRequest);
+                //DB.LogGenera("averitt.XMLRequest", "averitt.XMLRequest", XMLRequest);
 
                 Web_client http = new Web_client();
 
@@ -197,7 +197,7 @@ namespace gcmAPI.Models.Carriers
                 http.post_data = XMLRequest;
                 string doc = http.Make_http_request();
 
-                DB.LogGenera("averitt.response", "averitt.response", doc);
+                //DB.LogGenera("averitt.response", "averitt.response", doc);
 
                 #region Parse result
                 /*

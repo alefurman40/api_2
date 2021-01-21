@@ -148,7 +148,7 @@ namespace gcmAPI.Models.Carriers
                     //"&ins=10000",
                     "&json=1");
 
-                DB.LogGenera("Pyle", "Request URL", URL);
+                //DB.LogGenera("Pyle", "Request URL", URL);
 
                 #region Get result from server
 
@@ -159,7 +159,7 @@ namespace gcmAPI.Models.Carriers
                 http.accept = "application/json";
                 string doc = http.Make_http_request();
 
-                DB.LogGenera("Pyle", "Response", doc);
+                //DB.LogGenera("Pyle", "Response", doc);
 
                 dynamic dyn = JsonConvert.DeserializeObject(doc);
 

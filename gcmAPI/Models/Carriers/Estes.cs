@@ -85,7 +85,7 @@ namespace gcmAPI.Models.Carriers
                     total_units += quoteData.m_lPiece[i].Units;
                 }
 
-                DB.Log("P44 items", items.ToString());
+                //DB.Log("P44 items", items.ToString());
 
                 #endregion
 
@@ -523,7 +523,7 @@ namespace gcmAPI.Models.Carriers
                         width = "48",
                         height = "70"
                     };
-                    DB.Log("Get_ESTES_volume_rates quoteData.m_lPiece[i].Quantity", quoteData.m_lPiece[i].Quantity.ToString());
+                    //DB.Log("Get_ESTES_volume_rates quoteData.m_lPiece[i].Quantity", quoteData.m_lPiece[i].Quantity.ToString());
 
                     commodType.pieces = quoteData.m_lPiece[i].Quantity.ToString();
                     commodType.pieceType = new PackagingType();
@@ -540,8 +540,8 @@ namespace gcmAPI.Models.Carriers
 
                 #region Origin and destination
 
-                DB.Log("quoteData.origCountry", quoteData.origCountry);
-                DB.Log("quoteData.destCountry", quoteData.destCountry);
+                //DB.Log("quoteData.origCountry", quoteData.origCountry);
+                //DB.Log("quoteData.destCountry", quoteData.destCountry);
 
                 rateRequest.originPoint = new PointType
                 {
@@ -616,7 +616,7 @@ namespace gcmAPI.Models.Carriers
                 pricing = rateQuote.quote.pricing;
                 res[1] = pricing[0].standardPrice.ToString();
 
-                DB.Log("Get_ESTES_volume_rates", pricing[0].guaranteedPrice.ToString());
+                //DB.Log("Get_ESTES_volume_rates", pricing[0].guaranteedPrice.ToString());
 
 
                 //pricing[0].
@@ -1016,10 +1016,10 @@ namespace gcmAPI.Models.Carriers
 
             decimal rate = commodity[0].rate;
 
-            DB.LogGenera("Estes", "charge", charge.ToString());
+            //DB.LogGenera("Estes", "charge", charge.ToString());
 
             decimal buy_rate = charge - discount + accessorial_charges;
-            DB.LogGenera("Estes", "discount", discount.ToString());
+            //DB.LogGenera("Estes", "discount", discount.ToString());
             //DB.LogGenera("Estes", "fuel", fuel.ToString());
             //DB.LogGenera("Estes", "charge", buy_rate.ToString());
 

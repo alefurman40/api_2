@@ -44,7 +44,7 @@ public class USF
 
         gcmRateQuote.TotalPrice += overlengthFee;
 
-        DB.Log("USF overlength fee", overlengthFee.ToString());
+        //DB.Log("USF overlength fee", overlengthFee.ToString());
 
         // Get Overlenth Fee
         //HelperFuncs.GetOverlengthFee(ref quoteData.m_lPiece, ref overlengthFee, 96, 216, 288, 100, 150, 200);
@@ -110,7 +110,7 @@ public class USF
 
         double totalShipWeight = quoteData.totalWeight;
 
-        DB.Log("USFReddawayPrepaid totalShipWeight", quoteData.totalWeight.ToString());
+        //DB.Log("USFReddawayPrepaid totalShipWeight", quoteData.totalWeight.ToString());
 
         //for (int i = 0; i < lineItems.Length; i++)
         //{

@@ -101,7 +101,7 @@ namespace gcmAPI.Models.Carriers
     "}",
     "}");
 
-                DB.LogGenera("Frontier Get_rates", "http.post_data", http.post_data);
+                //DB.LogGenera("Frontier Get_rates", "http.post_data", http.post_data);
 
                 #endregion
 
@@ -111,7 +111,7 @@ namespace gcmAPI.Models.Carriers
                 string doc = "";
                 doc = http.Make_http_request();
 
-                DB.LogGenera("Frontier Get_rates", "doc", doc);
+                //DB.LogGenera("Frontier Get_rates", "doc", doc);
 
                 #region Parse result
 

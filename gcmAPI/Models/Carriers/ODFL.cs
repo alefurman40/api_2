@@ -32,8 +32,8 @@ namespace gcmAPI.Models.Carriers
 
             try
             {
-                DB.Log("GetResultObjectFromOldDominion zips, acct",
-                    string.Concat(quoteData.origZip, ", ", quoteData.destZip, ", ", acctInfo.acctNum));
+                //DB.Log("GetResultObjectFromOldDominion zips, acct",
+                //    string.Concat(quoteData.origZip, ", ", quoteData.destZip, ", ", acctInfo.acctNum));
 
                 if (quoteData.AccessorialsObj.TRADEPU.Equals(true) || quoteData.AccessorialsObj.TRADEDEL.Equals(true))
                 {
@@ -185,7 +185,7 @@ namespace gcmAPI.Models.Carriers
                     "<originCountry>", originCountry, "</originCountry><originPostalCode>", quoteData.origZip, "</originPostalCode>",
                     "<requestReferenceNumber>false</requestReferenceNumber><shipType>LTL</shipType></arg0></getLTLRateEstimate></s:Body></s:Envelope>");
 
-                DB.Log("odfl request", data);
+                //DB.Log("odfl request", data);
 
                 #endregion
 
@@ -203,7 +203,7 @@ namespace gcmAPI.Models.Carriers
                 doc = (string)HelperFuncs.generic_http_request_addHeaders("string", null, url, referrer, contentType, accept, method,
                    data, false, headerNames, headerValues);
 
-                DB.Log("odfl response", doc);
+                //DB.Log("odfl response", doc);
 
                 #region Gather results into an object
 
@@ -216,7 +216,7 @@ namespace gcmAPI.Models.Carriers
                 if (nodeList.Count > 0)
                 {
                     string netFreightCharge = nodeList[0].InnerText.Trim();
-                    DB.Log("odfl", netFreightCharge);
+                    //DB.Log("odfl", netFreightCharge);
 
                     nodeList = xmlDoc.GetElementsByTagName("serviceDays");
 
@@ -224,12 +224,12 @@ namespace gcmAPI.Models.Carriers
                     if (nodeList.Count > 0)
                     {
                         serviceDays = nodeList[0].InnerText.Trim();
-                        DB.Log("odfl serviceDays", serviceDays);
+                        //DB.Log("odfl serviceDays", serviceDays);
                     }
 
                     if (double.TryParse(netFreightCharge, out double TotalPrice))
                     {
-                        DB.Log("odfl parsed to double", TotalPrice.ToString());
+                        //DB.Log("odfl parsed to double", TotalPrice.ToString());
 
                         #region Add manual Accessorial charges
 

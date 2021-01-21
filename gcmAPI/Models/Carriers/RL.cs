@@ -201,7 +201,7 @@ namespace gcmAPI.Models.Carriers
 
             #endregion
 
-            DB.Log("RL data " + acctInfo.password, data);
+            //DB.Log("RL data " + acctInfo.password, data);
 
             string[] headerNames = new string[1];
             headerNames[0] = "SOAPAction";
@@ -219,7 +219,7 @@ namespace gcmAPI.Models.Carriers
 
             string cost = HelperFuncs.scrapeFromPage(tokens, doc);
 
-            DB.Log("RL xml cost", cost);
+            //DB.Log("RL xml cost", cost);
 
             //DB.Log("RL costAmount ", costAmount);
 
@@ -405,7 +405,7 @@ namespace gcmAPI.Models.Carriers
                 costAmount = reply.Result.Charges[8].Amount;
             }
 
-            DB.Log("RL costAmount ", costAmount);
+            //DB.Log("RL costAmount ", costAmount);
 
             string[] returnInfo = new string[5];
             returnInfo[0] = "";
@@ -751,6 +751,7 @@ namespace gcmAPI.Models.Carriers
                     }
                     DB.Log("R&L Freight (Live)", "password: " + acctInfo.password + " " + originZip + " " + originCity + "," + originState +
                         " to " + destZip + " " + destCity + "," + destState + " " + multItems + " " + accessors + " " + e.ToString());
+
                     returnInfo[1] = "loggedException"; // so it won't be logged twice
                 }
                 catch { }
@@ -765,7 +766,7 @@ namespace gcmAPI.Models.Carriers
         private void GetResultObjectFromRAndL(ref GCMRateQuote gcmRateQuote, ref GCMRateQuote rl_quote_guaranteed)
         {
 
-            DB.Log("GetResultObjectFromRAndL", "");
+            //DB.Log("GetResultObjectFromRAndL", "");
 
             //bool loggedException = false;
             try
@@ -943,7 +944,7 @@ namespace gcmAPI.Models.Carriers
                 int guaranteed_service_days = 5;
                 int.TryParse(guaranteed_service_days_str, out guaranteed_service_days);
 
-                DB.Log("RL xml cost", guaranteed_cost_str);
+                //DB.Log("RL xml cost", guaranteed_cost_str);
 
 
                 if (res[1] == "loggedException")

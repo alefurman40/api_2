@@ -100,7 +100,7 @@ namespace gcmAPI.Models.Carriers
                 byte num_of_acc = 0;
                 Get_num_of_acc(ref num_of_acc, ref quoteData);
 
-                DB.LogGenera("Daylight", "num_of_acc", num_of_acc.ToString());
+                //DB.LogGenera("Daylight", "num_of_acc", num_of_acc.ToString());
 
                 if (num_of_acc == 0)
                 {
@@ -186,7 +186,7 @@ namespace gcmAPI.Models.Carriers
             "}"
             );
 
-                DB.LogGenera("Daylight", "post_data", http.post_data);
+                //DB.LogGenera("Daylight", "post_data", http.post_data);
                 //Daylight_Quote_Genera = new GCMRateQuote();
                 //return;
 
@@ -203,7 +203,7 @@ namespace gcmAPI.Models.Carriers
 
                 string doc = http.Make_http_request();
 
-                DB.LogGenera("Daylight", "response", doc);
+                //DB.LogGenera("Daylight", "response", doc);
 
                 dynamic dyn = JsonConvert.DeserializeObject(doc);
 
