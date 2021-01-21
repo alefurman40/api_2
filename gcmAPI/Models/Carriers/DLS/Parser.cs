@@ -229,13 +229,16 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 pSheet.Scac = nodeList[i]["Scac"].InnerText.Trim();
 
-                if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+                var xpo_helper = new XPO();
+                bool can_get_XPO_rate = xpo_helper.Can_get_XPO_rate(ref quoteData.totalUnits);
+
+                if (can_get_XPO_rate==true)
                 {
-                    DB.Log("CarrierName, total 6to9", pSheet.CarrierName + " " + pSheet.Total);
+                    //DB.Log("CarrierName, total 6to9", pSheet.CarrierName + " " + pSheet.Total);
                     if (pSheet.Scac == "CNWY")
                     {
                         // Do nothing
-                        DB.Log("CarrierName, total 6to9 CNWY", pSheet.CarrierName + " " + pSheet.Total);
+                        //DB.Log("CarrierName, total 6to9 CNWY", pSheet.CarrierName + " " + pSheet.Total);
                     }
                     else
                     {
@@ -244,7 +247,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
                 else
                 {
-                    DB.Log("CarrierName, total not 6to9 units " + quoteData.totalUnits.ToString(), pSheet.CarrierName + " " + pSheet.Total);
+                    //DB.Log("CarrierName, total not 6to9 units " + quoteData.totalUnits.ToString(), pSheet.CarrierName + " " + pSheet.Total);
                     // Do nothing
                 }
 

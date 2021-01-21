@@ -79,7 +79,7 @@ public class LTL_Carriers
 
     string strRoadRunnerDisplay = "Roadrunner Transportation Services";
     string strSEFLDisplay = "Southeastern Freight Lines";
-    string strNEMFDisplay = "New England Motor Freight";
+    //string strNEMFDisplay = "New England Motor Freight";
 
     #endregion
 
@@ -543,6 +543,8 @@ public class LTL_Carriers
 
         ltl_threads = new List<Thread>();
 
+        var xpo_helper = new XPO();
+        bool can_get_XPO_rate = xpo_helper.Can_get_XPO_rate(ref quoteData.totalUnits);
 
         //if (quoteData.mode.Equals("durachem_bidding"))
         //{
@@ -567,7 +569,7 @@ public class LTL_Carriers
             //    genera.Send_email_over_9_pallets(ref quoteData, ref newLogId);
             //}
 
-            DB.Log("case ws un_genera", "case ws un_genera");
+            //DB.Log("case ws un_genera", "case ws un_genera");
 
             if (quoteData.totalUnits > 30)
             {
@@ -623,16 +625,16 @@ public class LTL_Carriers
 
             //DB.Log("case ws quoteData.linealFeet > 0.0", "case ws quoteData.linealFeet > 0.0");
 
-            if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+            if (can_get_XPO_rate==true)
             {
                 // Start DLS threads, to get only XPO rate
                 Start_join_LTL_threads("start");
-                //Start_join_LTL_threads_if_density_not_low("start");
+               
             }
             else if (quoteData.totalUnits < 6)
             {
                 Start_join_LTL_threads("start");
-                //Start_join_LTL_threads_if_density_not_low("start");
+               
             }
             else
             {
@@ -662,15 +664,15 @@ public class LTL_Carriers
 
             #region Join_LTL_threads
 
-            if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+            if (can_get_XPO_rate == true)
             {
                 // Join DLS threads, to get only XPO rate
-                //Start_join_LTL_threads_if_density_not_low("join");
+              
                 Start_join_LTL_threads("join");
             }
             else if (quoteData.totalUnits < 6)
             {
-                //Start_join_LTL_threads_if_density_not_low("join");
+                
                 Start_join_LTL_threads("join");
             }
             else
@@ -704,7 +706,8 @@ public class LTL_Carriers
 
                 #endregion
 
-                Start_join_LTL_threads_if_density_not_low("start");
+                
+                Start_join_LTL_threads("start");
 
                 #endregion
             }
@@ -734,7 +737,8 @@ public class LTL_Carriers
 
                 #endregion
 
-                Start_join_LTL_threads_if_density_not_low("join");
+                
+                Start_join_LTL_threads("join");
 
                 #endregion
             }
@@ -746,14 +750,14 @@ public class LTL_Carriers
             }
         }
         
-        if (dlsPricesheets_Genera != null)
-        {
-            DB.Log("dlsPricesheets_Genera count, before AddCarrierResultsToArray", dlsPricesheets_Genera.Count.ToString());
-        }
-        else
-        {
-            DB.Log("dlsPricesheets_Genera count, before AddCarrierResultsToArray", "was null");
-        }
+        //if (dlsPricesheets_Genera != null)
+        //{
+        //    DB.Log("dlsPricesheets_Genera count, before AddCarrierResultsToArray", dlsPricesheets_Genera.Count.ToString());
+        //}
+        //else
+        //{
+        //    DB.Log("dlsPricesheets_Genera count, before AddCarrierResultsToArray", "was null");
+        //}
 
         // Checks each carrier result object and adds to array of results
         AddCarrierResultsToArray(ref transitAddition, ref addition, quoteData.isHazmat, ref newLogId);
@@ -5404,8 +5408,10 @@ public class LTL_Carriers
 
         #endregion
 
-        if (quoteData.username == AppCodeConstants.un_genera && 
-            (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9))
+        var xpo_helper = new XPO();
+        bool can_get_XPO_rate = xpo_helper.Can_get_XPO_rate(ref quoteData.totalUnits);
+
+        if (quoteData.username == AppCodeConstants.un_genera && can_get_XPO_rate == true)
         {
             oThreadDLS_Genera.Start();
             ltl_threads.Add(oThreadDLS_Genera);
@@ -6362,6 +6368,9 @@ public class LTL_Carriers
             if (quoteData.hasFreightClass.Equals(true)) // If has class   
             {
 
+                var xpo_helper = new XPO();
+                bool can_get_XPO_rate = xpo_helper.Can_get_XPO_rate(ref quoteData.totalUnits);
+
                 #region Start Threads
 
                 if (quoteData.is_Genera_quote == true)
@@ -6385,7 +6394,9 @@ public class LTL_Carriers
 
                 if (quoteData.is_Genera_quote == true)
                 {
-                    if(quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+                    
+
+                    if (can_get_XPO_rate == true)
                     {
                         oThreadDLS_Genera = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera));
                         Start_thread(ref oThreadDLS_Genera);
@@ -6426,7 +6437,7 @@ public class LTL_Carriers
 
                 if (quoteData.is_Genera_quote == true)
                 {
-                    if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
+                    if (can_get_XPO_rate == true)
                     {
                         Join_threads();
                     }
@@ -6679,94 +6690,7 @@ public class LTL_Carriers
     }
 
     #endregion
-
-    #region Start_join_LTL_threads_if_density_not_low
-
-    private void Start_join_LTL_threads_if_density_not_low(string mode)
-    {
-        if (quoteData.linealFeet >= 20.0)
-        {
-            if (quoteData.totalWeight > 8800)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 19.0)
-        {
-            if (quoteData.totalWeight > 8200)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 18.0)
-        {
-            if (quoteData.totalWeight > 7700)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 17.0)
-        {
-            if (quoteData.totalWeight > 7200)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 16.0)
-        {
-            if (quoteData.totalWeight > 6600)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 15.0)
-        {
-            if (quoteData.totalWeight > 6100)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 14.0)
-        {
-            if (quoteData.totalWeight > 5600)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 13.0)
-        {
-            if (quoteData.totalWeight > 5100)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else if (quoteData.linealFeet >= 12.0)
-        {
-            if (quoteData.totalWeight > 4700)
-                if (mode == "start")
-                    Start_threads();
-                else
-                    Join_threads();
-        }
-        else
-        {
-            if (mode == "start")
-                Start_threads();
-            else
-                Join_threads();
-        }
-    }
-
-    #endregion
-
+    
     #region Start_join_LTL_threads
 
     private void Start_join_LTL_threads(string mode)

@@ -17,6 +17,11 @@ public class XPO
     QuoteData quoteData;
 
     // Constructor
+    public XPO()
+    {      
+    }
+
+    // Constructor
     public XPO(CarrierAcctInfo acctInfo, ref QuoteData quoteData)
     {
         this.acctInfo = acctInfo;
@@ -494,4 +499,17 @@ public class XPO
     }
 
     #endregion
+
+    #region Can_get_XPO_rate
+
+    public bool Can_get_XPO_rate(ref double total_units)
+    {
+        if (total_units >= 6 && total_units <= 9)
+            return true;
+        else
+            return false;
+    }
+
+    #endregion
+
 }
