@@ -37,14 +37,10 @@ namespace gcmAPI.Models.Carriers.DLS
 
         public void AddDLS_ResultToArray(ref List<dlsPricesheet> dlsPricesheets, ref GCMRateQuote[] totalQuotes, ref string UserName)
         {
-           
-            //DB.Log("AddDLS_ResultToArray", dupreRRTS_Buy.ToString());
-
+          
             HelperFuncs.dlsMarkup dlsMarkup = new HelperFuncs.dlsMarkup();
             dlsMarkup.DLSMU = 0;
             dlsMarkup.DLSMinDollar = 0;
-
-            //DB.Log("AddDLS_ResultToArray", "1");
 
             if (quoteData.subdomain.Equals("spc"))
             {
@@ -61,8 +57,6 @@ namespace gcmAPI.Models.Carriers.DLS
                 HelperFuncs.GetDLS_Markup(quoteData.username, ref dlsMarkup);
             }
 
-            //DB.Log("AddDLS_ResultToArray", "2");
-
             decimal dlsPercentSum = 0, dlsPercent;
             dlsPercent = Convert.ToDecimal(dlsMarkup.DLSMU) / 100;
 
@@ -71,20 +65,12 @@ namespace gcmAPI.Models.Carriers.DLS
             // Get Overlenth Fee
             int overlengthFee = 0;
             HelperFuncs.GetOverlengthFee(ref quoteData.m_lPiece, ref overlengthFee, 143, 216, 288, 100, 150, 200);
-
-            //DB.Log("overlengthFee", overlengthFee.ToString());
-
+            
             double maxDim = 0;
             HelperFuncs.GetMaxDimension(ref quoteData.m_lPiece, ref maxDim);
-
-            //double maxLengthDim = 0;
-            //HelperFuncs.GetMaxLengthDimension(ref quoteData.m_lPiece, ref maxLengthDim);
-
-            //DB.Log("quoteData.totalWeight", quoteData.totalWeight.ToString());
-
-
+            
             bool foundDLS_CTII = false, add_overlength_success = false;
-            //decimal dlsCTII_Addition = 0M;
+           
             string dlsCarrierKey = "";
             //CarsOnTime carOnTime;
             string onTimeCarName = "";
@@ -94,8 +80,8 @@ namespace gcmAPI.Models.Carriers.DLS
 
             foreach (dlsPricesheet objCarrier in dlsPricesheets)
             {
-                DB.LogGenera("XPO test", "XPO test", objCarrier.CarrierName + " " + objCarrier.ContractName + " " +
-                    objCarrier.Total.ToString());
+                //DB.LogGenera("XPO test", "XPO test", objCarrier.CarrierName + " " + objCarrier.ContractName + " " +
+                //    objCarrier.Total.ToString());
 
                 can_add_carrier_result = Can_add_carrier_result(objCarrier, ref foundDLS_CTII);
 
@@ -184,8 +170,6 @@ namespace gcmAPI.Models.Carriers.DLS
                     else
                         objQuote.OurRate = Convert.ToDouble(objCarrier.Total);
 
-                    //DB.Log("objQuote.OurRate", objQuote.OurRate.ToString());
-
                     if (quoteData.mode.Equals("NetNet"))
                     {
                         objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
@@ -219,17 +203,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                                 if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
                                 {
-                                    //if(dlsPercentSum > 150m)
-                                    //{
-                                    //    objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + 150m);
-                                    //}
-                                    //else
-                                    //{
-                                    //    //objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsPercentSum);
-
-                                    //    //objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
-
-                                    //}  
+                                  
                                     objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
                                 }
                                 else
@@ -275,8 +249,6 @@ namespace gcmAPI.Models.Carriers.DLS
                         #endregion
                     }
 
-                    //DB.Log("objQuote.TotalPrice", objQuote.TotalPrice.ToString());
-
                     objQuote.TotalPrice += addition;
                     objQuote.OurRate += addition;
 
@@ -289,11 +261,6 @@ namespace gcmAPI.Models.Carriers.DLS
                         continue;
                     }
 
-                    //DB.Log("addition", addition.ToString());
-
-                    //objQuote.OurRate += Convert.ToDouble(dlsCTII_Addition);
-                    //RETL
-
                     Add_overlength_fee(ref objQuote, ref quoteData, ref maxDim, ref overlengthFee, ref add_overlength_success);
 
                     if (add_overlength_success == true)
@@ -305,14 +272,10 @@ namespace gcmAPI.Models.Carriers.DLS
                         continue;
                     }
 
-
-
                     if (quoteData.username.ToLower().Equals("dupraafesbuy"))
                     {
                         double DuprMinusCost = dupreRRTS_Buy - objQuote.TotalPrice;
-
-                        //DB.Log("costMinusDupr", string.Concat(objCarrier.CarrierName, " ", DuprMinusCost.ToString()));
-
+                        
                         if (!(DuprMinusCost >= 30)) // Cost needs to be at least $30 more than dupreRRTS_Buy
                         {
                             continue;
@@ -551,8 +514,6 @@ namespace gcmAPI.Models.Carriers.DLS
             {
                 HelperFuncs.GetDLS_Markup(quoteData.username, ref dlsMarkup);
             }
-
-            //DB.Log("AddDLS_ResultToArray", "2");
 
             decimal dlsPercentSum = 0, dlsPercent;
             dlsPercent = Convert.ToDecimal(dlsMarkup.DLSMU) / 100;

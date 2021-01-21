@@ -66,8 +66,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
         private void getRateFromDLS(ref List<dlsPricesheet> dlsPricesheets, ref bool guaranteedService)
         {
-            //DB.Log("getRateFromDLS isUSED", isUSED.ToString());
-
+          
             #region Variables
 
             //string url = "", referrer, contentType, accept, method;
@@ -177,8 +176,7 @@ namespace gcmAPI.Models.Carriers.DLS
                     sbiItems.Append("</RateItemViewModel>");
 
                 }
-                //DB.Log("getRateFromDLS sbiItems", sbiItems.ToString());
-
+               
                 #endregion
 
                 #region Country
@@ -247,10 +245,10 @@ namespace gcmAPI.Models.Carriers.DLS
                     "<ShowInsurance>true</ShowInsurance>",
                     "</RateRequestViewModel>");
 
-                if (guaranteedService == false)
-                {
-                    //DB.Log("getRateFromDLS data", data);
-                }
+                //if (guaranteedService == false)
+                //{
+                    
+                //}
 
                 #endregion
 
@@ -267,33 +265,33 @@ namespace gcmAPI.Models.Carriers.DLS
                 
                 if (guaranteedService == false)
                 {
-                    //DB.Log("getRateFromDLS doc", doc);
-                    if (is_Estes_HHG_Under_500 == true)
-                    {
-                    }
-                    else if (UserName == "The Exchange")
-                    {
-                        DB.Log("getRateFromDLS_cust_rates res_part_1", res_part_1);
-                        DB.Log("getRateFromDLS_cust_rates res_part_2", res_part_2);
-                    }
-                    else if (UserName == "Ben Franklin Crafts - Macon")
-                    {
-                        DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_1", res_part_1);
-                        DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_2", res_part_2);
-                    }
-                    else if (UserName == "Genera Corp")
-                    {
+                    
+                    //if (is_Estes_HHG_Under_500 == true)
+                    //{
+                    //}
+                    //else if (UserName == "The Exchange")
+                    //{
+                    //    DB.Log("getRateFromDLS_cust_rates res_part_1", res_part_1);
+                    //    DB.Log("getRateFromDLS_cust_rates res_part_2", res_part_2);
+                    //}
+                    //else if (UserName == "Ben Franklin Crafts - Macon")
+                    //{
+                    //    DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_1", res_part_1);
+                    //    DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_2", res_part_2);
+                    //}
+                    //else if (UserName == "Genera Corp")
+                    //{
 
-                        DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
-                        DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
+                    //    DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
+                    //    DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
 
-                    }
-                    else
-                    {
-                        // PNW - Burien WA
-                        DB.Log("getRateFromDLS res_part_1", res_part_1);
-                        DB.Log("getRateFromDLS res_part_2", res_part_2);
-                    }
+                    //}
+                    //else
+                    //{
+                    //    // PNW - Burien WA
+                    //    DB.Log("getRateFromDLS res_part_1", res_part_1);
+                    //    DB.Log("getRateFromDLS res_part_2", res_part_2);
+                    //}
                 }
 
                 //doc = (string)HelperFuncs.generic_http_request_addHeaders("string", container, url, referrer, contentType, accept, method,
@@ -313,8 +311,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
 
                 dlsPricesheets = dlsPricesheets.Distinct().ToList();
-
-                //DB.Log("getRateFromDLS", doc);
+                
 
             }
             catch (Exception e)
@@ -336,7 +333,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
             if (isOverlength.Equals(true))
             {
-                //DB.Log("IsOverlength", "IsOverlength");
+                
                 accessorials.Append("<ServiceFlagViewModel><ServiceCode>OVL</ServiceCode></ServiceFlagViewModel>");
             }
             //else
@@ -477,7 +474,7 @@ namespace gcmAPI.Models.Carriers.DLS
         private string getResponseFromDLS(string data)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            //DB.Log("getRateFromDLS", "start of func");
+           
 
             #region Variables
 
@@ -497,7 +494,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 #region Post Data
 
-                DB.Log("getRateFromDLS Alex2015 data", data);
+                //DB.Log("getRateFromDLS Alex2015 data", data);
 
                 #endregion
 

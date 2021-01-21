@@ -61,9 +61,7 @@ namespace gcmAPI.Models.Carriers.DLS
             HelperFuncs.dlsMarkup dlsMarkup = new HelperFuncs.dlsMarkup();
             dlsMarkup.DLSMU = 0;
             dlsMarkup.DLSMinDollar = 0;
-
-            //DB.Log("AddDLS_ResultToArray", "1");
-
+            
             if (quoteData.mode == "NetNet")
             {
                 // Do nothing
@@ -253,14 +251,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 if (pSheet.Scac == "XGSI")
                     continue;
-                //
-                //
-
-                //string[] genera_carriers_allowed = {
-                //    "TOTL", "CTII","CNWY","FXFE","FXNL", "RETL", "SAIA", "DPHE", "HMES", "AACT", "EXLA",
-                //    "SWFL", "DAFG", "PITD", "WARD", "PYLE", "CENF", "EXDF", "RDWY", "ABFC", "AVRT"
-                //};
-
+                
                 Genera genera = new Genera();
                 string[] genera_carriers_active = genera.Get_active_carriers("LTL");
 
@@ -343,7 +334,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 if (guaranteedService.Equals(true))
                 {
-                    //pSheet.CarrierName = string.Concat(pSheet.CarrierName, "<span style='color:Green;'> Guaranteed by 5PM</span>");
+                    
                     //DB.Log("GLTL", pSheet.CarrierName);
 
                     if (pSheet.Scac.Equals("FXFE") || pSheet.Scac.Equals("FXNL"))
@@ -458,33 +449,6 @@ namespace gcmAPI.Models.Carriers.DLS
                 {
                     continue;
 
-                    //if (quoteData.AccessorialsObj.LGPU.Equals(true) || quoteData.AccessorialsObj.LGDEL.Equals(true) ||                                    
-                    //          quoteData.AccessorialsObj.INSDEL.Equals(true))
-                    //{
-                    //    continue;
-                    //}
-
-                    #region Check for valid states
-
-                    //DB.Log("nemf state", quoteData.origState);
-                    //string[] actStates = "IN&CT&OH&MA&WV&RI&VA&NY&MD&VT&DE&NH&PA&ME&NJ".Split('&');
-                    //bool OStateOK = false;
-                    //for (int j = 0; j < actStates.Length; j++)
-                    //{
-                    //    if (actStates[j].Equals(quoteData.origState))
-                    //    {
-                    //        //DB.Log("nemf o state okay", quoteData.origState);
-                    //        OStateOK = true;
-                    //        break;
-                    //    }
-                    //}
-
-                    //if (!OStateOK)
-                    //{
-                    //    continue;
-                    //}
-
-                    #endregion
                 }
 
                 #region Add results while adding DLS Worldwide carrier only once
@@ -514,8 +478,8 @@ namespace gcmAPI.Models.Carriers.DLS
                     //}
 
 
-                    DB.Log("regular adding not DLS Worldwide",
-                        string.Concat("car name: ", pSheet.CarrierName, " scac: ", pSheet.Scac));
+                    //DB.Log("regular adding not DLS Worldwide",
+                    //    string.Concat("car name: ", pSheet.CarrierName, " scac: ", pSheet.Scac));
 
                     dlsPricesheets.Add(pSheet);
                 }
@@ -544,20 +508,16 @@ namespace gcmAPI.Models.Carriers.DLS
                     //DB.Log("adding DLS_Worldwide", pSheet.Scac);
                 }
 
-                //if (!pSheet.Scac.Equals("DRRQ") || (GS.Equals("GLTL") && gotGLTL_DLS_Worldwide.Equals(false)) || gotDLS_Worldwide.Equals(false))
-                //{
-                //    DB.Log("getRateFromDLS CarrierName gcmdemo - Total", string.Concat(pSheet.CarrierName, " - ", pSheet.Total));
-                //}
-
+                
                 if (guaranteedService.Equals(true) && pSheet.Scac.Equals("DRRQ"))
                 {
                     gotGLTL_DLS_Worldwide = true;
-                    //DB.Log("found GLTL_DLS_Worldwide", "found");
+                   
                 }
                 else if (pSheet.Scac.Equals("DRRQ"))
                 {
                     gotDLS_Worldwide = true;
-                    //DB.Log("gotDLS_Worldwide", "true");
+                    
                 }
 
                 #endregion
@@ -646,9 +606,7 @@ namespace gcmAPI.Models.Carriers.DLS
                     // Do nothing
                     //DB.Log("Breakdown accessorial not found", breakdown_description);
                 }
-                //sb.Append(string.Concat(breakdown_description, "=$", breakdown_cost,
-                //    "<span style='Color: Blue;'> + </span>"));
-
+               
                 if (dlsPercentSum > 0M)
                 {
                     breakd_cost = breakd_cost + dlsPercentSum;
@@ -680,7 +638,7 @@ namespace gcmAPI.Models.Carriers.DLS
                 //1PSI Cost RDFS The Exchange ASP
                 if (nodeList[i]["ContractName"].InnerText.Trim().Equals("1PSI Cust PNW 100100 The Exchange"))
                 {
-                    //DB.Log("The Exchange", "The Exchange");
+                    
                     if (decimal.TryParse(nodeList[i]["Total"].InnerText.Trim(), out temp1))
                     {
                         dlsPricesheet pSheet = new dlsPricesheet();
@@ -741,8 +699,7 @@ namespace gcmAPI.Models.Carriers.DLS
                                     {
                                         // Do nothing
                                     }
-                                    //sb.Append(string.Concat(breakdown_description, "=$", breakdown_cost,
-                                    //    "<span style='Color: Blue;'> + </span>"));
+                                   
                                     sb.Append(string.Concat(breakdown_description, " $", breakdown_cost,
                                        " - "));
                                 }
@@ -756,13 +713,9 @@ namespace gcmAPI.Models.Carriers.DLS
                             string str = m_ex.ToString();
                             //DB.Log("The exchange Breakdown", m_ex.ToString());
                         }
-                        //
-
-
-
+                       
                         pSheet.Total = temp1;
-                        //DB.Log("The Exchange total", pSheet.Total.ToString());
-
+                      
                         pSheet.CarrierName = "AAFES Sell";
 
                         pSheet.ContractName = nodeList[i]["ContractName"].InnerText.Trim();
