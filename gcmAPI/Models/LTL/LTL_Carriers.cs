@@ -567,6 +567,8 @@ public class LTL_Carriers
             //    genera.Send_email_over_9_pallets(ref quoteData, ref newLogId);
             //}
 
+            DB.Log("case ws un_genera", "case ws un_genera");
+
             if (quoteData.totalUnits > 30)
             {
                 return carriersResult;
@@ -676,6 +678,8 @@ public class LTL_Carriers
         }
         else
         {
+            DB.Log("case ws quoteData.linealFeet > 0.0", "case ws quoteData.linealFeet > 0.0");
+
             // Live or WS
             // If mode = WS with Lineal Feet WS_with_lineal_feet mode == "WS" && lineal_feet > 0.0
             if (quoteData.mode.Equals("ws") && quoteData.linealFeet > 0.0)
@@ -738,6 +742,14 @@ public class LTL_Carriers
             }
         }
 
+        if (dlsPricesheets_Genera != null)
+        {
+            DB.Log("dlsPricesheets_Genera count, before AddCarrierResultsToArray", dlsPricesheets_Genera.Count.ToString());
+        }
+        else
+        {
+            DB.Log("dlsPricesheets_Genera count, before AddCarrierResultsToArray", "was null");
+        }
 
         // Checks each carrier result object and adds to array of results
         AddCarrierResultsToArray(ref transitAddition, ref addition, quoteData.isHazmat, ref newLogId);
