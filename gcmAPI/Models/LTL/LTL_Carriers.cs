@@ -5912,32 +5912,7 @@ public class LTL_Carriers
     }
 
     #endregion
-
-    #region Start_thread
-
-    private void Start_thread(ref Thread thread)
-    {
-        thread.Start();
-        ltl_threads.Add(thread);
-    }
-
-    #endregion
-
-    #region Join_threads
-
-    private void Join_threads()
-    {
-        for (byte i = 0; i < ltl_threads.Count; i++)
-        {
-            if (!ltl_threads[i].Join(TimeSpan.FromSeconds(25)))
-            {
-                ltl_threads[i].Abort();
-            }
-        }
-    }
-
-    #endregion
-
+    
     #region NetNet_Start_LTL_threads
 
     private void NetNet_Start_LTL_threads()
@@ -6123,192 +6098,149 @@ public class LTL_Carriers
         //}
         else // US to US or Canada
         {
-            //UPS ups = new UPS();
+         
+            #region Start Threads
 
-            if (quoteData.hasFreightClass.Equals(true)) // If has class   
+            //Start_volume_threads();
+
+            //oThreadEstes_DLS_account.Start();
+            //ltl_threads.Add(oThreadEstes_DLS_account);
+
+            oThreadEstes_Genera_account.Start();
+            ltl_threads.Add(oThreadEstes_Genera_account);
+
+            oThreadDLS.Start();
+            ltl_threads.Add(oThreadDLS);
+
+            oThreadDLS_GLTL.Start();
+            ltl_threads.Add(oThreadDLS_GLTL);
+
+            if (quoteData.is_AAFES_quote.Equals(true))
             {
-                // Not tradeshow and has class start and join threads
-                #region Has class start and join threads
+                oThreadDLS_cust_rates.Start();
+                ltl_threads.Add(oThreadDLS_cust_rates);
+            }
 
-                #region Start Threads
+            oThreadDLS_BenFranklinCraftsMacon.Start();
+            ltl_threads.Add(oThreadDLS_BenFranklinCraftsMacon);
 
-                //Start_volume_threads();
+            oThreadDLS_Genera.Start();
+            ltl_threads.Add(oThreadDLS_Genera);
 
-                //oThreadEstes_DLS_account.Start();
-                //ltl_threads.Add(oThreadEstes_DLS_account);
+            oThreadDLS_HHG_Under_500.Start();
+            ltl_threads.Add(oThreadDLS_HHG_Under_500);
 
-                oThreadEstes_Genera_account.Start();
-                ltl_threads.Add(oThreadEstes_Genera_account);
+            oThreadDLS_GLTL_HHG_Under_500.Start();
+            ltl_threads.Add(oThreadDLS_GLTL_HHG_Under_500);
 
-                oThreadDLS.Start();
-                ltl_threads.Add(oThreadDLS);
+            oThreadUPS_FREIGHT_Genera.Start();
+            ltl_threads.Add(oThreadUPS_FREIGHT_Genera);
 
-                oThreadDLS_GLTL.Start();
-                ltl_threads.Add(oThreadDLS_GLTL);
+            oThreadBestOvernite_Genera.Start();
+            ltl_threads.Add(oThreadBestOvernite_Genera);
 
-                if (quoteData.is_AAFES_quote.Equals(true))
-                {
-                    oThreadDLS_cust_rates.Start();
-                    ltl_threads.Add(oThreadDLS_cust_rates);
-                }
+            oThreadPyle_Genera.Start();
+            ltl_threads.Add(oThreadPyle_Genera);
 
-                oThreadDLS_BenFranklinCraftsMacon.Start();
-                ltl_threads.Add(oThreadDLS_BenFranklinCraftsMacon);
+            oThreadAveritt_Genera.Start();
+            ltl_threads.Add(oThreadAveritt_Genera);
 
-                oThreadDLS_Genera.Start();
-                ltl_threads.Add(oThreadDLS_Genera);
+            oThreadNewPenn_Genera.Start();
+            ltl_threads.Add(oThreadNewPenn_Genera);
 
-                oThreadDLS_HHG_Under_500.Start();
-                ltl_threads.Add(oThreadDLS_HHG_Under_500);
+            oThreadSMTL_Genera.Start();
+            ltl_threads.Add(oThreadSMTL_Genera);
 
-                oThreadDLS_GLTL_HHG_Under_500.Start();
-                ltl_threads.Add(oThreadDLS_GLTL_HHG_Under_500);
+            oThreadFrontier_Genera.Start();
+            ltl_threads.Add(oThreadFrontier_Genera);
 
-                oThreadUPS_FREIGHT_Genera.Start();
-                ltl_threads.Add(oThreadUPS_FREIGHT_Genera);
+            oThreadDaylight_Genera.Start();
+            ltl_threads.Add(oThreadDaylight_Genera);
 
-                oThreadBestOvernite_Genera.Start();
-                ltl_threads.Add(oThreadBestOvernite_Genera);
+            //oThreadGetHTMLForInsurance.Start(); //insurance info
 
-                oThreadPyle_Genera.Start();
-                ltl_threads.Add(oThreadPyle_Genera);
+            oThreadAAACooper.Start();
+            ltl_threads.Add(oThreadAAACooper);
 
-                oThreadAveritt_Genera.Start();
-                ltl_threads.Add(oThreadAveritt_Genera);
+            
 
-                oThreadNewPenn_Genera.Start();
-                ltl_threads.Add(oThreadNewPenn_Genera);
+            if (AccessorialsObj.APTPU == false)
+            {
+                oThreadRL.Start();
+                ltl_threads.Add(oThreadRL);
+            }
 
-                oThreadSMTL_Genera.Start();
-                ltl_threads.Add(oThreadSMTL_Genera);
+            oThreadRL_Genera.Start();
+            ltl_threads.Add(oThreadRL_Genera);
 
-                oThreadFrontier_Genera.Start();
-                ltl_threads.Add(oThreadFrontier_Genera);
+            if (!quoteData.isHHG && !quoteData.isCommodityLkupHHG && AccessorialsObj.RESPU == false)
+            {
+                oThreadRR.Start();
+                ltl_threads.Add(oThreadRR);
+                oThreadRR_AAFES.Start();
+                ltl_threads.Add(oThreadRR_AAFES);
+            }
 
-                oThreadDaylight_Genera.Start();
-                ltl_threads.Add(oThreadDaylight_Genera);
+            //if (AccessorialsObj.RESPU.Equals(false))
+            //{
+            //    oThreadSEFL.Start();
+            //    ltl_threads.Add(oThreadSEFL);
+            //}
 
-                //oThreadGetHTMLForInsurance.Start(); //insurance info
+            //oThreadSAIA.Start();
 
-                oThreadAAACooper.Start();
-                ltl_threads.Add(oThreadAAACooper);
+            oThreadDayton.Start();
+            ltl_threads.Add(oThreadDayton);
 
-                if (quoteData.isHazmat == false && quoteData.hasDimensions.Equals(true))
-                {
+            //oThreadODFL.Start();
 
-                    UPS_PackageStartThreads();
+            oThreadConWayFreight.Start();
+            ltl_threads.Add(oThreadConWayFreight);
 
-                    #region Not used
-                    //oThreadUPSPackage_Ground.Start();
-                    //oThreadUPSPackage_NextDayAir.Start();
-                    //oThreadUPSPackage_SecondDayAir.Start();
-                    //oThreadUPSPackage_3DaySelect.Start();
-                    //oThreadUPSPackage_NextDayAirSaver.Start();
-                    //oThreadUPSPackage_NextDayAirEarlyAM.Start();
-                    //oThreadUPSPackage_2ndDayAirAM.Start();
-                    #endregion
-                }
+            if (quoteData.origZip.Equals("90040"))
+            {
+                oThreadXPO_Shug.Start();
+                ltl_threads.Add(oThreadXPO_Shug);
+            }
 
-                //if (isPuertoRicoDest == false) // Gives a wrong rate for PR
-                //{
-                //    oThreadNEMF.Start();
-                //    ltl_threads.Add(oThreadNEMF);
-                //}
+            #region USF Start threads 
 
-                if (AccessorialsObj.APTPU == false)
-                {
-                    oThreadRL.Start();
-                    ltl_threads.Add(oThreadRL);
-                }
+            if (quoteData.origState == "WA" || quoteData.origState == "OR" || quoteData.origState == "CA" || quoteData.origState == "NV" || quoteData.origState == "ID" || quoteData.origState == "MT" ||
+            quoteData.origState == "AZ" || quoteData.origState == "UT" || quoteData.origState == "WY" || quoteData.origState == "CO")
+            {
+                oThreadUSFREDPP.Start();
+                ltl_threads.Add(oThreadUSFREDPP);
+            }
 
-                oThreadRL_Genera.Start();
-                ltl_threads.Add(oThreadRL_Genera);
-
-                if (!quoteData.isHHG && !quoteData.isCommodityLkupHHG && AccessorialsObj.RESPU == false)
-                {
-                    oThreadRR.Start();
-                    ltl_threads.Add(oThreadRR);
-                    oThreadRR_AAFES.Start();
-                    ltl_threads.Add(oThreadRR_AAFES);
-                }
-
-                //if (AccessorialsObj.RESPU.Equals(false))
-                //{
-                //    oThreadSEFL.Start();
-                //    ltl_threads.Add(oThreadSEFL);
-                //}
-
-                //oThreadSAIA.Start();
-
-                oThreadDayton.Start();
-                ltl_threads.Add(oThreadDayton);
-
-                //oThreadODFL.Start();
-
-                oThreadConWayFreight.Start();
-                ltl_threads.Add(oThreadConWayFreight);
-
-                if (quoteData.origZip.Equals("90040"))
-                {
-                    oThreadXPO_Shug.Start();
-                    ltl_threads.Add(oThreadXPO_Shug);
-                }
-
-                #region USF Start threads 
-
-                if (quoteData.origState == "WA" || quoteData.origState == "OR" || quoteData.origState == "CA" || quoteData.origState == "NV" || quoteData.origState == "ID" || quoteData.origState == "MT" ||
+            if (quoteData.origState == "WA" || quoteData.origState == "OR" || quoteData.origState == "CA" || quoteData.origState == "NV" || quoteData.origState == "ID" || quoteData.origState == "MT" ||
                 quoteData.origState == "AZ" || quoteData.origState == "UT" || quoteData.origState == "WY" || quoteData.origState == "CO")
-                {
-                    oThreadUSFREDPP.Start();
-                    ltl_threads.Add(oThreadUSFREDPP);
-                }
-
-                if (quoteData.origState == "WA" || quoteData.origState == "OR" || quoteData.origState == "CA" || quoteData.origState == "NV" || quoteData.origState == "ID" || quoteData.origState == "MT" ||
-                    quoteData.origState == "AZ" || quoteData.origState == "UT" || quoteData.origState == "WY" || quoteData.origState == "CO")
-                {
-                    oThreadUSFREDSPCPP.Start();
-                    ltl_threads.Add(oThreadUSFREDSPCPP);
-                    oThreadUSFREDDEPP.Start();
-                    ltl_threads.Add(oThreadUSFREDDEPP);
-                }
-                else if (quoteData.is_good_USF_Holland_orig_state == true)
-                {
-                    oThreadUSFHOLSPCPP.Start();
-                    ltl_threads.Add(oThreadUSFHOLSPCPP);
-                    //oThread_USF_volume.Start();
-                }
-
-                #endregion
-
-                if (!quoteData.isHHG)
-                {
-                    oThreadRRSPC.Start();
-                    ltl_threads.Add(oThreadRRSPC);
-                }
-
-                oThreadSAIASPC.Start();
-                ltl_threads.Add(oThreadSAIASPC);
-                //oThreadEstesSPC.Start();
-
-                #endregion
-
-                #endregion
-
-            }
-            else if (m_lPiece[0].Length > 0) // Any accessorial combination 
             {
-                #region No Class provided
-                // No Class provided
-                //oThreadGetHTMLForInsurance.Start(); //insurance info
-
-                if (quoteData.isHazmat == false && quoteData.hasDimensions.Equals(true))
-                {
-                    UPS_PackageStartThreads();
-                    //ltl_threads.Add(UPS_PackageStartThreads);
-                }
-
-                #endregion
+                oThreadUSFREDSPCPP.Start();
+                ltl_threads.Add(oThreadUSFREDSPCPP);
+                oThreadUSFREDDEPP.Start();
+                ltl_threads.Add(oThreadUSFREDDEPP);
             }
+            else if (quoteData.is_good_USF_Holland_orig_state == true)
+            {
+                oThreadUSFHOLSPCPP.Start();
+                ltl_threads.Add(oThreadUSFHOLSPCPP);
+                //oThread_USF_volume.Start();
+            }
+
+            #endregion
+
+            if (!quoteData.isHHG)
+            {
+                oThreadRRSPC.Start();
+                ltl_threads.Add(oThreadRRSPC);
+            }
+
+            oThreadSAIASPC.Start();
+            ltl_threads.Add(oThreadSAIASPC);
+            //oThreadEstesSPC.Start();
+
+            #endregion
+        
         }
     }
 
@@ -6382,20 +6314,9 @@ public class LTL_Carriers
                 {
                     Start_volume_threads();
                 }
-
-                //if (quoteData.is_Genera_quote == true && quoteData.totalUnits > 6)
-                //{
-                //    // Do nothing
-                //}
-                //else
-                //{
-                //    NetNet_Start_LTL_threads();
-                //}
-
+                
                 if (quoteData.is_Genera_quote == true)
-                {
-                    
-
+                {                
                     if (can_get_XPO_rate == true)
                     {
                         oThreadDLS_Genera = new Thread(new ThreadStart(GetResultObjectFromDLS_Genera));
@@ -6404,8 +6325,7 @@ public class LTL_Carriers
                     else if (quoteData.totalUnits < 6)
                     {
                         NetNet_Start_LTL_threads();
-                    }
-                        
+                    }                       
                 }
                 else
                 {
@@ -6472,56 +6392,7 @@ public class LTL_Carriers
 
     #endregion
 
-    #region UPS_PackageStartThreads
-
-    public void UPS_PackageStartThreads()
-    {
-        oThreadUPSPackage_Ground.Start();
-        oThreadUPSPackage_NextDayAir.Start();
-        oThreadUPSPackage_SecondDayAir.Start();
-        oThreadUPSPackage_3DaySelect.Start();
-        oThreadUPSPackage_NextDayAirSaver.Start();
-        oThreadUPSPackage_NextDayAirEarlyAM.Start();
-        oThreadUPSPackage_2ndDayAirAM.Start();
-    }
-
-    #endregion
-
-    #region UPS_PackageJoinThreads
-
-    public void UPS_PackageJoinThreads()
-    {
-        if (!oThreadUPSPackage_Ground.Join(TimeSpan.FromSeconds(12)))
-        {
-            oThreadUPSPackage_Ground.Abort();
-        }
-        if (!oThreadUPSPackage_NextDayAir.Join(TimeSpan.FromSeconds(12)))
-        {
-            oThreadUPSPackage_NextDayAir.Abort();
-        }
-        if (!oThreadUPSPackage_SecondDayAir.Join(TimeSpan.FromSeconds(12)))
-        {
-            oThreadUPSPackage_SecondDayAir.Abort();
-        }
-        if (!oThreadUPSPackage_3DaySelect.Join(TimeSpan.FromSeconds(12)))
-        {
-            oThreadUPSPackage_3DaySelect.Abort();
-        }
-        if (!oThreadUPSPackage_NextDayAirSaver.Join(TimeSpan.FromSeconds(12)))
-        {
-            oThreadUPSPackage_NextDayAirSaver.Abort();
-        }
-        if (!oThreadUPSPackage_NextDayAirEarlyAM.Join(TimeSpan.FromSeconds(12)))
-        {
-            oThreadUPSPackage_NextDayAirEarlyAM.Abort();
-        }
-        if (!oThreadUPSPackage_2ndDayAirAM.Join(TimeSpan.FromSeconds(12)))
-        {
-            oThreadUPSPackage_2ndDayAirAM.Abort();
-        }
-    }
-
-    #endregion
+    #region Volume threads
 
     #region Start_volume_threads
 
@@ -6690,16 +6561,6 @@ public class LTL_Carriers
     }
 
     #endregion
-    
-    #region Start_join_LTL_threads
-
-    private void Start_join_LTL_threads(string mode)
-    {
-        if (mode == "start")
-            Start_threads();
-        else
-            Join_threads();
-    }
 
     #endregion
 
@@ -8143,6 +8004,43 @@ public class LTL_Carriers
 
     #endregion
 
+    #region Start_thread
+
+    private void Start_thread(ref Thread thread)
+    {
+        thread.Start();
+        ltl_threads.Add(thread);
+    }
+
+    #endregion
+
+    #region Join_threads
+
+    private void Join_threads()
+    {
+        for (byte i = 0; i < ltl_threads.Count; i++)
+        {
+            if (!ltl_threads[i].Join(TimeSpan.FromSeconds(25)))
+            {
+                ltl_threads[i].Abort();
+            }
+        }
+    }
+
+    #endregion
+    
+    #region Start_join_LTL_threads
+
+    private void Start_join_LTL_threads(string mode)
+    {
+        if (mode == "start")
+            Start_threads();
+        else
+            Join_threads();
+    }
+
+    #endregion
+   
     #endregion
 
 }

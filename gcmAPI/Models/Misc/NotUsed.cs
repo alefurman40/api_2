@@ -93,5 +93,80 @@ namespace gcmAPI.Models.Misc
         //}
 
         #endregion
+
+
+        #region UPS_PackageStartThreads
+
+        //public void UPS_PackageStartThreads()
+        //{
+        //    oThreadUPSPackage_Ground.Start();
+        //    oThreadUPSPackage_NextDayAir.Start();
+        //    oThreadUPSPackage_SecondDayAir.Start();
+        //    oThreadUPSPackage_3DaySelect.Start();
+        //    oThreadUPSPackage_NextDayAirSaver.Start();
+        //    oThreadUPSPackage_NextDayAirEarlyAM.Start();
+        //    oThreadUPSPackage_2ndDayAirAM.Start();
+        //}
+
+        #endregion
+
+        #region UPS_PackageJoinThreads
+
+        //public void UPS_PackageJoinThreads()
+        //{
+        //    if (!oThreadUPSPackage_Ground.Join(TimeSpan.FromSeconds(12)))
+        //    {
+        //        oThreadUPSPackage_Ground.Abort();
+        //    }
+        //    if (!oThreadUPSPackage_NextDayAir.Join(TimeSpan.FromSeconds(12)))
+        //    {
+        //        oThreadUPSPackage_NextDayAir.Abort();
+        //    }
+        //    if (!oThreadUPSPackage_SecondDayAir.Join(TimeSpan.FromSeconds(12)))
+        //    {
+        //        oThreadUPSPackage_SecondDayAir.Abort();
+        //    }
+        //    if (!oThreadUPSPackage_3DaySelect.Join(TimeSpan.FromSeconds(12)))
+        //    {
+        //        oThreadUPSPackage_3DaySelect.Abort();
+        //    }
+        //    if (!oThreadUPSPackage_NextDayAirSaver.Join(TimeSpan.FromSeconds(12)))
+        //    {
+        //        oThreadUPSPackage_NextDayAirSaver.Abort();
+        //    }
+        //    if (!oThreadUPSPackage_NextDayAirEarlyAM.Join(TimeSpan.FromSeconds(12)))
+        //    {
+        //        oThreadUPSPackage_NextDayAirEarlyAM.Abort();
+        //    }
+        //    if (!oThreadUPSPackage_2ndDayAirAM.Join(TimeSpan.FromSeconds(12)))
+        //    {
+        //        oThreadUPSPackage_2ndDayAirAM.Abort();
+        //    }
+        //}
+
+        #endregion
+
+
+        //if (quoteData.isHazmat == false && quoteData.hasDimensions.Equals(true))
+        //{
+
+        //    //UPS_PackageStartThreads();
+
+        //    #region Not used
+        //    //oThreadUPSPackage_Ground.Start();
+        //    //oThreadUPSPackage_NextDayAir.Start();
+        //    //oThreadUPSPackage_SecondDayAir.Start();
+        //    //oThreadUPSPackage_3DaySelect.Start();
+        //    //oThreadUPSPackage_NextDayAirSaver.Start();
+        //    //oThreadUPSPackage_NextDayAirEarlyAM.Start();
+        //    //oThreadUPSPackage_2ndDayAirAM.Start();
+        //    #endregion
+        //}
+
+        //if (isPuertoRicoDest == false) // Gives a wrong rate for PR
+        //{
+        //    oThreadNEMF.Start();
+        //    ltl_threads.Add(oThreadNEMF);
+        //}
     }
 }
