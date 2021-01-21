@@ -626,13 +626,13 @@ public class LTL_Carriers
             if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
             {
                 // Start DLS threads, to get only XPO rate
-                //Start_join_LTL_threads("start");
-                Start_join_LTL_threads_if_density_not_low("start");
+                Start_join_LTL_threads("start");
+                //Start_join_LTL_threads_if_density_not_low("start");
             }
             else if (quoteData.totalUnits < 6)
             {
-                //Start_join_LTL_threads("start");
-                Start_join_LTL_threads_if_density_not_low("start");
+                Start_join_LTL_threads("start");
+                //Start_join_LTL_threads_if_density_not_low("start");
             }
             else
             {
@@ -665,11 +665,13 @@ public class LTL_Carriers
             if (quoteData.totalUnits == 6 || quoteData.totalUnits == 7 || quoteData.totalUnits == 8 || quoteData.totalUnits == 9)
             {
                 // Join DLS threads, to get only XPO rate
-                Start_join_LTL_threads_if_density_not_low("join");
+                //Start_join_LTL_threads_if_density_not_low("join");
+                Start_join_LTL_threads("join");
             }
             else if (quoteData.totalUnits < 6)
             {
-                Start_join_LTL_threads_if_density_not_low("join");
+                //Start_join_LTL_threads_if_density_not_low("join");
+                Start_join_LTL_threads("join");
             }
             else
             {
