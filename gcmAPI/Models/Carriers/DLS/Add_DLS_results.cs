@@ -237,7 +237,7 @@ namespace gcmAPI.Models.Carriers.DLS
                                         DB.Log("total, our rate", string.Concat(objCarrier.Total, " ", objQuote.OurRate));
 
                                         dlsPercentSum = (decimal)((objQuote.OurRate + addition) * 0.2);
-                                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsPercentSum);
+                                        objQuote.TotalPrice = Convert.ToDouble(Convert.ToDecimal(objQuote.OurRate) + dlsPercentSum);
 
                                         DB.Log("dlsPercentSum, objQuote.TotalPrice", string.Concat(dlsPercentSum, " ", objQuote.TotalPrice));
                                     }
@@ -268,7 +268,7 @@ namespace gcmAPI.Models.Carriers.DLS
                                     if (objCarrier.Scac == "CNWY")
                                     {
                                         dlsPercentSum = (decimal)((objQuote.OurRate + addition) * 0.2);
-                                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsPercentSum);
+                                        objQuote.TotalPrice = Convert.ToDouble(Convert.ToDecimal(objQuote.OurRate) + dlsPercentSum);
                                     }
                                     else
                                     {
