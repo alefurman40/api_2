@@ -6770,7 +6770,7 @@ public class LTL_Carriers
     private void AddCarrierResultsToArray(ref int transitAddition, ref double addition, bool hasHazmat, ref int newLogId)
     {
         //sunset_volume_result
-        DB.Log("AddCarrierResultsToArray", "1");
+        //DB.Log("AddCarrierResultsToArray", "1");
 
         #region sunset_volume_result
 
@@ -7875,7 +7875,7 @@ public class LTL_Carriers
 
         #endregion
 
-        DB.Log("AddCarrierResultsToArray", "before dlsPricesheets");
+        //DB.Log("AddCarrierResultsToArray", "before dlsPricesheets");
 
         #region dlsPricesheets
 
@@ -7926,13 +7926,13 @@ public class LTL_Carriers
             if (dlsPricesheets_Genera != null && dlsPricesheets_Genera.Count > 0)
             {
                 string UserName = "Genera Corp";
-                DB.Log("dlsPricesheets_Genera.Count > 0", "");
+                //DB.Log("dlsPricesheets_Genera.Count > 0", "");
                 add_dls_results.AddDLS_ResultToArray(ref dlsPricesheets_Genera, ref totalQuotes, ref UserName);
 
             }
             else
             {
-                DB.Log("dlsPricesheets_Genera", " was empty");
+                //DB.Log("dlsPricesheets_Genera", " was empty");
             }
 
             if (dlsPricesheets_HHG_Under_500 != null && dlsPricesheets_HHG_Under_500.Count > 0)
