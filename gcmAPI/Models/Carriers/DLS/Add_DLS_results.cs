@@ -203,8 +203,16 @@ namespace gcmAPI.Models.Carriers.DLS
 
                                 if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
                                 {
-                                  
-                                    objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
+                                    if (objCarrier.Scac == "CNWY")
+                                    {
+                                        dlsPercentSum = (objCarrier.Total + Convert.ToDecimal(addition)) * 0.2M;
+                                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsPercentSum);
+                                    }
+                                    else
+                                    {
+                                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
+                                    }
+                                    
                                 }
                                 else
                                 {
@@ -222,7 +230,16 @@ namespace gcmAPI.Models.Carriers.DLS
                             {
                                 if (quoteData.is_Genera_quote == true || quoteData.username == AppCodeConstants.un_genera)
                                 {
-                                    objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
+                                    if (objCarrier.Scac == "CNWY")
+                                    {
+                                        dlsPercentSum = (objCarrier.Total + Convert.ToDecimal(addition)) * 0.2M;
+                                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsPercentSum);
+                                    }
+                                    else
+                                    {
+                                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total);
+                                    }
+                                    
                                 }
                                 else
                                 {

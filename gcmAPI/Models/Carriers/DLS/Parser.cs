@@ -452,8 +452,8 @@ namespace gcmAPI.Models.Carriers.DLS
                 }
 
                 #region Add results while adding DLS Worldwide carrier only once
-                DB.Log("regular adding not DLS Worldwide",
-                       "before add results");
+                //DB.Log("regular adding not DLS Worldwide",
+                //       "before add results");
                 // Add DLS Worldwide carrier only once
                 if (!pSheet.Scac.Equals("DRRQ"))
                 {
