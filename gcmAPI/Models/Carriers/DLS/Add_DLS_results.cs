@@ -172,11 +172,21 @@ namespace gcmAPI.Models.Carriers.DLS
 
                     if (quoteData.mode.Equals("NetNet"))
                     {
-                        objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
+                        //objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
 
                         if (quoteData.is_Genera_quote == true)
                         {
-                            // Do nothing
+                           // objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
+
+                            if (objCarrier.Scac == "CNWY")
+                            {
+                                dlsPercentSum = (objCarrier.Total + Convert.ToDecimal(addition)) * 0.2M;
+                                objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M + dlsPercentSum);
+                            }
+                            else
+                            {
+                                objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
+                            }
                         }
                         else
                         {
