@@ -1,1267 +1,146 @@
-﻿<ArrayOfPricesheetViewModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy">
-  <PricesheetViewModel>
-    <AccessorialTotal>114.71</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(142691,3840,0)</CarrierId>
-    <CarrierName>SAIA</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>1216.99</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>54.33</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-719.24</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>59.1</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>64.71</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>497.75</Quantity>
-        <Rate>13</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>50</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>50</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(198770712541,3023,0)</ContractId>
-    <ContractName>1PSI Cost SAIA</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>1020182</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>SAIA</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>497.75</SubTotal>
-    <Total>612.46</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>297.1</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(8210554331,3840,0)</CarrierId>
-    <CarrierName>FORWARD AIR, INC.</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>5081.44</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>226.85</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-3855.29</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>75.87</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>229.9</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>1226.15</Quantity>
-        <Rate>18.75</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>67.2</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>2240</Quantity>
-        <Rate>0.03</Rate>
-        <RateQualifier>PZ</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199365345011,3023,0)</ContractId>
-    <ContractName>1PSI Cost FWDA</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>1211821</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>FWDA</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>4</ServiceDays>
-    <SubTotal>1226.15</SubTotal>
-    <Total>1523.25</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>143.76</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(29269919131,3840,0)</CarrierId>
-    <CarrierName>YRC Freight</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>1216.99</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>54.33</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-726.54</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>59.7</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>63.76</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>490.45</Quantity>
-        <Rate>13</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>80</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>80</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199783888458,3023,0)</ContractId>
-    <ContractName>1PSI Cost RDWY</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>2006319</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>RDWY</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>490.45</SubTotal>
-    <Total>634.21</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>106.83</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(132784695631,3840,0)</CarrierId>
-    <CarrierName>Dayton Freight Lines, Inc.</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>1216.99</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>54.33</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-664.48</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>54.6</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>71.83</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>552.51</Quantity>
-        <Rate>13</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>35</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>35</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199854760626,3023,0)</ContractId>
-    <ContractName>1PSI Cost DAFG</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>P</DestinationService>
-    <Distance>514</Distance>
-    <Id>1207380</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY COMPANY OF CONNECTICUT</Company>
-        <ContactName>MARSH USA INC</ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>2018-03-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY COMPANY OF CONNECTICUT</Company>
-        <ContactName>MARSH USA INC</ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>2018-03-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY COMPANY OF CONNECTICUT</Company>
-        <ContactName>MARSH USA INC</ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>2018-03-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>DAFG</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>552.51</SubTotal>
-    <Total>659.34</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>160.88</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(144077,3840,0)</CarrierId>
-    <CarrierName>R &amp; L Carriers, Inc.</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>1216.99</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>54.33</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-671.78</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>55.2</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>70.88</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>545.21</Quantity>
-        <Rate>13</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>90</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>90</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199941804460,3023,0)</ContractId>
-    <ContractName>1PSI Cost RNLO</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>1048753</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>PROTECTIVE INSURANCE COMPANY</Company>
-        <ContactName>BALDWIN &amp; LYONS INC</ContactName>
-        <ContactPhone>8002316024</ContactPhone>
-        <ExpirationDate>2017-10-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>PROTECTIVE INSURANCE COMPANY</Company>
-        <ContactName>BALDWIN &amp; LYONS INC</ContactName>
-        <ContactPhone>8002316024</ContactPhone>
-        <ExpirationDate>2017-10-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>PROTECTIVE INSURANCE COMPANY</Company>
-        <ContactName>BALDWIN &amp; LYONS INC</ContactName>
-        <ContactPhone>8002316024</ContactPhone>
-        <ExpirationDate>2017-10-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>RNLO</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>545.21</SubTotal>
-    <Total>706.09</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>137.25</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(195279637052,3840,0)</CarrierId>
-    <CarrierName>Ward Trucking, Llc</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>973.5</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>100</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>43.46</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-520.82</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>53.5</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>58.85</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>452.68</Quantity>
-        <Rate>13</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>78.4</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>2240</Quantity>
-        <Rate>0.035</Rate>
-        <RateQualifier>PZ</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(199988772049,3023,0)</ContractId>
-    <ContractName>1PSI Cost WARD Direct</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>1020240</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY CO OF CT</Company>
-        <ContactName>NEXTIER INSURANCE SERVICES</ContactName>
-        <ContactPhone>7247766077</ContactPhone>
-        <ExpirationDate>2019-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY CO OF CT</Company>
-        <ContactName>NEXTIER INSURANCE SERVICES</ContactName>
-        <ContactPhone>7247766077</ContactPhone>
-        <ExpirationDate>2019-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>5000000</Amount>
-        <Company>TRAVELERS INDEMNITY CO OF CT</Company>
-        <ContactName>NEXTIER INSURANCE SERVICES</ContactName>
-        <ContactPhone>7247766077</ContactPhone>
-        <ExpirationDate>2019-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>WARD</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>1</ServiceDays>
-    <SubTotal>452.68</SubTotal>
-    <Total>589.93</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>92.77</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(33514152931,3840,0)</CarrierId>
-    <CarrierName>Estes Express Lines</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>972.38</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>43.41</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-528</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>54.3</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>57.77</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>444.38</Quantity>
-        <Rate>13</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>35</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>35</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(200101165598,3023,0)</ContractId>
-    <ContractName>1PSI Cost EXLA</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>1020011</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>10000000</Amount>
-        <Company>NATIONAL UNION FIRE INS CO OF PITTSBURGH</Company>
-        <ContactName>AON RISK SERVICES SOUTH INC</ContactName>
-        <ContactPhone>8662837122</ContactPhone>
-        <ExpirationDate>2018-05-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>10000000</Amount>
-        <Company>NATIONAL UNION FIRE INS CO OF PITTSBURGH</Company>
-        <ContactName>AON RISK SERVICES SOUTH INC</ContactName>
-        <ContactPhone>8662837122</ContactPhone>
-        <ExpirationDate>2018-05-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>10000000</Amount>
-        <Company>NATIONAL UNION FIRE INS CO OF PITTSBURGH</Company>
-        <ContactName>AON RISK SERVICES SOUTH INC</ContactName>
-        <ContactPhone>8662837122</ContactPhone>
-        <ExpirationDate>2018-05-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>EXLA</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>444.38</SubTotal>
-    <Total>537.15</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>152.61</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(143945,3840,0)</CarrierId>
-    <CarrierName>Fedex LTL Priority</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>1216.99</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>54.33</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-704.64</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>57.9</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>108.62</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>512.35</Quantity>
-        <Rate>21.2</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>43.99</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>43.99</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(200103081231,3023,0)</ContractId>
-    <ContractName>1PSI Cost FXFE</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>2200949</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>FXFE</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>512.35</SubTotal>
-    <Total>664.96</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>169.38</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(2631944531,3840,0)</CarrierId>
-    <CarrierName>Fedex LTL Economy</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>1216.99</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>54.33</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-625.53</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>51.4</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>125.39</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>591.46</Quantity>
-        <Rate>21.2</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>43.99</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>43.99</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(200103704639,3023,0)</ContractId>
-    <ContractName>1PSI Cost FXNL</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>1213139</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>FXNL</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>3</ServiceDays>
-    <SubTotal>591.46</SubTotal>
-    <Total>760.84</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>91.04</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(32740883631,3840,0)</CarrierId>
-    <CarrierName>UPS Freight</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>3332</Amount>
-        <Description>Total Line Haul</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>148.75</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-2968.81</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>89.1</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>41.04</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>363.19</Quantity>
-        <Rate>11.3</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>50</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>50</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(200164181048,3023,0)</ContractId>
-    <ContractName>1PSI Cost UPGF</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>001218208</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>LIBERTY MUTUAL INSURANCE CO NAT'L INS NORTHEAST</Company>
-        <ContactName>LIBERTY MUTUAL INSURANCE</ContactName>
-        <ContactPhone>7818918900</ContactPhone>
-        <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>LIBERTY MUTUAL INSURANCE CO NAT'L INS NORTHEAST</Company>
-        <ContactName>LIBERTY MUTUAL INSURANCE</ContactName>
-        <ContactPhone>7818918900</ContactPhone>
-        <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>1000000</Amount>
-        <Company>LIBERTY MUTUAL INSURANCE CO NAT'L INS NORTHEAST</Company>
-        <ContactName>LIBERTY MUTUAL INSURANCE</ContactName>
-        <ContactPhone>7818918900</ContactPhone>
-        <ExpirationDate>2018-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>UPGF</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>363.19</SubTotal>
-    <Total>454.23</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-  <PricesheetViewModel>
-    <AccessorialTotal>113.35</AccessorialTotal>
-    <AdjustedBenchmark>0</AdjustedBenchmark>
-    <CarrierId>(143899,3840,0)</CarrierId>
-    <CarrierName>XPO Logistics Freight, Inc.</CarrierName>
-    <ChargeModel>NORMALIZED_SMC</ChargeModel>
-    <Charges>
-      <RateChargeViewModel>
-        <Amount>1424.86</Amount>
-        <Description>ITEMNAME</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode></EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>125</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>22.4</Quantity>
-        <Rate>63.61</Rate>
-        <RateQualifier>CW</RateQualifier>
-        <Type>ITEM</Type>
-        <Weight>2240</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>-783.67</Amount>
-        <Description>Discount</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>DSC</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>55</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>DISCOUNT</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>83.35</Amount>
-        <Description>Fuel Surcharge</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>405</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>false</IsMax>
-        <IsMin>false</IsMin>
-        <IsNontaxable>false</IsNontaxable>
-        <Quantity>641.19</Quantity>
-        <Rate>13</Rate>
-        <RateQualifier>PCT</RateQualifier>
-        <Type>ACCESSORIAL_FUEL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-      <RateChargeViewModel>
-        <Amount>30</Amount>
-        <Description>Limited Access Delivery - Military Bases, Installations</Description>
-        <DimWeight>0</DimWeight>
-        <EdiCode>LADMILI</EdiCode>
-        <FakFreightClass>0</FakFreightClass>
-        <FreightClass>0</FreightClass>
-        <IsMax>true</IsMax>
-        <IsMin>true</IsMin>
-        <IsNontaxable>true</IsNontaxable>
-        <Quantity>0</Quantity>
-        <Rate>30</Rate>
-        <RateQualifier>FR</RateQualifier>
-        <Type>ACCESSORIAL</Type>
-        <Weight>0</Weight>
-      </RateChargeViewModel>
-    </Charges>
-    <ContractId>(197830541757,3023,0)</ContractId>
-    <ContractName>1PSI Cost CNWY The Exchange 3rd Party ASP</ContractName>
-    <CurrencyCode>USD</CurrencyCode>
-    <DestinationService>D</DestinationService>
-    <Distance>514</Distance>
-    <Id>1225092</Id>
-    <InsuranceTypes>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-      <InsuranceTypeViewModel>
-        <Amount>0</Amount>
-        <Company></Company>
-        <ContactName></ContactName>
-        <ContactPhone></ContactPhone>
-        <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-        <Type>Liability</Type>
-      </InsuranceTypeViewModel>
-    </InsuranceTypes>
-    <InsuredDetail xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rrdl.Dls.Proxy.Models.ViewModels.RateShop" i:nil="true" />
-    <IsSelected>false</IsSelected>
-    <Mode>LTL</Mode>
-    <OriginService>D</OriginService>
-    <Scac>CNWY</Scac>
-    <Service>LTL</Service>
-    <ServiceDays>2</ServiceDays>
-    <SubTotal>641.19</SubTotal>
-    <Total>754.54</Total>
-    <Type>Charge</Type>
-  </PricesheetViewModel>
-</ArrayOfPricesheetViewModel>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraceShipmentResponse xmlns="http://www.rlcarriers.com/">
+      <TraceShipmentResult>
+        <WasSuccess>true</WasSuccess>
+        <Messages />
+        <Result>
+          <Shipment>
+            <ErrResponse xmlns="http://tempuri.org/">
+              <Level>0</Level>
+            </ErrResponse>
+            <Parties xmlns="http://tempuri.org/">
+              <Party>
+                <PartyID />
+                <Type>CONSIGNEE</Type>
+                <Attention />
+                <Name>POLYNT COMPOSITES USA INC</Name>
+                <PrimaryAddress>
+                  <Address1>10124 ROCKET BLVD</Address1>
+                  <Address2 />
+                  <Address3 />
+                  <City>ORLANDO</City>
+                  <State>FL</State>
+                  <Zip>32824</Zip>
+                  <CountryName />
+                  <CountryCode>USA</CountryCode>
+                  <AddressType />
+                </PrimaryAddress>
+              </Party>
+              <Party>
+                <PartyID />
+                <Type>SHIPPER</Type>
+                <Attention />
+                <Name>DURA</Name>
+                <PrimaryAddress>
+                  <Address1>7120 KRICK RD</Address1>
+                  <Address2 />
+                  <Address3 />
+                  <City>WALTON HILLS</City>
+                  <State>OH</State>
+                  <Zip>44146</Zip>
+                  <CountryName />
+                  <CountryCode>USA</CountryCode>
+                  <AddressType />
+                </PrimaryAddress>
+              </Party>
+              <Party>
+                <PartyID />
+                <Type>BILLER</Type>
+                <Attention />
+                <Name>DURA CHEMICALS C/O AES LOGISTI</Name>
+                <PrimaryAddress>
+                  <Address1>2505 S 320TH ST STE 625</Address1>
+                  <Address2 />
+                  <Address3 />
+                  <City>FEDERAL WAY</City>
+                  <State>WA</State>
+                  <Zip>98003</Zip>
+                  <CountryName />
+                  <CountryCode>USA</CountryCode>
+                  <AddressType />
+                </PrimaryAddress>
+              </Party>
+            </Parties>
+            <ShipmentNumber xmlns="http://tempuri.org/">I550368513</ShipmentNumber>
+            <ReferenceNumbers xmlns="http://tempuri.org/">
+              <ReferenceNumber>
+                <Type>MBOL</Type>
+                <Description>MBOL</Description>
+                <Number>120140-00</Number>
+              </ReferenceNumber>
+              <ReferenceNumber>
+                <Type>MCN</Type>
+                <Description>MCN</Description>
+                <Number>10479</Number>
+              </ReferenceNumber>
+              <ReferenceNumber>
+                <Type>MCORD</Type>
+                <Description>MCORD</Description>
+                <Number>7800122619</Number>
+              </ReferenceNumber>
+              <ReferenceNumber>
+                <Type>MPO</Type>
+                <Description>MPO</Description>
+                <Number>7800122619</Number>
+              </ReferenceNumber>
+            </ReferenceNumbers>
+            <ShipmentDates xmlns="http://tempuri.org/">
+              <ShipmentDate>
+                <Type>Appointment Date</Type>
+                <Date />
+                <Time />
+              </ShipmentDate>
+              <ShipmentDate>
+                <Type>Estimated Delivery</Type>
+                <Date>01/21/2021</Date>
+                <Time />
+              </ShipmentDate>
+              <ShipmentDate>
+                <Type>Pickup Date</Type>
+                <Date>01/19/2021</Date>
+                <Time />
+              </ShipmentDate>
+              <ShipmentDate>
+                <Type>Delivered</Type>
+                <Date>01/21/2021</Date>
+                <Time>12:01:00 PM</Time>
+              </ShipmentDate>
+            </ShipmentDates>
+            <Piece xmlns="http://tempuri.org/">1</Piece>
+            <Weight xmlns="http://tempuri.org/">2012</Weight>
+            <Blind xmlns="http://tempuri.org/">FALSE</Blind>
+            <ShortStatus xmlns="http://tempuri.org/">Delivered</ShortStatus>
+            <LongStatus xmlns="http://tempuri.org/">This shipment was delivered on time on 01/21/2021</LongStatus>
+            <StatusHistory xmlns="http://tempuri.org/">
+              <Status>
+                <Date>01/19/2021</Date>
+                <Time>01:24:28 PM</Time>
+                <Description>Picked Up in WALTON HILLS, OH</Description>
+              </Status>
+              <Status>
+                <Date>01/20/2021</Date>
+                <Time>02:06:47 AM</Time>
+                <Description>Departed NORWALK, OH in route to destination terminal</Description>
+              </Status>
+              <Status>
+                <Date>01/20/2021</Date>
+                <Time>10:46:00 PM</Time>
+                <Description>Arrived at destination terminal</Description>
+              </Status>
+              <Status>
+                <Date>01/21/2021</Date>
+                <Time>12:01:00 PM</Time>
+                <Description>Delivered</Description>
+              </Status>
+            </StatusHistory>
+            <Is3PL xmlns="http://tempuri.org/" />
+            <ErrorMessage xmlns="http://tempuri.org/" />
+            <ServiceLevel xmlns="http://tempuri.org/">STD</ServiceLevel>
+          </Shipment>
+        </Result>
+      </TraceShipmentResult>
+    </TraceShipmentResponse>
+  </soap:Body>
+</soap:Envelope>

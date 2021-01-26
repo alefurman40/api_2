@@ -240,12 +240,12 @@ namespace gcmAPI.Models.Carriers
                //"&Acc_RES=Y&Acc_LGD=Y"
                );
 
-            //HelperFuncs.writeToSiteErrors("Pitt Ohio API (Live) request", url);
+            HelperFuncs.writeToSiteErrors("Pitt Ohio API (Live) request", url);
             //string doc = "";
             string doc = (string)HelperFuncs.generic_http_request_3(
                 "string", null, url, "", "text/xml", "*/*", "GET", "", false, false, "", "");
 
-            //HelperFuncs.writeToSiteErrors("Pitt Ohio API (Live) response", doc);
+            HelperFuncs.writeToSiteErrors("Pitt Ohio API (Live) response", doc);
 
 
             string[] tokens = new string[3];
