@@ -5543,6 +5543,15 @@ public class LTL_Carriers
                 //ltl_threads.Add(oThreadRL);
 
                 Start_thread(ref oThreadRL);
+
+                HelperFuncs.isDirectPittOhio(ref isDirectPittOhioZone, ref quoteData.origZip, ref quoteData.destZip); // Bool is passed by ref 
+
+                //DB.Log("isDirectPittOhioZone", isDirectPittOhioZone.ToString());
+
+                if (isDirectPittOhioZone)
+                {                  
+                    Start_thread(ref oThreadPittOhio_API_Durachem);
+                }
             }
         }
 
