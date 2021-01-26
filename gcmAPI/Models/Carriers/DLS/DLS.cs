@@ -265,33 +265,33 @@ namespace gcmAPI.Models.Carriers.DLS
                 
                 if (guaranteedService == false)
                 {
-                    
-                    //if (is_Estes_HHG_Under_500 == true)
-                    //{
-                    //}
-                    //else if (UserName == "The Exchange")
-                    //{
-                    //    DB.Log("getRateFromDLS_cust_rates res_part_1", res_part_1);
-                    //    DB.Log("getRateFromDLS_cust_rates res_part_2", res_part_2);
-                    //}
-                    //else if (UserName == "Ben Franklin Crafts - Macon")
-                    //{
-                    //    DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_1", res_part_1);
-                    //    DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_2", res_part_2);
-                    //}
-                    //else if (UserName == "Genera Corp")
-                    //{
 
-                    //    DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
-                    //    DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
+                    if (is_Estes_HHG_Under_500 == true)
+                    {
+                    }
+                    else if (UserName == "The Exchange")
+                    {
+                        //DB.Log("getRateFromDLS_cust_rates res_part_1", res_part_1);
+                        //DB.Log("getRateFromDLS_cust_rates res_part_2", res_part_2);
+                    }
+                    else if (UserName == "Ben Franklin Crafts - Macon")
+                    {
+                        //DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_1", res_part_1);
+                        //DB.Log("getRateFromDLS Ben Franklin Crafts - Macon res_part_2", res_part_2);
+                    }
+                    else if (UserName == "Genera Corp")
+                    {
 
-                    //}
-                    //else
-                    //{
-                    //    // PNW - Burien WA
-                    //    DB.Log("getRateFromDLS res_part_1", res_part_1);
-                    //    DB.Log("getRateFromDLS res_part_2", res_part_2);
-                    //}
+                        DB.Log("getRateFromDLS Genera Corp res_part_1", res_part_1);
+                        DB.Log("getRateFromDLS Genera Corp res_part_2", res_part_2);
+
+                    }
+                    else
+                    {
+                        // PNW - Burien WA
+                        //DB.Log("getRateFromDLS res_part_1", res_part_1);
+                        //DB.Log("getRateFromDLS res_part_2", res_part_2);
+                    }
                 }
 
                 //doc = (string)HelperFuncs.generic_http_request_addHeaders("string", container, url, referrer, contentType, accept, method,
@@ -494,7 +494,7 @@ namespace gcmAPI.Models.Carriers.DLS
 
                 #region Post Data
 
-                //DB.Log("getRateFromDLS Alex2015 data", data);
+                DB.Log("getRateFromDLS Alex2015 data", data);
 
                 #endregion
 
