@@ -183,6 +183,8 @@ namespace gcmAPI.Models.Carriers.DLS
                         objQuote.OurRate = Convert.ToDouble(objCarrier.Total);
                     }
 
+                    
+
                     if (quoteData.mode.Equals("NetNet"))
                     {
                         //objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total / 1.16M);
@@ -232,8 +234,12 @@ namespace gcmAPI.Models.Carriers.DLS
                                 {
                                     if (objCarrier.Scac == "CNWY")
                                     {
+                                        DB.Log("total, our rate", string.Concat(objCarrier.Total, " ", objQuote.OurRate));
+
                                         dlsPercentSum = (decimal)((objQuote.OurRate + addition) * 0.2);
                                         objQuote.TotalPrice = Convert.ToDouble(objCarrier.Total + dlsPercentSum);
+
+                                        DB.Log("dlsPercentSum, objQuote.TotalPrice", string.Concat(dlsPercentSum, " ", objQuote.TotalPrice));
                                     }
                                     else
                                     {
