@@ -42,7 +42,7 @@ public class LTL_Carriers
     Thread oThreadDLS, oThreadDLS_GLTL, oThreadDLS_cust_rates, oThreadDLS_BenFranklinCraftsMacon, oThreadDLS_Genera,
         oThreadDLS_HHG_Under_500, oThreadDLS_GLTL_HHG_Under_500,
         oThreadRR, oThreadRR_Class50, 
-        oThreadPittOhio_API, oThreadPittOhio_API_SPC, oThreadPittOhio_API_Durachem,
+        oThreadPittOhio_API, oThreadPittOhio_API_SPC, oThreadPittOhio_API_Durachem, oThreadPittOhio_API_JC,
         oThreadYRC, oThreadYRC_SPC, oThreadRL, oThreadRL_Genera, oThreadSAIASPC,
         oThreadRRSPC, oThreadDayton;
     //, oThreadNEMF;oThreadSEFL,oThreadRLGriots,  oThreadCentralFreight,
@@ -152,7 +152,7 @@ public class LTL_Carriers
 
     GCMRateQuote pittOhioQuoteAPI;
     GCMRateQuote pittOhioQuoteAPI_SPC;
-    GCMRateQuote pittOhioQuoteAPI_Durachem;
+    GCMRateQuote pittOhioQuoteAPI_Durachem, pittOhioQuoteAPI_JC;
 
     ///////////MWI Pricing/////////////// 
     GCMRateQuote saiaQuoteMWI;
@@ -2430,6 +2430,33 @@ public class LTL_Carriers
 
         PittOhio pittOhio = new PittOhio(ref acctInfo, ref quoteData);
         pittOhio.GetResultObjectFromPittOhio_API(ref pittOhioQuoteAPI_Durachem);
+    }
+
+    #endregion
+
+    #region GetResultObjectFromPittOhio_API_JC
+
+    private void GetResultObjectFromPittOhio_API_JC()
+    {
+        Logins logins = new Logins();
+        logins.Get_login_info(127, out Logins.Login_info login_info);
+
+        DB.Log("GETTING JC RATES", "GETTING JC RATES");
+
+        CarrierAcctInfo acctInfo = new CarrierAcctInfo
+        {
+            username = login_info.username,
+            password = login_info.password,
+            //terms = "3",
+            terms = "P",
+            bookingKey = "#1#",
+            displayName = "Pitt Ohio",
+            carrierKey = "Pitt OhioDura"
+
+        };
+
+        PittOhio pittOhio = new PittOhio(ref acctInfo, ref quoteData);
+        pittOhio.GetResultObjectFromPittOhio_API(ref pittOhioQuoteAPI_JC);
     }
 
     #endregion
@@ -5319,6 +5346,9 @@ public class LTL_Carriers
         oThreadPittOhio_API = new Thread(new ThreadStart(GetResultObjectFromPittOhio_API));
         oThreadPittOhio_API_SPC = new Thread(new ThreadStart(GetResultObjectFromPittOhio_API_SPC));
         oThreadPittOhio_API_Durachem = new Thread(new ThreadStart(GetResultObjectFromPittOhio_API_Durachem));
+
+        oThreadPittOhio_API_JC = new Thread(new ThreadStart(GetResultObjectFromPittOhio_API_JC));
+
         oThreadYRC = new Thread(new ThreadStart(GetResultObjectFromYRC_API));
         oThreadYRC_SPC = new Thread(new ThreadStart(GetResultObjectFromYRC_API_SPC));
         //oThreadSEFL = new Thread(new ThreadStart(GetResultObjectFromSEFL_AnyAccount));
@@ -5550,7 +5580,7 @@ public class LTL_Carriers
 
                 if (isDirectPittOhioZone)
                 {                  
-                    Start_thread(ref oThreadPittOhio_API_Durachem);
+                    Start_thread(ref oThreadPittOhio_API_JC);
                 }
             }
         }
@@ -7219,6 +7249,14 @@ public class LTL_Carriers
             pittOhioQuoteAPI_Durachem.DeliveryDays += transitAddition;
             pittOhioQuoteAPI_Durachem.TotalPrice += addition;
             totalQuotes = SharedLTL.AddItemsToQuoteArray(totalQuotes, pittOhioQuoteAPI_Durachem);
+        }
+
+        // Pitt Ohio API_JC
+        if (pittOhioQuoteAPI_JC != null && pittOhioQuoteAPI_JC.TotalPrice > 0)
+        {
+            pittOhioQuoteAPI_JC.DeliveryDays += transitAddition;
+            pittOhioQuoteAPI_JC.TotalPrice += addition;
+            totalQuotes = SharedLTL.AddItemsToQuoteArray(totalQuotes, pittOhioQuoteAPI_JC);
         }
 
         #endregion
